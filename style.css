@@ -1,9 +1,9 @@
 html,
 body {
-    width: 100%;
-    min-height: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-height: 100%;
 }
 
 * {
@@ -22,7 +22,6 @@ body {
     position: relative;
 }
 
-/* star canvas */
 #starfield {
     position: fixed;
     inset: 0;
@@ -33,7 +32,6 @@ body {
     pointer-events: none;
 }
 
-/* shared page wrapper */
 .page-shell {
     position: relative;
     z-index: 1;
@@ -45,9 +43,7 @@ body {
     padding: 40px 20px;
 }
 
-/* main card */
 .container {
-    position: relative;
     width: 100%;
     max-width: 760px;
     margin: 0 auto;
@@ -64,7 +60,6 @@ body {
     -webkit-backdrop-filter: blur(10px);
 }
 
-/* logo */
 .logo-img {
     width: 150px;
     height: auto;
@@ -98,7 +93,6 @@ body {
     font-weight: 600;
 }
 
-/* waitlist */
 .waitlist {
     display: flex;
     justify-content: center;
@@ -117,18 +111,10 @@ body {
     background: rgba(255, 255, 255, 0.06);
     color: #FFFFFF;
     outline: none;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .waitlist input::placeholder {
     color: #9CA3AF;
-}
-
-.waitlist input:focus {
-    border-color: rgba(0, 240, 255, 0.5);
-    box-shadow:
-        0 0 0 3px rgba(0, 240, 255, 0.08),
-        0 0 18px rgba(0, 240, 255, 0.12);
 }
 
 .waitlist button {
@@ -139,18 +125,8 @@ body {
     color: #000000;
     font-weight: 700;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.25s ease;
-    box-shadow: 0 0 18px rgba(0, 240, 255, 0.25);
 }
 
-.waitlist button:hover {
-    transform: translateY(-2px);
-    box-shadow:
-        0 0 20px rgba(0, 240, 255, 0.3),
-        0 8px 30px rgba(0, 240, 255, 0.16);
-}
-
-/* links */
 .socials {
     margin-top: 20px;
 }
@@ -161,22 +137,6 @@ body {
 .back-home {
     color: #00F0FF;
     text-decoration: none;
-    transition: color 0.2s ease, text-shadow 0.2s ease;
-}
-
-.socials a:hover,
-.learn-more:hover,
-.back-home:hover {
-    color: #FFFFFF;
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
-}
-
-.contact a:hover {
-    text-decoration: underline;
-}
-
-.socials a {
-    font-size: 16px;
 }
 
 .about-short {
@@ -188,7 +148,6 @@ body {
 .about-short h2 {
     font-size: 28px;
     margin: 0 0 14px 0;
-    color: #FFFFFF;
 }
 
 .about-short p {
@@ -198,19 +157,12 @@ body {
     margin: 0 0 14px 0;
 }
 
-.learn-more {
-    display: inline-block;
-    margin-top: 8px;
-    font-weight: 700;
-}
-
 .contact {
     margin-top: 28px;
     font-size: 15px;
     color: #9CA3AF;
 }
 
-/* info page */
 body.info-page .page-shell {
     align-items: flex-start;
     padding-top: 60px;
@@ -219,7 +171,6 @@ body.info-page .page-shell {
 
 .info-container {
     max-width: 840px;
-    text-align: center;
 }
 
 .info-text {
@@ -237,7 +188,6 @@ body.info-page .page-shell {
 .info-text h2 {
     margin: 34px 0 14px 0;
     font-size: 28px;
-    color: #FFFFFF;
     text-align: left;
 }
 
@@ -247,20 +197,12 @@ body.info-page .page-shell {
     font-weight: 700;
 }
 
-/* animation */
 @keyframes floatLogo {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-4px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
 }
 
-/* mobile */
 @media (max-width: 640px) {
     .page-shell {
         padding: 24px 14px;
@@ -279,16 +221,6 @@ body.info-page .page-shell {
         width: 120px;
     }
 
-    .tagline,
-    .about-short p,
-    .info-text p {
-        font-size: 16px;
-    }
-
-    .coming {
-        font-size: 21px;
-    }
-
     .waitlist {
         flex-direction: column;
     }
@@ -297,10 +229,5 @@ body.info-page .page-shell {
     .waitlist button {
         width: 100%;
         max-width: 320px;
-    }
-
-    .about-short h2,
-    .info-text h2 {
-        font-size: 24px;
     }
 }
