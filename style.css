@@ -283,6 +283,11 @@ body.info-page {
     .coming {
         font-size: 21px;
     }
+    .waitlist-note {
+  font-size: 13px;
+  color: #6B7280;
+  margin: -16px 0 20px 0;
+}
 
     .waitlist {
         flex-direction: column;
