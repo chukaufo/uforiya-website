@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uforiya — How It Works: Rules & Manual</title>
+  <meta name="description" content="The complete guide to projects, tracks, versions, collaborators, roles and visibility on Uforiya." />
+
+  <link rel="icon" type="image/png" href="../images/ufologo.png" />
+  <link rel="apple-touch-icon" href="../images/ufologo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+  <style>
+    :root {
+      --purple: #7b5ff5;
+      --purple-light: #9b7ff7;
+      --purple-dim: rgba(123, 95, 245, 0.15);
+      --cyan: #00F0FF;
+      --bg: #050507;
+      --bg-card: rgba(12, 12, 18, 0.75);
+      --bg-card-hover: rgba(18, 18, 28, 0.90);
+      --border: rgba(255, 255, 255, 0.07);
+      --border-accent: rgba(123, 95, 245, 0.3);
+      --border-cyan: rgba(0, 240, 255, 0.2);
+      --text-primary: #f0f0f5;
+      --text-secondary: #9199aa;
+      --text-muted: #5a6070;
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --font-heading: 'Cabinet Grotesk', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-mono: 'Fira Code', monospace;
+      --max-width: 860px;
+      --nav-height: 72px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text-primary); min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    #starfield { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5; }
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-height); border-bottom: 1px solid var(--border); background: rgba(5,5,7,0.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; gap: 16px; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo { width: 36px; height: 36px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(123,95,245,0.5)); }
+    .nav-wordmark { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--text-primary); }
+    .nav-back { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+    .nav-back:hover { color: var(--text-primary); }
+    .page-wrap { position: relative; z-index: 1; max-width: var(--max-width); margin: 0 auto; padding: calc(var(--nav-height) + 64px) 24px 120px; }
+    .page-header { margin-bottom: 64px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
+    .page-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px; display: block; }
+    .page-title { font-family: var(--font-heading); font-size: clamp(36px,5vw,60px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 20px; }
+    .page-intro { font-size: 17px; color: var(--text-secondary); line-height: 1.8; max-width: 680px; }
+    .page-intro strong { color: var(--text-primary); font-weight: 500; }
+    .toc { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px 32px; margin-bottom: 64px; backdrop-filter: blur(10px); }
+    .toc-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .toc-list li { display: flex; align-items: center; gap: 12px; }
+    .toc-num { font-family: var(--font-mono); font-size: 11px; color: var(--cyan); background: rgba(0,240,255,0.06); border: 1px solid var(--border-cyan); border-radius: 6px; padding: 2px 8px; flex-shrink: 0; }
+    .toc-list a { font-size: 15px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+    .toc-list a:hover { color: var(--purple-light); }
+    .rules-section { margin-bottom: 72px; scroll-margin-top: calc(var(--nav-height) + 24px); }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+    .section-num { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--cyan); background: rgba(0,240,255,0.06); border: 1px solid var(--border-cyan); border-radius: var(--radius-sm); padding: 5px 12px; flex-shrink: 0; letter-spacing: 0.1em; }
+    .section-title { font-family: var(--font-heading); font-size: clamp(22px,3vw,30px); font-weight: 700; color: var(--text-primary); line-height: 1.1; }
+    .section-icon { font-size: 22px; color: var(--purple-light); flex-shrink: 0; }
+    .prose { font-size: 16px; color: var(--text-secondary); line-height: 1.8; }
+    .prose p { margin-bottom: 16px; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose strong { color: var(--text-primary); font-weight: 500; }
+    .prose em { color: var(--purple-light); font-style: normal; font-family: var(--font-mono); font-size: 13px; background: var(--purple-dim); border: 1px solid var(--border-accent); border-radius: 5px; padding: 1px 7px; }
+    .rule-cards { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .rule-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; backdrop-filter: blur(8px); transition: border-color 0.2s ease, background 0.2s ease; }
+    .rule-card:hover { border-color: var(--border-accent); background: var(--bg-card-hover); }
+    .rule-card-icon { font-size: 20px; color: var(--purple-light); flex-shrink: 0; margin-top: 2px; transition: color 0.2s ease; }
+    .rule-card:hover .rule-card-icon { color: var(--cyan); }
+    .rule-card-body h4 { font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+    .rule-card-body p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+    .role-table, .plan-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 14px; }
+    .role-table th, .plan-table th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--border); }
+    .role-table td, .plan-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-secondary); line-height: 1.6; vertical-align: top; }
+    .role-table tr:last-child td, .plan-table tr:last-child td { border-bottom: none; }
+    .role-table tr:hover td, .plan-table tr:hover td { background: rgba(123,95,245,0.03); }
+    .role-label, .plan-name-cell { font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--text-primary); white-space: nowrap; }
+    .role-badge { display: inline-block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 100px; margin-left: 8px; vertical-align: middle; }
+    .badge-owner { color: var(--purple-light); background: var(--purple-dim); border: 1px solid var(--border-accent); }
+    .badge-editor { color: var(--cyan); background: rgba(0,240,255,0.06); border: 1px solid var(--border-cyan); }
+    .badge-listener { color: var(--text-muted); background: rgba(255,255,255,0.03); border: 1px solid var(--border); }
+    .callout { border-radius: var(--radius-md); padding: 18px 22px; margin-bottom: 24px; display: flex; gap: 14px; align-items: flex-start; font-size: 14px; line-height: 1.7; }
+    .callout-info { background: rgba(0,240,255,0.05); border: 1px solid var(--border-cyan); color: var(--text-secondary); }
+    .callout-purple { background: var(--purple-dim); border: 1px solid var(--border-accent); color: var(--text-secondary); }
+    .callout i { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .callout-info i { color: var(--cyan); }
+    .callout-purple i { color: var(--purple-light); }
+    .callout strong { color: var(--text-primary); font-weight: 500; }
+    .credit-roles { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .credit-role-tag { font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 100px; padding: 5px 14px; }
+    .feedback-section { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .feedback-card { border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 40px; backdrop-filter: blur(10px); background: rgba(123,95,245,0.04); }
+    .feedback-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--purple-light); margin-bottom: 12px; display: block; }
+    .feedback-title { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--text-primary); margin-bottom: 14px; }
+    .feedback-body { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 28px; max-width: 580px; }
+    .feedback-body strong { color: var(--text-primary); font-weight: 500; }
+    .feedback-subjects { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+    .feedback-subject { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 14px; }
+    .feedback-subject span { color: var(--cyan); }
+    .btn-feedback { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: var(--purple); color: #fff; font-family: var(--font-body); font-size: 15px; font-weight: 500; border-radius: var(--radius-sm); text-decoration: none; transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease; box-shadow: 0 0 24px rgba(123,95,245,0.35); }
+    .btn-feedback:hover { background: var(--purple-light); transform: translateY(-2px); box-shadow: 0 0 36px rgba(123,95,245,0.5); }
+    .footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 40px 0; text-align: center; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .footer-brand { display: flex; align-items: center; gap: 8px; }
+    .footer-logo { width: 24px; height: 24px; object-fit: contain; filter: drop-shadow(0 0 6px rgba(123,95,245,0.4)); }
+    .footer-brand span { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--text-primary); }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); }
+    .section-divider { height: 1px; background: var(--border); margin: 64px 0; }
+    @media (max-width: 600px) {
+      .page-title { font-size: clamp(28px,9vw,40px); }
+      .feedback-card { padding: 28px 22px; }
+      .role-table, .plan-table { font-size: 13px; }
+      .role-table th, .role-table td, .plan-table th, .plan-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="../images/ufologo.png" alt="Uforiya" class="nav-logo" />
+        <span class="nav-wordmark">Uforiya</span>
+      </a>
+      <a href="/" class="nav-back">
+        <i class="ph-bold ph-arrow-left"></i>
+        Back to home
+      </a>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+
+    <header class="page-header">
+      <span class="page-label">Manual</span>
+      <h1 class="page-title">Rules &amp; How It Works</h1>
+      <p class="page-intro">
+        Uforiya is built around two levels of organisation: <strong>projects</strong> and <strong>tracks</strong>. Both have their own collaborators, roles and permissions that work independently of each other. This page explains exactly how everything works so you always know who can do what and why.
+      </p>
+    </header>
+
+    <nav class="toc" aria-label="Table of contents">
+      <div class="toc-title">Contents</div>
+      <ul class="toc-list">
+        <li><span class="toc-num">01</span><a href="#uploads">Uploads &amp; Projects</a></li>
+        <li><span class="toc-num">02</span><a href="#collaborators">Collaborators: Two Levels</a></li>
+        <li><span class="toc-num">03</span><a href="#project-roles">Project Roles</a></li>
+        <li><span class="toc-num">04</span><a href="#track-roles">Track Roles &amp; Credits</a></li>
+        <li><span class="toc-num">05</span><a href="#versions">Versions</a></li>
+        <li><span class="toc-num">06</span><a href="#visibility">Visibility</a></li>
+        <li><span class="toc-num">07</span><a href="#ownership">Track Ownership &amp; Standalone Tracks</a></li>
+        <li><span class="toc-num">08</span><a href="#accounts">Accounts</a></li>
+        <li><span class="toc-num">09</span><a href="#subscriptions">Subscriptions &amp; Limits</a></li>
+        <li><span class="toc-num">10</span><a href="#feedback">Feedback &amp; Rule Reviews</a></li>
+      </ul>
+    </nav>
+
+    <!-- 01 -->
+    <section class="rules-section" id="uploads">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <i class="ph-bold ph-upload-simple section-icon"></i>
+        <h2 class="section-title">Uploads &amp; Projects</h2>
+      </div>
+      <div class="prose">
+        <p>Every track on Uforiya must belong to a project. When you upload a track you choose to either create a new project or add it to an existing one, including both projects you own and projects you are an editor on.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-folder-plus rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Every track belongs to a project</h4>
+            <p>You cannot upload a track without assigning it to a project. You can create a new project during upload or add to an existing one you own or edit.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-tag rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Creating a project</h4>
+            <p><strong>Name, type and visibility are mandatory.</strong> Cover image and all other details are optional. Project type must be one of: <strong>Single, EP, Album, Mixtape</strong> or <strong>Playlist</strong>.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-music-note rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Uploading a track</h4>
+            <p><strong>Title and visibility are mandatory</strong> when uploading a track. All other metadata such as featuring artists, BPM and key are optional. If the project is private, the track will be private regardless of the visibility you set.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-crown-simple rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>You own every track you upload</h4>
+            <p>Whoever uploads a track is its owner, regardless of their role in the project. Uploading to someone else's project does not give them ownership of your track.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <i class="ph-bold ph-info"></i>
+        <p>BPM and key are detected automatically on upload. You can override either value manually if the detection is incorrect.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 02 -->
+    <section class="rules-section" id="collaborators">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <i class="ph-bold ph-users-three section-icon"></i>
+        <h2 class="section-title">Collaborators: Two Levels</h2>
+      </div>
+      <div class="prose">
+        <p>Uforiya has collaborators at two separate levels: <strong>project level</strong> and <strong>track level</strong>. These are managed independently. Adding someone to a project does not automatically add them to any track, and adding someone to a track does not give them project access.</p>
+        <p>At both levels, a collaborator is either an <em>Editor</em> or a <em>Listener</em>. The permissions for each role differ between project and track level and are explained in the sections below.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-buildings rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Project-level collaborators</h4>
+            <p>Managed from Project Settings. Only the project owner can manage project collaborators. Project collaborators have access to <strong>all tracks in the project</strong> regardless of individual track visibility settings. Project editors have the same capabilities as a track editor on every track in the project.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-music-notes rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Track-level collaborators</h4>
+            <p>Managed from Track Settings by the track owner. Track collaborators are separate from project collaborators. They can view project collaborators from Project Settings but cannot manage them.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-purple">
+        <i class="ph-bold ph-arrows-left-right"></i>
+        <p>Both track and project collaborators can <strong>view</strong> project collaborators from Project Settings. Only the project owner can <strong>manage</strong> them.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 03 -->
+    <section class="rules-section" id="project-roles">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <i class="ph-bold ph-shield-check section-icon"></i>
+        <h2 class="section-title">Project Roles</h2>
+      </div>
+      <div class="prose">
+        <p>Every person in a project has one of three roles. These roles control what they can do within the project.</p>
+      </div>
+      <table class="role-table">
+        <thead><tr><th>Role</th><th>Permissions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="role-label">Owner</span><span class="role-badge badge-owner">Owner</span></td>
+            <td>Full control. Can invite and remove collaborators, delete the project, change project visibility, edit all project and track data, and upload new versions of any track. There is one owner per project.</td>
+          </tr>
+          <tr>
+            <td><span class="role-label">Editor</span><span class="role-badge badge-editor">Editor</span></td>
+            <td>Can upload tracks to the project and retain ownership of those tracks. Has the same capabilities as a track editor on all tracks in the project. Can edit some track data as specified in the app. Cannot invite or remove collaborators, delete the project, or change project visibility.</td>
+          </tr>
+          <tr>
+            <td><span class="role-label">Listener</span><span class="role-badge badge-listener">Listener</span></td>
+            <td>Listen access only. Can stream all tracks in the project but only the current version of each track. Cannot upload, edit or manage anything.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout callout-info">
+        <i class="ph-bold ph-info"></i>
+        <p>Collaborators are invited by <strong>username or email</strong>. You can invite someone who does not yet have a Uforiya account by email; they will receive an invitation to join.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 04 -->
+    <section class="rules-section" id="track-roles">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <i class="ph-bold ph-vinyl-record section-icon"></i>
+        <h2 class="section-title">Track Roles &amp; Credits</h2>
+      </div>
+      <div class="prose">
+        <p>At the track level, collaborators are also either <strong>Editors</strong> or <strong>Listeners</strong>. All track editors have the same permissions; there is no permission difference between them at this level.</p>
+        <p>Each editor on a track is assigned a <strong>credit role</strong> to document their contribution. Since anyone with access to the track can see all editors and their roles, these serve as credits for the record.</p>
+      </div>
+      <div class="credit-roles">
+        <span class="credit-role-tag">Artist</span>
+        <span class="credit-role-tag">Producer</span>
+        <span class="credit-role-tag">Engineer</span>
+        <span class="credit-role-tag">Songwriter</span>
+        <span class="credit-role-tag">Composer</span>
+        <span class="credit-role-tag">Vocalist</span>
+        <span class="credit-role-tag">Featured Artist</span>
+        <span class="credit-role-tag">Other</span>
+      </div>
+      <table class="role-table">
+        <thead><tr><th>Role</th><th>Permissions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="role-label">Owner</span><span class="role-badge badge-owner">Owner</span></td>
+            <td>Full control over the track. Can invite and remove track collaborators, mark a version as current, edit all track data, set track visibility, and remove the track from a project if the project is not owned by them.</td>
+          </tr>
+          <tr>
+            <td><span class="role-label">Editor</span><span class="role-badge badge-editor">Editor</span></td>
+            <td>Can upload new versions of the track from Track Settings and edit some track data as specified in the app. All editors have the same permissions regardless of their assigned credit role.</td>
+          </tr>
+          <tr>
+            <td><span class="role-label">Listener</span><span class="role-badge badge-listener">Listener</span></td>
+            <td>Listen access only. Can stream the current version of the track. Cannot upload, edit or manage anything.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout callout-purple">
+        <i class="ph-bold ph-star"></i>
+        <p><strong>Credit roles are for documentation, not permissions.</strong> A producer and an engineer on the same track have identical editing capabilities; the credit role records their contribution to the record, not their level of access.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 05 -->
+    <section class="rules-section" id="versions">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <i class="ph-bold ph-git-branch section-icon"></i>
+        <h2 class="section-title">Versions</h2>
+      </div>
+      <div class="prose">
+        <p>Versions are the core of Uforiya. Every time an audio file is uploaded for a track it is saved as a new version. Nothing is overwritten. Your full version history is always there.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-gear rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Where versions are uploaded</h4>
+            <p>New versions can only be uploaded from <strong>Track Settings</strong>. This keeps version history intentional and organised.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-cloud-arrow-up rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Who can upload a new version</h4>
+            <p>The track owner, the project owner, and any project or track editor can upload a new version of a track.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-check-circle rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Who marks the current version</h4>
+            <p>Only the <strong>track owner</strong> can mark a version as current. This ensures nothing is officially changed without the track owner's sign-off, even if editors can upload new files.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-clock-counter-clockwise rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Nothing is deleted</h4>
+            <p>Every version you upload stays on the platform. You can go back to any version at any time. Old versions are never removed when a new one is uploaded.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-stack rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Version limits are based on the track owner's plan</h4>
+            <p>The number of versions allowed per track is determined by the <strong>track owner's plan</strong>, not the uploader's plan. See Section 09 for plan limits.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <i class="ph-bold ph-info"></i>
+        <p>As long as you have not reached your plan's version limit for a track, you can keep uploading new versions. If you reach the limit, you will need to upgrade your plan to continue.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 06 -->
+    <section class="rules-section" id="visibility">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <i class="ph-bold ph-eye section-icon"></i>
+        <h2 class="section-title">Visibility</h2>
+      </div>
+      <div class="prose">
+        <p>Visibility is controlled at two levels: project and track. The project's visibility sets the boundaries. Track visibility cannot exceed what the project allows.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-lock-simple rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Private project</h4>
+            <p>Only invited collaborators can access the project. All tracks inside a private project are private regardless of their individual visibility settings. No exceptions.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-globe rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Public project</h4>
+            <p>Any Uforiya user with the project link can view the project. When a project is public, each track owner can set their track's visibility independently; some tracks can be private while others are public.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-sliders-horizontal rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Who controls visibility</h4>
+            <p>The <strong>project owner</strong> sets and changes project visibility. The <strong>track owner</strong> sets and changes the visibility of their own tracks within the bounds of the project's visibility.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-purple">
+        <i class="ph-bold ph-warning"></i>
+        <p><strong>Track visibility cannot exceed project visibility.</strong> If a project is private, all tracks inside it are private regardless of individual track settings. Making a project public gives each track owner the ability to choose their track's visibility independently.</p>
+      </div>
+      <div class="callout callout-info">
+        <i class="ph-bold ph-user-circle"></i>
+        <p>A Uforiya account is required to access any content on the platform, including public projects.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 07 -->
+    <section class="rules-section" id="ownership">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <i class="ph-bold ph-crown-simple section-icon"></i>
+        <h2 class="section-title">Track Ownership &amp; Standalone Tracks</h2>
+      </div>
+      <div class="prose">
+        <p>Track ownership always stays with whoever uploaded the track. There are several situations where a track can be separated from a project and become a standalone single.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-trash rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Project is deleted</h4>
+            <p>If a project owner deletes a project, all tracks uploaded by editors within that project are not deleted. They become standalone projects with the type <strong>Single</strong>, still owned by the original track owner.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-x-circle rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Project owner removes a track</h4>
+            <p>The project owner can remove a track uploaded by an editor from their project. The removed track becomes a standalone <strong>Single</strong> owned by the original track owner.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-sign-out rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Track owner removes their own track</h4>
+            <p>A track owner can remove their own track from a project at any time. This applies only when the project is not owned by the track owner. The track becomes a standalone <strong>Single</strong> under their ownership.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <i class="ph-bold ph-info"></i>
+        <p>Track ownership <strong>never transfers automatically</strong>. Ownership transfer is not available in the current version of Uforiya but is planned for a future release.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 08 -->
+    <section class="rules-section" id="accounts">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <i class="ph-bold ph-user-circle section-icon"></i>
+        <h2 class="section-title">Accounts</h2>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-identification-card rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>An account is required</h4>
+            <p>You must have a Uforiya account to use the platform. This includes accessing public projects; all content on Uforiya is behind an account.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-currency-dollar rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Free to start</h4>
+            <p>Creating an account is free. The Free plan gives you 25 tracks, 5 versions per track and unlimited collaborators. No credit card required.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 09 -->
+    <section class="rules-section" id="subscriptions">
+      <div class="section-header">
+        <span class="section-num">09</span>
+        <i class="ph-bold ph-stack section-icon"></i>
+        <h2 class="section-title">Subscriptions &amp; Limits</h2>
+      </div>
+      <div class="prose">
+        <p>Your plan determines how many tracks you can upload and how many versions each track can have. These limits are tied to your account, not to any specific project.</p>
+      </div>
+      <table class="plan-table">
+        <thead>
+          <tr><th>Plan</th><th>Tracks</th><th>Versions per track</th><th>Collaborators</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="plan-name-cell">Free</span></td><td>25</td><td>5</td><td>Unlimited</td></tr>
+          <tr><td><span class="plan-name-cell">Pro</span></td><td>250</td><td>10</td><td>Unlimited</td></tr>
+          <tr><td><span class="plan-name-cell">Premium</span></td><td>1,000</td><td>15</td><td>Unlimited</td></tr>
+        </tbody>
+      </table>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-user rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Track count is based on who uploads</h4>
+            <p>Your track limit counts every track you upload, regardless of which project it belongs to. If you upload a track to another user's project, it counts toward your limit. If someone uploads a track to your project, it counts toward their limit.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-stack rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Version limits are based on the track owner's plan</h4>
+            <p>The version limit for any given track is set by the track owner's plan, not the plan of whoever is uploading the version.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 Feedback -->
+    <section class="feedback-section" id="feedback">
+      <div class="feedback-card">
+        <span class="feedback-label">Section 10: Feedback</span>
+        <h2 class="feedback-title">Think a rule should change?</h2>
+        <p class="feedback-body">
+          We want Uforiya to work for the people who actually use it. If you believe a rule is unclear, unfair, or does not fit how you work, send us an email and we will review it. <strong>We cannot promise every rule will change, but every request will be read.</strong>
+        </p>
+        <p class="feedback-body">
+          Use the subject line format below so we can route your request correctly. Include your Uforiya username, the section name or number, and describe what you think should be different and why.
+        </p>
+        <div class="feedback-subjects">
+          <div class="feedback-subject"><span>Subject:</span> Request for Rule Review &mdash; Section 01: Uploads &amp; Projects</div>
+          <div class="feedback-subject"><span>Subject:</span> Request for Rule Review &mdash; Section 05: Versions</div>
+          <div class="feedback-subject"><span>Subject:</span> Request for Rule Review &mdash; Section 06: Visibility</div>
+        </div>
+        <a href="mailto:hello@uforiya.xyz?subject=Request%20for%20Rule%20Review%20%E2%80%94%20Section%20[Number]%3A%20[Section%20Name]" class="btn-feedback">
+          <i class="ph-bold ph-envelope-simple"></i>
+          Email hello@uforiya.xyz
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="../images/ufologo.png" alt="Uforiya" class="footer-logo" />
+        <span>Uforiya</span>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="https://uforiya.space" target="_blank" rel="noopener">Open App</a>
+        <a href="mailto:hello@uforiya.xyz">Contact</a>
+        <a href="../privacy/index.html">Privacy Policy</a>
+        <a href="../terms/index.html">Terms of Service</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Uforiya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../stars.js"></script>
+</body>
+</html>

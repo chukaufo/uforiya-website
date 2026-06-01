@@ -908,8 +908,8 @@ mask-image: linear-gradient(
 }
 
 .cta-logo {
-  width: 72px;
-  height: 72px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   filter: drop-shadow(0 0 16px rgba(123, 95, 245, 0.5));
   margin-bottom: 24px;
