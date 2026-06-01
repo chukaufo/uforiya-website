@@ -3,45 +3,435 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uforiya</title>
+  <title>Uforiya — Every track. Every version. Every collaborator. One place.</title>
+  <meta name="description" content="Uforiya is the collaboration platform built for music creators. Manage tracks, versions and collaborators all in one place." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/ufologo.png" />
+<link rel="apple-touch-icon" href="images/ufologo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="starfield"></canvas>
-  <div class="container">
-    <img src="images/uforiya_logo_exact.png" alt="Uforiya Logo" class="logo-img" />
-    <h1 class="logo">Uforiya</h1>
-    <p class="tagline">Every track. Every version. Every collaborator. One place.</p>
-    <p class="coming">Coming Soon</p>
-    <form
-      class="waitlist"
-      action="https://formspree.io/f/xaqapyrv"
-      method="POST"
-    >
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <button type="submit">Join Waitlist</button>
-    </form>
-    <p class="waitlist-note">Be the first to know when we launch.</p>
-    <div class="socials">
-      <a href="https://instagram.com/uforiya_" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </div>
-    <div class="about-short">
-      <h2>What is Uforiya</h2>
-      <p>
-        Uforiya is the collaboration platform built for music creatives. Artists, producers, songwriters, and engineers all work together in one place, without losing control of their music.
 
-Stop sending files through iMessage and AirDrop. Start building music with your team.
-      </p>
-      <p>
-        Stop sending files through iMessage and AirDrop.<br>
-        Start building music with your team.
-      </p>
-      <a href="what-is-uforiya.html" class="learn-more">Learn more</a>
+  <!-- Starfield background -->
+  <canvas id="starfield"></canvas>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="images/ufologo.png" alt="Uforiya logo" class="nav-logo" />
+        <span class="nav-wordmark">Uforiya</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+
+      <a href="https://uforiya.space" class="btn-open-app" target="_blank" rel="noopener">
+        Open App
+      </a>
+
+      <!-- Mobile hamburger -->
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="contact">
-      <p>Contact: <a href="mailto:hello@uforiya.xyz">hello@uforiya.xyz</a></p>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://uforiya.space" class="btn-open-app mobile-cta" target="_blank" rel="noopener">Open App</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-badge">Now live — sign up and start for free</div>
+
+      <h1 class="hero-title">
+        Your music deserves<br />
+        <span class="gradient-text">a proper home.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Uforiya is where artists, producers, songwriters and engineers
+        bring their work together. Every track, every version, every collaborator,
+        all in one place.
+      </p>
+
+      <div class="hero-cta">
+        <a href="https://uforiya.space" class="btn-primary" target="_blank" rel="noopener">
+          Get started for free
+        </a>
+        <a href="#how-it-works" class="btn-ghost">See how it works</a>
+      </div>
+
+      <p class="hero-note">Free forever on the starter plan. No credit card required.</p>
+    </div>
+
+    <!-- Hero screenshot -->
+    <div class="hero-screenshot-wrap">
+      <div class="screenshot-glow"></div>
+      <img
+        src="images/projectpage.png"
+        alt="Uforiya project view showing tracks, BPM and key data"
+        class="hero-screenshot"
+      />
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SOCIAL PROOF BAR
+  ═══════════════════════════════════════════ -->
+  <div class="proof-bar">
+    <p>Built for artists who take their craft seriously</p>
+    <div class="proof-tags">
+      <span>Producers</span>
+      <span>Songwriters</span>
+      <span>Recording Artists</span>
+      <span>Mix Engineers</span>
+      <span>Sound Designers</span>
     </div>
   </div>
+
+  <!-- ═══════════════════════════════════════════
+       FEATURES
+  ═══════════════════════════════════════════ -->
+  <section class="features" id="features">
+    <div class="section-inner">
+      <div class="section-label">What you get</div>
+      <h2 class="section-title">Everything your session is missing</h2>
+      <p class="section-sub">
+        Stop losing files in iMessage threads and shared drives.
+        Uforiya keeps your music organised, versioned and collaborative from day one.
+      </p>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">🎵</div>
+          <h3>Track management</h3>
+          <p>Upload your audio, get automatic BPM and key detection, and keep every track cleanly organised inside your projects.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔁</div>
+          <h3>Version control</h3>
+          <p>Every revision lives on the platform. Go back to any version, compare changes, and never overwrite something you needed.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>Real collaboration</h3>
+          <p>Invite producers, engineers and artists by username or email. Assign roles so everyone has the access they need and nothing more.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Visibility control</h3>
+          <p>Keep projects private, share with specific collaborators, or make them public. You decide who hears what and when.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Play analytics</h3>
+          <p>See how your tracks perform. Know which records are getting attention and use that data to make better decisions.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎧</div>
+          <h3>Built-in audio player</h3>
+          <p>Stream your tracks directly in the app with waveform visualisation, timestamped comments and stem support.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SCREENSHOT SHOWCASE
+  ═══════════════════════════════════════════ -->
+  <section class="showcase" id="showcase">
+    <div class="section-inner">
+      <div class="section-label">Inside the app</div>
+      <h2 class="section-title">See it for yourself</h2>
+
+      <div class="showcase-grid">
+        <div class="showcase-item showcase-large">
+          <img src="images/dashboard.png" alt="Uforiya dashboard showing project library" />
+          <div class="showcase-caption">Your library at a glance</div>
+        </div>
+        <div class="showcase-item">
+          <img src="images/audioplayer.png" alt="Uforiya fullscreen audio player with waveform" />
+          <div class="showcase-caption">Fullscreen player with waveform and comments</div>
+        </div>
+        <div class="showcase-item">
+          <img src="images/upload.png" alt="Uforiya upload track page" />
+          <div class="showcase-caption">Upload in seconds, organised instantly</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       HOW IT WORKS
+  ═══════════════════════════════════════════ -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-inner">
+      <div class="section-label">The process</div>
+      <h2 class="section-title">From upload to collaboration in minutes</h2>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Upload your audio and start a project</h3>
+            <p>Drop in your file and Uforiya handles the rest: BPM detection, key analysis and waveform generation all happen automatically. Assign the track to a project as you upload. Projects can be a single, album, EP, playlist or whatever structure fits your workflow.</p>
+          </div>
+        </div>
+        
+        <div class="step-divider"></div>
+        
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Invite your team</h3>
+            <p>Add collaborators by username or email and give each person the right role: editor or listener. Editors can upload new tracks to the project and whoever uploads a track owns it. Everyone works inside the same space with no files being passed around.</p>
+          </div>
+        </div>
+        
+        <div class="step-divider"></div>
+        
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Version as you go</h3>
+            <p>Uforiya is built to take your music from idea to finished record. Any editor as well as project and track owners can upload new versions at every stage of the process. Only the track owner can mark a version as current, so nothing gets changed without the right sign-off.</p>
+          </div>
+        </div>
+        
+        <div class="step-divider"></div>
+        
+        <div class="step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Build together</h3>
+            <p>Stream tracks, leave timestamped comments and watch the project grow from first idea to final master. Your whole creative process lives in one place: no more chasing files over DMs, no more losing the version that actually sounded right.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PRICING
+  ═══════════════════════════════════════════ -->
+  <section class="pricing" id="pricing">
+    <div class="section-inner">
+      <div class="section-label">Plans</div>
+      <h2 class="section-title">Start free, grow when you're ready</h2>
+      <p class="section-sub">No hidden fees, no surprises. Every plan includes full access to collaboration features.</p>
+
+      <div class="pricing-toggle">
+        <span class="toggle-label" id="label-monthly">Monthly</span>
+        <button class="toggle-btn" id="billing-toggle" aria-label="Toggle billing period">
+          <span class="toggle-thumb"></span>
+        </button>
+        <span class="toggle-label" id="label-yearly">Yearly <em class="save-badge">Save ~17%</em></span>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Free -->
+        <div class="pricing-card">
+          <div class="plan-name">Free</div>
+          <div class="plan-price">
+            <span class="price-amount">$0</span>
+            <span class="price-period">forever</span>
+          </div>
+          <p class="plan-desc">Everything you need to get started and share your work.</p>
+          <ul class="plan-features">
+            <li>25 tracks</li>
+            <li>5 versions per track</li>
+            <li>Unlimited collaborators</li>
+            <li>Last 5 plays analytics</li>
+            <li>Private and public projects</li>
+            <li>Stem uploads per track version</li>
+          </ul>
+          <a href="https://uforiya.space" class="btn-plan btn-plan-ghost" target="_blank" rel="noopener">Get started</a>
+        </div>
+
+        <!-- Pro -->
+        <div class="pricing-card pricing-card-featured">
+          <div class="plan-badge">Most popular</div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">
+            <span class="price-amount" data-monthly="$9.99" data-yearly="$8.25">$9.99</span>
+            <span class="price-period" data-monthly="per month" data-yearly="per month, billed yearly">per month</span>
+          </div>
+          <p class="plan-desc">For creators who are actively building and releasing music.</p>
+          <ul class="plan-features">
+            <li>250 tracks</li>
+            <li>10 versions per track</li>
+            <li>Unlimited collaborators</li>
+            <li>Weekly and monthly analytics</li>
+            <li>Private and public projects</li>
+            <li>Stem uploads per track version</li>
+          </ul>
+         <a href="https://uforiya.space" class="btn-plan btn-plan-ghost" target="_blank" rel="noopener">Get started</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="pricing-card">
+          <div class="plan-name">Premium</div>
+          <div class="plan-price">
+            <span class="price-amount" data-monthly="$19.99" data-yearly="$16.58">$19.99</span>
+            <span class="price-period" data-monthly="per month" data-yearly="per month, billed yearly">per month</span>
+          </div>
+          <p class="plan-desc">For professional studios, labels and power users who need everything.</p>
+          <ul class="plan-features">
+            <li>1,000 tracks</li>
+            <li>15 versions per track</li>
+            <li>Unlimited collaborators</li>
+            <li>Daily, weekly and monthly analytics</li>
+            <li>Private and public projects</li>
+            <li>Stem uploads per track version</li>
+          </ul>
+         <a href="https://uforiya.space" class="btn-plan btn-plan-ghost" target="_blank" rel="noopener">Get started</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FINAL CTA
+  ═══════════════════════════════════════════ -->
+  <section class="final-cta">
+    <div class="section-inner">
+      <img src="images/ufologo.png" alt="Uforiya" class="cta-logo" />
+      <h2>Your next record starts here.</h2>
+      <p>
+        Join Uforiya today and give your music the space it deserves.
+        Free to start, built to grow with you.
+      </p>
+      <a href="https://uforiya.space" class="btn-primary btn-large" target="_blank" rel="noopener">
+        Create your free account
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/ufologo.png" alt="Uforiya" class="footer-logo" />
+        <span>Uforiya</span>
+      </div>
+      <p class="footer-tagline">Every track. Every version. Every collaborator. One place.</p>
+
+      <div class="footer-links">
+        <a href="https://uforiya.space" target="_blank" rel="noopener">Open App</a>
+        <a href="mailto:hello@uforiya.xyz">Contact</a>
+        <a href="https://instagram.com/uforiyaspace" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://twitter.com/uforiyaspace" target="_blank" rel="noopener">Twitter</a>
+        <a href="privacy/index.html">Privacy Policy</a>
+        <a href="terms/index.html">Terms of Service</a>
+      </div>
+
+      <p class="footer-copy">&copy; 2026 Uforiya. All rights reserved.</p>
+    </div>
+  </footer>
+
   <script src="stars.js"></script>
+  <script>
+    /* ── Navbar scroll effect ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* ── Mobile hamburger ── */
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('nav-mobile');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMobile.classList.toggle('open');
+    });
+
+    /* Close mobile menu on link click */
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navMobile.classList.remove('open');
+      });
+    });
+
+    /* ── Smooth scroll for anchor links ── */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    /* ── Billing toggle ── */
+    const toggle = document.getElementById('billing-toggle');
+    const labelMonthly = document.getElementById('label-monthly');
+    const labelYearly = document.getElementById('label-yearly');
+    let isYearly = false;
+
+    toggle.addEventListener('click', () => {
+      isYearly = !isYearly;
+      toggle.classList.toggle('active', isYearly);
+      labelMonthly.classList.toggle('active', !isYearly);
+      labelYearly.classList.toggle('active', isYearly);
+
+      document.querySelectorAll('.price-amount[data-monthly]').forEach(el => {
+        el.textContent = isYearly ? el.dataset.yearly : el.dataset.monthly;
+      });
+      document.querySelectorAll('.price-period[data-monthly]').forEach(el => {
+        el.textContent = isYearly ? el.dataset.yearly : el.dataset.monthly;
+      });
+    });
+
+    /* Set monthly as default active */
+    labelMonthly.classList.add('active');
+
+    /* ── Scroll reveal ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(
+      '.feature-card, .step, .pricing-card, .showcase-item'
+    ).forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
