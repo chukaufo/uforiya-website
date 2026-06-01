@@ -283,26 +283,27 @@ body {
   padding: 11px 0;
   margin-bottom: 48px;
   /* Fade edges so text dissolves at the sides */
-  -webkit-mask-image: linear-gradient(
+-webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 8%,
-    black 92%,
+    #000 8%,                     /* Safari needs #000 not 'black' keyword */
+    #000 92%,
     transparent 100%
   );
-  mask-image: linear-gradient(
+mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 8%,
-    black 92%,
+    #000 8%,
+    #000 92%,
     transparent 100%
   );
 }
 
 .hero-marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 38s linear infinite; /* adjust speed here if needed */
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 38s linear infinite;
 }
 
 /* Pause on hover — gives users time to read */
@@ -321,7 +322,7 @@ body {
 
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); } /* -50% because we have two identical spans */
+  to   { transform: translateX(-50%); }
 }
 
 .hero-title {
