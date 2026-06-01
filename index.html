@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uforiya — Every track. Every version. Every collaborator. One place.</title>
-  <meta name="description" content="Uforiya is the collaboration platform built for music creators. Manage tracks, versions and collaborators all in one place." />
+<title>Uforiya | Music Collaboration Software for Producers, Artists & Engineers</title>
+  <meta name="description" content="Uforiya is music collaboration software built for producers, artists, songwriters and engineers. Track versioning, project management, and team collaboration — all in one place. Free to start." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/ufologo.png" />
 <link rel="apple-touch-icon" href="images/ufologo.png" />
 
-  <!-- Fonts -->
+<!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Outfit (body) + Fira Code (mono) from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Cabinet Grotesk (headings) from Fontshare -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet" />
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -62,7 +67,13 @@
   ═══════════════════════════════════════════ -->
   <section class="hero" id="home">
     <div class="hero-inner">
-      <div class="hero-badge">Now live — sign up and start for free</div>
+      <div class="hero-marquee-wrap" aria-label="Now live — sign up and start for free">
+        <div class="hero-marquee-track">
+          <!-- Two identical sets so the loop is seamless -->
+          <span>Every track. Every version. · The version that sounded right is still there. · Invite your team. · The studio doesn't end when the session does. · Your producer has access. Your engineer too. · Built for the session. · Your music deserves better. · From idea to master. · Free to start. ·&nbsp;&nbsp;</span>
+          <span>Every track. Every version. · The version that sounded right is still there. · Invite your team. · The studio doesn't end when the session does. · Your producer has access. Your engineer too. · Built for the session. · Your music deserves better. · From idea to master. · Free to start. ·&nbsp;&nbsp;</span>
+        </div>
+      </div>
 
       <h1 class="hero-title">
         Your music deserves<br />
@@ -70,9 +81,9 @@
       </h1>
 
       <p class="hero-sub">
-        Uforiya is where artists, producers, songwriters and engineers
-        bring their work together. Every track, every version, every collaborator,
-        all in one place.
+        Uforiya is music collaboration software for artists, producers, songwriters and engineers.
+        Track versioning, project management and team access control.
+        All in one place.
       </p>
 
       <div class="hero-cta">
@@ -100,7 +111,7 @@
        SOCIAL PROOF BAR
   ═══════════════════════════════════════════ -->
   <div class="proof-bar">
-    <p>Built for artists who take their craft seriously</p>
+    <p>Music collaboration platform for the whole creative team</p>
     <div class="proof-tags">
       <span>Producers</span>
       <span>Songwriters</span>
@@ -125,37 +136,37 @@
       <div class="features-grid">
 
         <div class="feature-card">
-          <div class="feature-icon">🎵</div>
+         <div class="feature-icon"><i class="ph-bold ph-music-note"></i></div>
           <h3>Track management</h3>
           <p>Upload your audio, get automatic BPM and key detection, and keep every track cleanly organised inside your projects.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">🔁</div>
+          <div class="feature-icon"><i class="ph-bold ph-git-branch"></i></div>
           <h3>Version control</h3>
           <p>Every revision lives on the platform. Go back to any version, compare changes, and never overwrite something you needed.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">👥</div>
+         <div class="feature-icon"><i class="ph-bold ph-users-three"></i></div>
           <h3>Real collaboration</h3>
           <p>Invite producers, engineers and artists by username or email. Assign roles so everyone has the access they need and nothing more.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">🔒</div>
+          <div class="feature-icon"><i class="ph-bold ph-lock-simple"></i></div>
           <h3>Visibility control</h3>
           <p>Keep projects private, share with specific collaborators, or make them public. You decide who hears what and when.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">📊</div>
+         <div class="feature-icon"><i class="ph-bold ph-chart-bar"></i></div>
           <h3>Play analytics</h3>
           <p>See how your tracks perform. Know which records are getting attention and use that data to make better decisions.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">🎧</div>
+          <div class="feature-icon"><i class="ph-bold ph-headphones"></i></div>
           <h3>Built-in audio player</h3>
           <p>Stream your tracks directly in the app with waveform visualisation, timestamped comments and stem support.</p>
         </div>
@@ -203,7 +214,7 @@
           <div class="step-number">01</div>
           <div class="step-content">
             <h3>Upload your audio and start a project</h3>
-            <p>Drop in your file and Uforiya handles the rest: BPM detection and key analysis all happen automatically. Assign the track to a project as you upload. Projects can be a single, album, EP, playlist or whatever structure fits your workflow.</p>
+            <p>Drop in your file and Uforiya handles the rest. BPM detection, key analysis, instant organisation. Structure your projects your way: single, album, EP, mixtape or playlist.</p>
           </div>
         </div>
         
@@ -213,7 +224,7 @@
           <div class="step-number">02</div>
           <div class="step-content">
             <h3>Invite your team</h3>
-            <p>Add collaborators by username or email and give each person the right role: editor or listener. Editors can upload new tracks to the project and whoever uploads a track owns it. Everyone works inside the same space with no files being passed around.</p>
+            <p>Add collaborators by username or email and give each person the right role. Editors can upload and own their tracks. Everyone works in the same space. No files passed around.</p>
           </div>
         </div>
         
@@ -223,7 +234,7 @@
           <div class="step-number">03</div>
           <div class="step-content">
             <h3>Version as you go</h3>
-            <p>Uforiya is built to take your music from idea to finished record. Any editor as well as project and track owners can upload new versions at every stage of the process. Only the track owner can mark a version as current, so nothing gets changed without the right sign-off.</p>
+            <p>Upload new versions at every stage, from rough idea to final record. Only the track owner marks a version as current, so nothing changes without the right sign-off.</p>
           </div>
         </div>
         
@@ -233,7 +244,7 @@
           <div class="step-number">04</div>
           <div class="step-content">
             <h3>Build together</h3>
-            <p>Stream tracks, leave timestamped comments and watch the project grow from first idea to final master. Your whole creative process lives in one place: no more chasing files over DMs, no more losing the version that actually sounded right.</p>
+            <p>Stream tracks, leave timestamped comments, watch the project grow. Your whole creative process in one place. No more chasing files, no more losing the take that sounded right.</p>
           </div>
         </div>
 
@@ -265,7 +276,7 @@
           <div class="plan-name">Free</div>
           <div class="plan-price">
             <span class="price-amount">$0</span>
-            <span class="price-period">forever</span>
+           <span class="price-period">free forever</span>
           </div>
           <p class="plan-desc">Everything you need to get started and share your work.</p>
           <ul class="plan-features">
@@ -285,7 +296,7 @@
           <div class="plan-name">Pro</div>
           <div class="plan-price">
             <span class="price-amount" data-monthly="$9.99" data-yearly="$8.25">$9.99</span>
-            <span class="price-period" data-monthly="per month" data-yearly="per month, billed yearly">per month</span>
+           <span class="price-period" data-monthly="per month CAD" data-yearly="per month CAD, billed yearly">per month CAD</span>
           </div>
           <p class="plan-desc">For creators who are actively building and releasing music.</p>
           <ul class="plan-features">

@@ -23,9 +23,9 @@
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-xl: 28px;
-  --font-heading: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-heading: 'Cabinet Grotesk', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'Fira Code', monospace;
   --max-width: 1120px;
   --nav-height: 72px;
 }
@@ -73,9 +73,9 @@ body {
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(32px, 4.5vw, 52px); /* punched up for Cabinet Grotesk */
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.1;
   color: var(--text-primary);
   margin-bottom: 16px;
 }
@@ -135,8 +135,8 @@ body {
 }
 
 .nav-logo {
-  width: 36px;
-  height: 36px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   filter: drop-shadow(0 0 8px rgba(123, 95, 245, 0.5));
 }
@@ -272,27 +272,66 @@ body {
   margin: 0 auto;
 }
 
-.hero-badge {
-  display: inline-block;
+/* ── Hero marquee ticker ── */
+.hero-marquee-wrap {
+  width: 100vw;                          /* full bleed edge to edge */
+  margin-left: calc(-50vw + 50%);        /* break out of hero-inner max-width */
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 240, 255, 0.12);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.12);
+  background: rgba(0, 240, 255, 0.03);
+  padding: 11px 0;
+  margin-bottom: 48px;
+  /* Fade edges so text dissolves at the sides */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.hero-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite; /* adjust speed here if needed */
+}
+
+/* Pause on hover — gives users time to read */
+.hero-marquee-wrap:hover .hero-marquee-track {
+  animation-play-state: paused;
+}
+
+.hero-marquee-track span {
   font-family: var(--font-mono);
   font-size: 12px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--cyan);
-  background: rgba(0, 240, 255, 0.08);
-  border: 1px solid rgba(0, 240, 255, 0.2);
-  border-radius: 100px;
-  padding: 6px 16px;
-  margin-bottom: 32px;
+  white-space: nowrap;
+  padding-right: 0;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* -50% because we have two identical spans */
 }
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(40px, 6.5vw, 78px);
+  font-size: clamp(48px, 7.5vw, 96px); /* bigger, more editorial impact */
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
   color: var(--text-primary);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .hero-sub {
@@ -451,26 +490,67 @@ body {
   padding: 28px 26px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   opacity: 0;
   transform: translateY(20px);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* Accent gradient line along top edge — hidden until hover */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Subtle inner glow that bleeds in on hover */
+.feature-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(123, 95, 245, 0.07) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .feature-card.revealed {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.25s ease, background 0.25s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .feature-card:hover {
   border-color: var(--border-accent);
   background: var(--bg-card-hover);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(123, 95, 245, 0.1);
 }
 
+.feature-card:hover::before { opacity: 1; }  /* reveal top accent line */
+.feature-card:hover::after  { opacity: 1; }  /* reveal inner glow */
+
 .feature-icon {
-  font-size: 28px;
-  margin-bottom: 14px;
+  font-size: 26px;               /* Phosphor icon size */
+  color: var(--purple-light);
+  margin-bottom: 16px;
+  display: block;
+  transition: color 0.25s ease, transform 0.25s ease;
+  line-height: 1;
+}
+
+/* Icon pops and shifts to cyan on hover */
+.feature-card:hover .feature-icon {
+  color: var(--cyan);
+  transform: scale(1.15) translateY(-2px);
 }
 
 .feature-card h3 {
@@ -579,15 +659,16 @@ body {
 
 .step-number {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  color: var(--purple-light);
-  background: var(--purple-dim);
-  border: 1px solid var(--border-accent);
+  color: var(--cyan);                           /* cyan for stronger contrast */
+  background: rgba(0, 240, 255, 0.06);
+  border: 1px solid rgba(0, 240, 255, 0.2);
   border-radius: var(--radius-sm);
-  padding: 6px 12px;
+  padding: 6px 14px;
   flex-shrink: 0;
   margin-top: 4px;
+  letter-spacing: 0.1em;
 }
 
 .step-content h3 {
@@ -702,7 +783,8 @@ body {
 
 .pricing-card-featured {
   border-color: var(--border-accent);
-  box-shadow: 0 0 40px rgba(123, 95, 245, 0.12);
+  box-shadow: 0 0 60px rgba(123, 95, 245, 0.18), 0 0 0 1px rgba(123, 95, 245, 0.15) inset;
+  background: rgba(123, 95, 245, 0.05); /* very subtle purple tint */
 }
 
 .plan-badge {
@@ -940,8 +1022,8 @@ body {
 
 @media (max-width: 600px) {
   .features-grid { grid-template-columns: 1fr; }
-  .hero-title { font-size: clamp(34px, 10vw, 52px); }
-  .section-title { font-size: clamp(24px, 7vw, 36px); }
+  .hero-title { font-size: clamp(38px, 11vw, 56px); } /* Cabinet Grotesk reads well bigger */
+  .section-title { font-size: clamp(26px, 7.5vw, 38px); }
   .steps { padding: 0; }
   .hero-cta { flex-direction: column; }
   .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
