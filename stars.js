@@ -6,6 +6,15 @@ let shootingStars = [];
 let mouse = { x: -9999, y: -9999 };
 let clicks = []; // click ripple events
 
+// One blackhole, placed at a visually interesting spot (not dead center)
+const blackhole = {
+  x: 0,           // set on resize
+  y: 0,
+  radius: 28,     // dark void size
+  pullRadius: 180, // gravitational influence radius
+  angle: 0,       // accretion disk rotation
+};
+
 const STAR_COUNT = 320;
 const INTERACTION_RADIUS = 160;  // wider field of influence
 const SCATTER_RADIUS = 90;       // click scatter radius
@@ -39,8 +48,10 @@ function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   createStars();
+  // Place blackhole at ~70% x, ~35% y — off-center feels more natural
+  blackhole.x = canvas.width * 0.70;
+  blackhole.y = canvas.height * 0.35;
 }
-
 function getStarColor() {
   const colors = [
     "255,255,255",
@@ -141,16 +152,39 @@ function animate() {
       }
     }
 
+/* ── Blackhole gravity: subtle pull toward blackhole ── */
+    const bhdx = blackhole.x - star.x;
+    const bhdy = blackhole.y - star.y;
+    const bhdist = Math.sqrt(bhdx * bhdx + bhdy * bhdy);
+    if (bhdist < blackhole.pullRadius && bhdist > blackhole.radius + 4) {
+      // Pull strength increases closer to the blackhole
+      const pull = (1 - bhdist / blackhole.pullRadius) * 0.06;
+      star.vx += (bhdx / bhdist) * pull;
+      star.vy += (bhdy / bhdist) * pull;
+    }
+    // If a star gets swallowed, reset it to a random edge position
+   if (bhdist < blackhole.radius + 6) {
+      star.x = Math.random() * canvas.width;
+      star.y = Math.random() * canvas.height;
+      star.baseX = star.x;
+      star.baseY = star.y;
+      star.vx = 0;
+      star.vy = 0;
+    }
+
     /* ── Physics: apply velocity, friction, spring back to base ── */
     star.vx *= 0.88;           // friction — dampens velocity each frame
     star.vy *= 0.88;
     star.x += star.vx;
     star.y += star.vy;
 
-    /* Spring force pulls star back toward its base position */
+/* Spring force — disabled when blackhole is pulling the star */
     const springStrength = 0.04;
-    star.x += (star.baseX - star.x) * springStrength;
-    star.y += (star.baseY - star.y) * springStrength;
+    if (bhdist >= blackhole.pullRadius) {
+      // Only spring back when outside blackhole influence
+      star.x += (star.baseX - star.x) * springStrength;
+      star.y += (star.baseY - star.y) * springStrength;
+    }
 
     /* ── Draw ── */
     const alpha = Math.min(1, star.opacity * (0.3 + twinkle * star.pulseAmp * 0.7) + proximityBoost);
@@ -174,6 +208,49 @@ function animate() {
     ctx.fill();
     ctx.shadowBlur = 0;
   }
+
+/* ── Blackhole ── */
+  blackhole.angle += 0.004; // slowly rotate accretion disk
+
+  // Outer glow — faint purple haze
+  const outerGlow = ctx.createRadialGradient(
+    blackhole.x, blackhole.y, blackhole.radius,
+    blackhole.x, blackhole.y, blackhole.pullRadius * 0.45
+  );
+  outerGlow.addColorStop(0, "rgba(123,95,245,0.07)");
+  outerGlow.addColorStop(1, "rgba(123,95,245,0)");
+  ctx.beginPath();
+  ctx.arc(blackhole.x, blackhole.y, blackhole.pullRadius * 0.45, 0, Math.PI * 2);
+  ctx.fillStyle = outerGlow;
+  ctx.fill();
+
+  // Accretion disk — thin glowing ellipse, rotates slowly
+  ctx.save();
+  ctx.translate(blackhole.x, blackhole.y);
+  ctx.rotate(blackhole.angle);
+  ctx.scale(1, 0.28); // flatten into a disk
+  const diskGrad = ctx.createRadialGradient(0, 0, blackhole.radius, 0, 0, blackhole.radius + 22);
+  diskGrad.addColorStop(0, "rgba(155,127,247,0.55)");
+  diskGrad.addColorStop(0.5, "rgba(123,95,245,0.18)");
+  diskGrad.addColorStop(1, "rgba(123,95,245,0)");
+  ctx.beginPath();
+  ctx.arc(0, 0, blackhole.radius + 22, 0, Math.PI * 2);
+  ctx.fillStyle = diskGrad;
+  ctx.fill();
+  ctx.restore();
+
+  // Dark void — draws over everything inside, pure black
+  ctx.beginPath();
+  ctx.arc(blackhole.x, blackhole.y, blackhole.radius, 0, Math.PI * 2);
+  ctx.fillStyle = "#08080f"; // matches your background exactly
+  ctx.fill();
+
+  // Inner rim glow — subtle purple edge
+  ctx.beginPath();
+  ctx.arc(blackhole.x, blackhole.y, blackhole.radius, 0, Math.PI * 2);
+  ctx.strokeStyle = "rgba(155,127,247,0.35)";
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
 
   /* ── Shooting stars ── */
   for (let i = shootingStars.length - 1; i >= 0; i--) {
