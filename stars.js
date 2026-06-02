@@ -49,8 +49,16 @@ function resizeCanvas() {
   canvas.height = window.innerHeight;
   createStars();
   // Place blackhole at ~70% x, ~35% y — off-center feels more natural
-  blackhole.x = canvas.width * 0.70;
-  blackhole.y = canvas.height * 0.35;
+  // On narrow mobile screens, push blackhole to top-right corner
+  // so it doesn't compete with hero text
+  if (canvas.width < 600) {
+    blackhole.x = canvas.width * 0.88;
+    blackhole.y = canvas.height * 0.12;
+  } else {
+    blackhole.x = canvas.width * 0.70;
+    blackhole.y = canvas.height * 0.35;
+  }
+
 }
 function getStarColor() {
   const colors = [

@@ -42,7 +42,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); background: var(--bg); color: var(--text-primary); min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-    #starfield { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5; }
+   #starfield { display: none; }
     .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-height); border-bottom: 1px solid var(--border); background: rgba(5,5,7,0.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
     .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; gap: 16px; }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
@@ -582,7 +582,5 @@
       <p class="footer-copy">&copy; 2026 Uforiya. All rights reserved.</p>
     </div>
   </footer>
-
-  <script src="../stars.js"></script>
 </body>
 </html>
