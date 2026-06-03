@@ -292,4 +292,92 @@ function animate() {
 
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
-animate();
+
+// Only animate on non-mobile — blackhole is visually noisy on small screens
+// and competes with hero text
+if (window.innerWidth >= 600) {
+  animate();
+} else {
+  // Mobile: run a stripped animate loop with no blackhole rendering
+  function animateMobile() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = clicks.length - 1; i >= 0; i--) {
+      clicks[i].age++;
+      if (clicks[i].age > 40) clicks.splice(i, 1);
+    }
+
+    for (const star of stars) {
+      star.phase += star.speed;
+      const twinkle = 0.5 + Math.sin(star.phase) * 0.5;
+
+      const mdx = mouse.x - star.x;
+      const mdy = mouse.y - star.y;
+      const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+      let proximityBoost = 0;
+
+      if (mdist < INTERACTION_RADIUS) {
+        const force = (1 - mdist / INTERACTION_RADIUS) * 7;
+        star.vx += (-mdx / mdist) * force * 0.12;
+        star.vy += (-mdy / mdist) * force * 0.12;
+        proximityBoost = (1 - mdist / INTERACTION_RADIUS) * 0.5;
+      }
+
+      for (const click of clicks) {
+        if (click.age > 15) continue;
+        const cdx = star.x - click.x;
+        const cdy = star.y - click.y;
+        const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
+        if (cdist < SCATTER_RADIUS && cdist > 0) {
+          const impulse = (1 - cdist / SCATTER_RADIUS) * SCATTER_FORCE;
+          star.vx += (cdx / cdist) * impulse;
+          star.vy += (cdy / cdist) * impulse;
+        }
+      }
+
+      // No blackhole physics on mobile
+      star.vx *= 0.88;
+      star.vy *= 0.88;
+      star.x += star.vx;
+      star.y += star.vy;
+      star.x += (star.baseX - star.x) * 0.04;
+      star.y += (star.baseY - star.y) * 0.04;
+
+      const alpha = Math.min(1, star.opacity * (0.3 + twinkle * star.pulseAmp * 0.7) + proximityBoost);
+      const drawRadius = star.radius + proximityBoost * 1.2;
+
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, drawRadius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${star.color}, ${alpha})`;
+      ctx.shadowBlur = star.radius * 3;
+      ctx.shadowColor = `rgba(${star.color}, ${alpha * 0.5})`;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    }
+
+    // Shooting stars still render on mobile — they look great
+    for (let i = shootingStars.length - 1; i >= 0; i--) {
+      const s = shootingStars[i];
+      s.x += Math.cos(s.angle) * s.speed;
+      s.y += Math.sin(s.angle) * s.speed;
+      s.opacity -= 0.018;
+      if (s.opacity <= 0) { shootingStars.splice(i, 1); continue; }
+
+      const tailX = s.x - Math.cos(s.angle) * s.len;
+      const tailY = s.y - Math.sin(s.angle) * s.len;
+      const grad = ctx.createLinearGradient(tailX, tailY, s.x, s.y);
+      grad.addColorStop(0, `rgba(255,255,255,0)`);
+      grad.addColorStop(1, `rgba(255,255,255,${s.opacity})`);
+      ctx.beginPath();
+      ctx.moveTo(tailX, tailY);
+      ctx.lineTo(s.x, s.y);
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(animateMobile);
+  }
+
+  animateMobile();
+}
