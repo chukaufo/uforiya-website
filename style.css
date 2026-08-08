@@ -1335,3 +1335,351 @@ a { color: inherit; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ═══════════════════════════════════════════════
+   APPEND EVERYTHING BELOW TO THE END OF style.css
+   Nothing above needs to change. These rules sit after the
+   existing responsive block on purpose, so the mobile
+   overrides here win.
+═══════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════
+   NAVBAR: MINIMAL
+   Logo on the left, one quiet link and one loud button on the
+   right. No hamburger, because there is nothing to collapse.
+═══════════════════════════════════════════════ */
+
+.nav-inner-minimal {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.nav-link-quiet {
+  font-size: 14px;
+  color: var(--ink-2);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-link-quiet:hover { color: var(--ink); }
+
+/* The old layout hid this button on narrow screens because a hamburger
+   took over. There is no hamburger now, so it stays visible everywhere. */
+@media (max-width: 960px) {
+  .nav-inner-minimal .btn-open-app { display: inline-flex; }
+}
+
+@media (max-width: 520px) {
+  .nav-link-quiet { display: none; }
+  .nav-actions { gap: 10px; }
+}
+
+/* ═══════════════════════════════════════════════
+   HERO READOUT: STATIC
+   Same transmitting chip, minus the hover and chevron, since it
+   no longer links anywhere.
+═══════════════════════════════════════════════ */
+
+.status-readout-static { cursor: default; }
+.status-readout-static:hover .readout-body { background: #07070d; }
+.status-readout-static:hover .readout-text { color: var(--ink-2); }
+
+/* ═══════════════════════════════════════════════
+   FEATURES: FOUR CARDS
+   Two by two reads calmer than four in a row at this width.
+═══════════════════════════════════════════════ */
+
+.features-grid-four { grid-template-columns: repeat(2, 1fr); }
+
+@media (max-width: 680px) {
+  .features-grid-four { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════
+   SHOWCASE
+   Captions dropped their index number, so the caption grid is
+   two columns now instead of three.
+═══════════════════════════════════════════════ */
+
+.showcase-item figcaption {
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+}
+
+.showcase-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 44px;
+}
+
+@media (max-width: 680px) {
+  .showcase-item figcaption { grid-template-columns: 1fr; gap: 4px; }
+  .showcase-cta .btn-primary { width: 100%; }
+}
+
+/* ═══════════════════════════════════════════════
+   PRICING: THREE PLANS
+═══════════════════════════════════════════════ */
+
+.pricing-grid-three { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 1040px) {
+  .pricing-grid-three { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 880px) {
+  .pricing-grid-three { grid-template-columns: 1fr; max-width: 420px; }
+}
+
+/* ═══════════════════════════════════════════════
+   FEEDBACK FORM
+═══════════════════════════════════════════════ */
+
+.feedback-form {
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field > label {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.field-hint {
+  font-family: var(--f-body);
+  font-size: 11.5px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-3);
+  opacity: 0.75;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--f-body);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder { color: var(--ink-3); }
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--line-accent);
+  background: var(--surface-raised);
+}
+
+.field textarea {
+  min-height: 140px;
+  line-height: 1.65;
+  resize: vertical;
+}
+
+/* ── Attachments ── */
+
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.file-drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(123, 95, 245, 0.03);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--r-md);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.file-drop:hover,
+.file-drop.dragging {
+  border-color: var(--line-accent);
+  background: rgba(123, 95, 245, 0.07);
+}
+
+.file-drop i {
+  font-size: 20px;
+  color: var(--purple-light);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.file-drop-main {
+  font-size: 14.5px;
+  color: var(--ink);
+}
+
+.file-drop-sub {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+
+.file-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.file-list:empty { display: none; }
+
+.file-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+}
+
+.file-item-name {
+  font-size: 13.5px;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-item-size {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.file-item-remove {
+  padding: 0;
+  font-family: var(--f-body);
+  font-size: 12.5px;
+  color: var(--ink-3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.file-item-remove:hover { color: #ff4d4d; }
+
+/* ── Bot trap ──
+   Off screen rather than display none, since some bots skip
+   anything that is not rendered. */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ── Actions and status ── */
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.form-actions .btn-primary { flex-shrink: 0; }
+
+.form-actions .btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-status {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.form-status:empty { display: none; }
+
+.form-status.error   { color: #ff4d4d; }
+.form-status.success { color: var(--cyan); }
+
+.form-note {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  line-height: 1.6;
+}
+
+.form-note a {
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.form-note a:hover { color: var(--ink); }
+
+@media (max-width: 560px) {
+  .field-row { grid-template-columns: 1fr; }
+  .form-actions .btn-primary { width: 100%; }
+}
+
+/* ═══════════════════════════════════════════════
+   FINAL CTA: DOMAIN LINE
+═══════════════════════════════════════════════ */
+
+.cta-sub {
+  margin-top: 18px;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--ink-3);
+}
+
+/* The generic .final-cta p rule sets a wider max-width, so pull
+   this one back in line under the button. */
+.final-cta .cta-sub { max-width: none; margin-bottom: 0; }

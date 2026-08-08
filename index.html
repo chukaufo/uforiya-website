@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uforiya | Manage Your Music From First Idea to Official Release</title>
-  <meta name="description" content="Uforiya is where musicians manage unreleased music, versions and collaborators. Store every version, control access, and distribute to streaming platforms when the record is ready." />
+  <title>Uforiya | Where unreleased music lives</title>
+  <meta name="description" content="Upload tracks, invite collaborators with roles, and keep every version in one place. The Uforiya beta is open and free to start." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/uforiya-fav-icon.png" />
@@ -13,9 +13,9 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://uforiya.xyz" />
-  <meta property="og:title" content="Uforiya | Manage Your Music From First Idea to Official Release" />
-  <meta property="og:description" content="Store every version, control who has access, and distribute to streaming platforms when the record is ready." />
-  <meta property="og:image" content="https://uforiya.xyz/images/uforiya-space-meta.png" />
+  <meta property="og:title" content="Uforiya | Where unreleased music lives" />
+  <meta property="og:description" content="Upload tracks, invite collaborators with roles, and keep every version in one place. Free to start." />
+  <meta property="og:image" content="https://uforiya.xyz/images/uforiya-space-meta.png?v=3" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Uforiya" />
@@ -23,9 +23,9 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://uforiya.xyz" />
-  <meta name="twitter:title" content="Uforiya | Manage Your Music From First Idea to Official Release" />
-  <meta name="twitter:description" content="Store every version, control who has access, and distribute to streaming platforms when the record is ready." />
-  <meta name="twitter:image" content="https://uforiya.xyz/images/uforiya-space-meta.png" />
+  <meta name="twitter:title" content="Uforiya | Where unreleased music lives" />
+  <meta name="twitter:description" content="Upload tracks, invite collaborators with roles, and keep every version in one place. Free to start." />
+  <meta name="twitter:image" content="https://uforiya.xyz/images/uforiya-space-meta.png?v=3" />
   <meta name="twitter:creator" content="@uforiyaspace" />
 
   <!-- Fonts -->
@@ -37,7 +37,7 @@
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
 
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
 
@@ -48,34 +48,18 @@
        NAVBAR
   ═══════════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
-    <div class="nav-inner">
+    <div class="nav-inner nav-inner-minimal">
       <a href="/" class="nav-brand">
         <img src="images/ufologo.png" alt="Uforiya" class="nav-logo" />
         <span class="nav-wordmark">Uforiya</span>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-      </ul>
-
-      <a href="https://uforiya.space" class="btn-open-app" target="_blank" rel="noopener">
-        Open app
-      </a>
-
-      <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div class="nav-mobile" id="nav-mobile">
-      <a href="#features">Features</a>
-      <a href="#how-it-works">How it works</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#pricing">Pricing</a>
-      <a href="https://uforiya.space" class="btn-open-app mobile-cta" target="_blank" rel="noopener">Open app</a>
+      <div class="nav-actions">
+        <a href="#feedback" class="nav-link-quiet">Send feedback</a>
+        <a href="https://uforiya.space" class="btn-open-app" target="_blank" rel="noopener">
+          Open app
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -85,41 +69,40 @@
   <header class="hero" id="home">
     <div class="hero-inner">
 
-      <a href="#roadmap" class="status-readout">
+      <span class="status-readout status-readout-static">
         <span class="readout-sweep" aria-hidden="true"></span>
         <span class="readout-body">
           <span class="readout-ping" aria-hidden="true"></span>
-          <span class="readout-stage">MVP</span>
-          <span class="readout-text">Live and open to everyone</span>
-          <span class="readout-chevron" aria-hidden="true">&rsaquo;</span>
+          <span class="readout-stage">BETA</span>
+          <span class="readout-text">Open to everyone, free to start</span>
         </span>
-      </a>
+      </span>
 
       <h1 class="hero-title">
-        From the first idea<br />
-        to the official drop.
+        Upload the track.<br />
+        Invite collaborators.<br />
+        Keep every version.<br />
       </h1>
 
       <p class="hero-sub">
-        Uforiya is where musicians manage unreleased music. Store every version,
-        give your collaborators the access they need, and keep the whole record in
-        one place from the day it starts to the day it comes out.
+        Uforiya is where unreleased tracks live while it is still being made.
+        One place for the audio, the versions and the people on it.
       </p>
 
       <div class="hero-cta">
         <a href="https://uforiya.space" class="btn-primary" target="_blank" rel="noopener">
-          Create your free account
+          Try the beta
         </a>
-        <a href="#how-it-works" class="btn-ghost">See how it works</a>
+        <a href="#inside" class="btn-ghost">See what is inside</a>
       </div>
 
-      <p class="hero-note">Free on the starter plan. No credit card required.</p>
+      <p class="hero-note">Free plan, no card needed. It is a beta, so tell us what breaks.</p>
     </div>
 
     <div class="hero-shot">
       <img
         src="images/projectpage.png"
-        alt="Uforiya project view showing tracks with duration, BPM and key"
+        alt="A Uforiya project showing its tracks with duration, BPM and key"
         class="hero-shot-img"
       />
     </div>
@@ -132,11 +115,10 @@
     <div class="section-inner">
       <p class="audience-label">Built for every role in the record</p>
       <div class="audience-tags">
-        <span>Recording artists</span>
         <span>Producers</span>
+        <span>Recording artists</span>
         <span>Songwriters</span>
         <span>Mix engineers</span>
-        <span>Sound designers</span>
         <span>Independent labels</span>
       </div>
     </div>
@@ -148,50 +130,34 @@
   <section class="section features" id="features">
     <div class="section-inner">
       <div class="section-head">
-        <p class="eyebrow">Available now</p>
-        <h2 class="section-title">Everything the session is missing</h2>
-        <p class="section-sub">
-          Files spread across message threads and shared drives are how records get
-          lost. Uforiya keeps the music, the history and the people in one place.
-        </p>
+        <p class="eyebrow">Working today</p>
+        <h2 class="section-title">Four things you can do right now</h2>
       </div>
 
-      <div class="features-grid">
+      <div class="features-grid features-grid-four">
 
         <article class="feature-card">
           <i class="ph-bold ph-music-notes feature-icon" aria-hidden="true"></i>
-          <h3>Track management</h3>
-          <p>Upload your audio and get BPM and key detection on the way in. Organise tracks into singles, EPs, albums, mixtapes or playlists.</p>
+          <h3>Upload and read the track</h3>
+          <p>Drop in MP3, WAV, FLAC, AIFF or M4A. BPM, key and duration are read on the way in, so you are not typing them yourself.</p>
         </article>
 
         <article class="feature-card">
           <i class="ph-bold ph-git-branch feature-icon" aria-hidden="true"></i>
-          <h3>Version history</h3>
-          <p>Every revision stays exactly where you left it. Return to any version at any time and keep a clear record of how the track got here.</p>
+          <h3>Keep every version</h3>
+          <p>Rough idea, revised bounce, final master: each one stays where you left it. Only the track owner marks a version as current.</p>
         </article>
 
         <article class="feature-card">
           <i class="ph-bold ph-users-three feature-icon" aria-hidden="true"></i>
-          <h3>Collaborator roles</h3>
-          <p>Invite people by username or email and set what each person can do. Owners, editors and listeners get exactly the access they need.</p>
-        </article>
-
-        <article class="feature-card">
-          <i class="ph-bold ph-lock-simple feature-icon" aria-hidden="true"></i>
-          <h3>Access control</h3>
-          <p>Keep a project private, open it to specific collaborators, or make it public. You decide who hears the record and when they hear it.</p>
+          <h3>Invite the people on it</h3>
+          <p>Add collaborators by username or email. Owners, editors and listeners each get exactly the access they need, nothing more.</p>
         </article>
 
         <article class="feature-card">
           <i class="ph-bold ph-waveform feature-icon" aria-hidden="true"></i>
-          <h3>Player and comments</h3>
-          <p>Stream in the browser with waveform playback, leave comments pinned to a timestamp, and upload stems alongside every version.</p>
-        </article>
-
-        <article class="feature-card">
-          <i class="ph-bold ph-chart-bar feature-icon" aria-hidden="true"></i>
-          <h3>Play data</h3>
-          <p>See which records are getting attention inside your circle before they ever reach a streaming platform.</p>
+          <h3>Play it back and comment</h3>
+          <p>Waveform playback in the browser, comments pinned to the timestamp, and stems uploaded alongside any version.</p>
         </article>
 
       </div>
@@ -199,21 +165,20 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       SHOWCASE
+       INSIDE THE APP
   ═══════════════════════════════════════════ -->
-  <section class="section showcase" id="showcase">
+  <section class="section showcase" id="inside">
     <div class="section-inner">
       <div class="section-head">
         <p class="eyebrow">Inside the app</p>
-        <h2 class="section-title">See it for yourself</h2>
+        <h2 class="section-title">See it before you sign up</h2>
       </div>
 
       <figure class="showcase-item showcase-lead">
         <div class="showcase-frame">
-          <img src="images/dashboard.png" alt="Uforiya dashboard showing the project library" />
+          <img src="images/dashboard.png" alt="The Uforiya library showing every project you own or collaborate on" />
         </div>
         <figcaption>
-          <span class="shot-index">01</span>
           <span class="shot-title">Library</span>
           <span class="shot-desc">Every project and track you own or collaborate on, in one view.</span>
         </figcaption>
@@ -222,10 +187,9 @@
       <div class="showcase-pair">
         <figure class="showcase-item">
           <div class="showcase-frame">
-            <img src="images/audioplayer.png" alt="Uforiya fullscreen player with waveform and comments" />
+            <img src="images/audioplayer.png" alt="The Uforiya player with waveform playback and a timestamped comment" />
           </div>
           <figcaption>
-            <span class="shot-index">02</span>
             <span class="shot-title">Player</span>
             <span class="shot-desc">Waveform playback with comments pinned to the timestamp.</span>
           </figcaption>
@@ -233,114 +197,19 @@
 
         <figure class="showcase-item">
           <div class="showcase-frame">
-            <img src="images/upload.png" alt="Uforiya upload page" />
+            <img src="images/upload.png" alt="The Uforiya upload page with project, audio file and track details" />
           </div>
           <figcaption>
-            <span class="shot-index">03</span>
             <span class="shot-title">Upload</span>
             <span class="shot-desc">Drop the file in and BPM, key and duration are read for you.</span>
           </figcaption>
         </figure>
       </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════════════════════
-       HOW IT WORKS
-  ═══════════════════════════════════════════ -->
-  <section class="section how-it-works" id="how-it-works">
-    <div class="section-inner">
-      <div class="section-head">
-        <p class="eyebrow">The process</p>
-        <h2 class="section-title">Four steps from upload to release</h2>
-      </div>
-
-      <ol class="steps">
-
-        <li class="step">
-          <span class="step-index">01</span>
-          <div class="step-body">
-            <h3>Start the project</h3>
-            <p>Drop in your file and the analysis runs on upload. BPM, key and duration are read automatically, then the track lands in a project you structure your way.</p>
-          </div>
-        </li>
-
-        <li class="step">
-          <span class="step-index">02</span>
-          <div class="step-body">
-            <h3>Bring in your people</h3>
-            <p>Add collaborators by username or email and assign the role that fits. Editors upload and own their own tracks. Everyone works in the same space instead of passing files around.</p>
-          </div>
-        </li>
-
-        <li class="step">
-          <span class="step-index">03</span>
-          <div class="step-body">
-            <h3>Version as the record grows</h3>
-            <p>Upload a new version at every stage, from the first rough idea through to the final master. Only the track owner marks a version as current, so nothing changes without the right sign off.</p>
-          </div>
-        </li>
-
-        <li class="step">
-          <span class="step-index">04</span>
-          <div class="step-body">
-            <h3>Take it to release</h3>
-            <p>When the record is finished, push it out to streaming platforms without leaving Uforiya. Distribution arrives with the beta release.</p>
-            <span class="step-flag"><span>Beta release</span></span>
-          </div>
-        </li>
-
-      </ol>
-
-      <p class="steps-footnote">
-        Want the full detail? <a href="rules/index.html">Read the rules and manual</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       ROADMAP
-  ═══════════════════════════════════════════ -->
-  <section class="section roadmap" id="roadmap">
-    <div class="section-inner">
-      <div class="section-head">
-        <p class="eyebrow">Where we are</p>
-        <h2 class="section-title">Built in three releases</h2>
-        <p class="section-sub">
-          Uforiya is live and in active development. Here is what is available today
-          and what is being built next, so you know exactly what you are signing up for.
-        </p>
-      </div>
-
-      <div class="roadmap-grid">
-
-        <article class="phase phase-live">
-          <header class="phase-head">
-            <span class="phase-name">MVP</span>
-            <span class="phase-status status-live"><span>Live now</span></span>
-          </header>
-          <h3>Create and collaborate</h3>
-          <p>Upload audio, keep every version, invite collaborators with roles, control visibility, stream with waveform playback and timestamped comments.</p>
-        </article>
-
-        <article class="phase">
-          <header class="phase-head">
-            <span class="phase-name">Beta</span>
-            <span class="phase-status">Next</span>
-          </header>
-          <h3>Distribution to streaming platforms</h3>
-          <p>Send a finished record from Uforiya straight to the major streaming platforms. No exporting, no second dashboard, no re-entering metadata you already filled in.</p>
-        </article>
-
-        <article class="phase">
-          <header class="phase-head">
-            <span class="phase-name">Official release</span>
-            <span class="phase-status">Planned</span>
-          </header>
-          <h3>Royalty splits and reporting</h3>
-          <p>Declare ownership splits per track, see how a release performs after it is out, and settle what each collaborator is owed from one place.</p>
-        </article>
-
+      <div class="showcase-cta">
+        <a href="https://uforiya.space" class="btn-primary" target="_blank" rel="noopener">
+          Create your free account
+        </a>
       </div>
     </div>
   </section>
@@ -352,10 +221,10 @@
     <div class="section-inner">
       <div class="section-head">
         <p class="eyebrow">Plans</p>
-        <h2 class="section-title">Start free, move up when you need to</h2>
+        <h2 class="section-title">Start free, move up when you hit the ceiling</h2>
         <p class="section-sub">
-          Collaboration is on every plan, including the free one. Unlimited
-          collaborators, private and public projects, and stem uploads on every version.
+          Collaboration is on every plan, including the free one. Unlimited collaborators,
+          private and public projects, and stem uploads on every version.
         </p>
       </div>
 
@@ -368,7 +237,7 @@
         <em class="save-badge">Save about 17%</em>
       </div>
 
-      <div class="pricing-grid">
+      <div class="pricing-grid pricing-grid-three">
 
         <!-- Free -->
         <article class="plan">
@@ -377,34 +246,34 @@
             <span class="price-amount">$0</span>
           </div>
           <p class="plan-period">Free forever</p>
-          <p class="plan-desc">Everything you need to start putting your music somewhere it belongs.</p>
+          <p class="plan-desc">Enough to run a real project and see if this fits how you work.</p>
           <ul class="plan-features">
             <li>25 tracks</li>
-            <li>5 versions per track</li>
+            <li>3 versions per track</li>
             <li>Unlimited collaborators</li>
             <li>Last 5 plays of analytics</li>
             <li>Stem uploads per version</li>
           </ul>
-          <a href="https://uforiya.space" class="btn-plan" target="_blank" rel="noopener">Get started</a>
+          <a href="https://uforiya.space" class="btn-plan btn-plan-primary" target="_blank" rel="noopener">Start free</a>
         </article>
 
         <!-- Pro -->
         <article class="plan plan-featured">
-          <span class="plan-badge">Best for most artists</span>
+          <span class="plan-badge">Most users land here</span>
           <h3 class="plan-name">Pro</h3>
           <div class="plan-price">
             <span class="price-amount" data-monthly="$9.99" data-yearly="$8.25">$9.99</span>
           </div>
           <p class="plan-period" data-monthly="per month CAD" data-yearly="per month CAD, billed yearly">per month CAD</p>
-          <p class="plan-desc">For artists actively building a catalogue and working with a team.</p>
+          <p class="plan-desc">For artists building a catalogue and working with a regular team.</p>
           <ul class="plan-features">
             <li>250 tracks</li>
-            <li>10 versions per track</li>
+            <li>5 versions per track</li>
             <li>Unlimited collaborators</li>
             <li>Weekly and monthly analytics</li>
             <li>Stem uploads per version</li>
           </ul>
-          <a href="https://uforiya.space" class="btn-plan btn-plan-primary" target="_blank" rel="noopener">Get started</a>
+          <a href="https://uforiya.space" class="btn-plan" target="_blank" rel="noopener">Get Pro</a>
         </article>
 
         <!-- Premium -->
@@ -417,38 +286,92 @@
           <p class="plan-desc">For studios and busy rooms running several records at once.</p>
           <ul class="plan-features">
             <li>1,000 tracks</li>
-            <li>15 versions per track</li>
+            <li>10 versions per track</li>
             <li>Unlimited collaborators</li>
             <li>Daily, weekly and monthly analytics</li>
             <li>Granular download control</li>
           </ul>
-          <a href="https://uforiya.space" class="btn-plan" target="_blank" rel="noopener">Get started</a>
-        </article>
-
-        <!-- Platinum -->
-        <article class="plan plan-platinum">
-          <h3 class="plan-name">Platinum</h3>
-          <div class="plan-price">
-            <span class="price-amount" data-monthly="$30" data-yearly="$25">$30</span>
-          </div>
-          <p class="plan-period" data-monthly="per month CAD" data-yearly="per month CAD, billed yearly">per month CAD</p>
-          <p class="plan-desc">For labels and career catalogues with no ceiling in sight.</p>
-          <ul class="plan-features">
-            <li>Unlimited tracks</li>
-            <li>20 versions per track</li>
-            <li>Unlimited collaborators</li>
-            <li>Full analytics history</li>
-            <li>Priority support</li>
-          </ul>
-          <a href="https://uforiya.space" class="btn-plan" target="_blank" rel="noopener">Get started</a>
+          <a href="https://uforiya.space" class="btn-plan" target="_blank" rel="noopener">Get Premium</a>
         </article>
 
       </div>
 
       <p class="pricing-note">
-        Distribution to streaming platforms is not part of the MVP release. It arrives
-        with the beta and will be included on paid plans at no extra subscription cost.
+        Prices in CAD. Plan limits can move while the beta runs, and you can cancel from settings at any time.
       </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FEEDBACK
+  ═══════════════════════════════════════════ -->
+  <section class="section feedback" id="feedback">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow">Beta feedback</p>
+        <h2 class="section-title">Tell us what broke</h2>
+        <p class="section-sub">
+          Bugs, missing features, anything that felt wrong in the session. Attach a screenshot
+          or a screen recording if it helps. You will get a reply from a real person.
+        </p>
+      </div>
+
+      <form class="feedback-form" id="feedback-form" novalidate>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="fb-name">Name</label>
+            <input type="text" id="fb-name" name="name" maxlength="80" autocomplete="name" placeholder="What should we call you" required />
+          </div>
+
+          <div class="field">
+            <label for="fb-email">Email</label>
+            <input type="email" id="fb-email" name="email" maxlength="160" autocomplete="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fb-message">What happened</label>
+          <textarea id="fb-message" name="message" maxlength="4000" placeholder="Describe what you were doing and what you expected instead" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="fb-files">Attachments <span class="field-hint">optional, up to 3 files, 50MB each</span></label>
+
+          <label class="file-drop" id="file-drop" for="fb-files">
+            <i class="ph-bold ph-paperclip" aria-hidden="true"></i>
+            <span class="file-drop-main">Drop a screenshot or recording here</span>
+            <span class="file-drop-sub">or click to browse: PNG, JPG, GIF, WEBP, MP4, MOV, WEBM</span>
+          </label>
+
+          <input
+            type="file"
+            id="fb-files"
+            class="file-input"
+            accept="image/png,image/jpeg,image/gif,image/webp,video/mp4,video/quicktime,video/webm"
+            multiple
+          />
+
+          <ul class="file-list" id="file-list"></ul>
+        </div>
+
+        <!-- Bot trap: hidden from people, filled in by scrapers -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="fb-website">Website</label>
+          <input type="text" id="fb-website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary" id="fb-submit">Send feedback</button>
+          <p class="form-status" id="fb-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <p class="form-note">
+          We use your email to reply to this message and nothing else. See the
+          <a href="privacy/index.html">privacy policy</a>.
+        </p>
+
+      </form>
     </div>
   </section>
 
@@ -460,12 +383,13 @@
       <img src="images/ufologo.png" alt="" class="cta-logo" aria-hidden="true" />
       <h2>Your next record starts here.</h2>
       <p>
-        Give your music the space it deserves. Free to start, built to carry the
-        record all the way to release.
+        Free to start, open to everyone, and being built in the open with the
+        producers using it.
       </p>
       <a href="https://uforiya.space" class="btn-primary btn-large" target="_blank" rel="noopener">
         Create your free account
       </a>
+      <p class="cta-sub">uforiya.space</p>
     </div>
   </section>
 
@@ -498,31 +422,33 @@
 
   <script src="stars.js?v=2"></script>
   <script>
-    /* ── Navbar scroll state ── */
+    /* ═══════════════════════════════════════════
+       CONFIG
+    ═══════════════════════════════════════════ */
+    const API_BASE = 'https://api.uforiya.xyz';
+
+    const MAX_FILES = 3;
+    const MAX_FILE_BYTES = 50 * 1024 * 1024; // 50MB
+    const ALLOWED_TYPES = [
+      'image/png', 'image/jpeg', 'image/gif', 'image/webp',
+      'video/mp4', 'video/quicktime', 'video/webm'
+    ];
+
+    /* Bot trap: a real person cannot read the page and submit this fast */
+    const PAGE_LOADED_AT = Date.now();
+    const MIN_FILL_MS = 4000;
+
+    /* ═══════════════════════════════════════════
+       NAVBAR SCROLL STATE
+    ═══════════════════════════════════════════ */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 24);
     }, { passive: true });
 
-    /* ── Mobile menu ── */
-    const hamburger = document.getElementById('hamburger');
-    const navMobile = document.getElementById('nav-mobile');
-
-    hamburger.addEventListener('click', () => {
-      const open = hamburger.classList.toggle('open');
-      navMobile.classList.toggle('open', open);
-      hamburger.setAttribute('aria-expanded', String(open));
-    });
-
-    navMobile.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navMobile.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    /* ── Smooth scroll for in page anchors ── */
+    /* ═══════════════════════════════════════════
+       SMOOTH SCROLL
+    ═══════════════════════════════════════════ */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => {
         const target = document.querySelector(anchor.getAttribute('href'));
@@ -532,7 +458,9 @@
       });
     });
 
-    /* ── Billing toggle ── */
+    /* ═══════════════════════════════════════════
+       BILLING TOGGLE
+    ═══════════════════════════════════════════ */
     const toggle = document.getElementById('billing-toggle');
     const labelMonthly = document.getElementById('label-monthly');
     const labelYearly = document.getElementById('label-yearly');
@@ -550,9 +478,11 @@
       });
     });
 
-    /* ── Scroll reveal ── */
+    /* ═══════════════════════════════════════════
+       SCROLL REVEAL
+    ═══════════════════════════════════════════ */
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealTargets = document.querySelectorAll('.feature-card, .step, .plan, .phase, .showcase-item');
+    const revealTargets = document.querySelectorAll('.feature-card, .plan, .showcase-item');
 
     if (prefersReduced) {
       revealTargets.forEach(el => el.classList.add('revealed'));
@@ -568,6 +498,209 @@
 
       revealTargets.forEach(el => observer.observe(el));
     }
+
+    /* ═══════════════════════════════════════════
+       FEEDBACK FORM
+    ═══════════════════════════════════════════ */
+    const form       = document.getElementById('feedback-form');
+    const fileInput  = document.getElementById('fb-files');
+    const fileDrop   = document.getElementById('file-drop');
+    const fileList   = document.getElementById('file-list');
+    const submitBtn  = document.getElementById('fb-submit');
+    const statusEl   = document.getElementById('fb-status');
+
+    /* Files live here rather than on the input, so individual ones can be removed */
+    let selectedFiles = [];
+
+    function formatSize(bytes) {
+      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB';
+      return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    }
+
+    function setStatus(message, kind) {
+      statusEl.textContent = message;
+      statusEl.className = 'form-status' + (kind ? ' ' + kind : '');
+    }
+
+    function renderFileList() {
+      fileList.innerHTML = '';
+
+      selectedFiles.forEach((file, index) => {
+        const li = document.createElement('li');
+        li.className = 'file-item';
+
+        const name = document.createElement('span');
+        name.className = 'file-item-name';
+        name.textContent = file.name;
+
+        const size = document.createElement('span');
+        size.className = 'file-item-size';
+        size.textContent = formatSize(file.size);
+
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'file-item-remove';
+        remove.setAttribute('aria-label', 'Remove ' + file.name);
+        remove.textContent = 'Remove';
+        remove.addEventListener('click', () => {
+          selectedFiles.splice(index, 1);
+          renderFileList();
+        });
+
+        li.append(name, size, remove);
+        fileList.appendChild(li);
+      });
+    }
+
+    function addFiles(incoming) {
+      const rejected = [];
+
+      for (const file of incoming) {
+        if (selectedFiles.length >= MAX_FILES) {
+          rejected.push('You can attach ' + MAX_FILES + ' files at most.');
+          break;
+        }
+        if (!ALLOWED_TYPES.includes(file.type)) {
+          rejected.push(file.name + ' is not an image or video.');
+          continue;
+        }
+        if (file.size > MAX_FILE_BYTES) {
+          rejected.push(file.name + ' is over 50MB.');
+          continue;
+        }
+        selectedFiles.push(file);
+      }
+
+      renderFileList();
+
+      if (rejected.length) {
+        setStatus(rejected[0], 'error');
+      } else {
+        setStatus('', '');
+      }
+    }
+
+    fileInput.addEventListener('change', () => {
+      addFiles(Array.from(fileInput.files));
+      fileInput.value = '';
+    });
+
+    ['dragenter', 'dragover'].forEach(evt => {
+      fileDrop.addEventListener(evt, (e) => {
+        e.preventDefault();
+        fileDrop.classList.add('dragging');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(evt => {
+      fileDrop.addEventListener(evt, (e) => {
+        e.preventDefault();
+        fileDrop.classList.remove('dragging');
+      });
+    });
+
+    fileDrop.addEventListener('drop', (e) => {
+      if (!e.dataTransfer || !e.dataTransfer.files.length) return;
+      addFiles(Array.from(e.dataTransfer.files));
+    });
+
+    /* Ask the backend for a presigned PUT, then send the file straight to R2.
+       Nothing large passes through the API, so the serverless body limit
+       is never a factor. */
+    async function uploadFile(file) {
+      const res = await fetch(API_BASE + '/api/feedback/upload-url', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          filename: file.name,
+          contentType: file.type,
+          size: file.size
+        })
+      });
+
+      if (!res.ok) throw new Error('Could not prepare the upload for ' + file.name);
+
+      const { uploadUrl, key } = await res.json();
+
+      const put = await fetch(uploadUrl, {
+        method: 'PUT',
+        headers: { 'Content-Type': file.type },
+        body: file
+      });
+
+      if (!put.ok) throw new Error('Could not upload ' + file.name);
+
+      return { key, name: file.name, size: file.size, type: file.type };
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name    = document.getElementById('fb-name').value.trim();
+      const email   = document.getElementById('fb-email').value.trim();
+      const message = document.getElementById('fb-message').value.trim();
+      const website = document.getElementById('fb-website').value.trim();
+
+      if (!name)    return setStatus('Add a name so we know who to reply to.', 'error');
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return setStatus('That email address does not look right.', 'error');
+      }
+      if (message.length < 10) {
+        return setStatus('Give us a bit more detail, at least a sentence.', 'error');
+      }
+
+      /* Bot traps: honeypot filled, or the form was submitted faster than a
+         person could read it. Fail quietly so a bot learns nothing. */
+      if (website || Date.now() - PAGE_LOADED_AT < MIN_FILL_MS) {
+        return setStatus('Thanks. Your feedback is in.', 'success');
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending';
+
+      try {
+        const uploaded = [];
+
+        for (let i = 0; i < selectedFiles.length; i++) {
+          setStatus('Uploading ' + (i + 1) + ' of ' + selectedFiles.length + '.', '');
+          uploaded.push(await uploadFile(selectedFiles[i]));
+        }
+
+        setStatus('Sending.', '');
+
+        const res = await fetch(API_BASE + '/api/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+            website,
+            files: uploaded,
+            loadedAt: PAGE_LOADED_AT,
+            pageUrl: window.location.href
+          })
+        });
+
+        if (res.status === 429) {
+          throw new Error('You just sent one. Give it a few minutes before the next.');
+        }
+        if (!res.ok) {
+          throw new Error('That did not send. Email hello@uforiya.xyz and we will pick it up there.');
+        }
+
+        form.reset();
+        selectedFiles = [];
+        renderFileList();
+        setStatus('Sent. Check your inbox for the confirmation, a reply follows from there.', 'success');
+
+      } catch (err) {
+        setStatus(err.message, 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send feedback';
+      }
+    });
   </script>
 </body>
 </html>
