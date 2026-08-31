@@ -1683,3 +1683,5 @@ a { color: inherit; }
 /* The generic .final-cta p rule sets a wider max-width, so pull
    this one back in line under the button. */
 .final-cta .cta-sub { max-width: none; margin-bottom: 0; }
+
+.tools .showcase-lead { margin-bottom: 0; }
