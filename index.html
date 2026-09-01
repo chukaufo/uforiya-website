@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uforiya | Where unreleased music lives</title>
-  <meta name="description" content="Upload tracks, invite collaborators with roles, and keep every version in one place. The Uforiya beta is open and free to start." />
+
+  <title>Uforiya | Music Collaboration for Artists &amp; Producers</title>
+  <meta name="description" content="Keep unreleased tracks, every version and every collaborator in one place. Free audio tools to trim, fade, convert and compress, no account needed." />
+  <link rel="canonical" href="https://uforiya.com" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#050507" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/ufo-faveicon.png" />
@@ -13,18 +17,20 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://uforiya.com" />
-  <meta property="og:title" content="Uforiya | Where unreleased music lives" />
-  <meta property="og:description" content="Upload tracks, invite collaborators with roles, and keep every version in one place. Free to start." />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:title" content="Uforiya | Music Collaboration for Artists &amp; Producers" />
+  <meta property="og:description" content="Keep unreleased tracks, every version and every collaborator in one place. Free audio tools to trim, fade, convert and compress, no account needed." />
   <meta property="og:image" content="https://uforiya.com/images/uforiya-space-meta.png?v=3" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The Uforiya project page showing tracks with duration, BPM and key" />
   <meta property="og:site_name" content="Uforiya" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://uforiya.com" />
-  <meta name="twitter:title" content="Uforiya | Where unreleased music lives" />
-  <meta name="twitter:description" content="Upload tracks, invite collaborators with roles, and keep every version in one place. Free to start." />
+  <meta name="twitter:title" content="Uforiya | Music Collaboration for Artists &amp; Producers" />
+  <meta name="twitter:description" content="Keep unreleased tracks, every version and every collaborator in one place. Free audio tools to trim, fade, convert and compress, no account needed." />
   <meta name="twitter:image" content="https://uforiya.com/images/uforiya-space-meta.png?v=3" />
   <meta name="twitter:creator" content="@uforiyaspace" />
 
@@ -37,24 +43,171 @@
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
 
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
+
+  <!-- ═══════════════════════════════════════════
+       STRUCTURED DATA
+       The FAQ entries below mirror the visible FAQ section word for word.
+       If one changes, change the other.
+  ═══════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://uforiya.com/#website",
+        "url": "https://uforiya.com",
+        "name": "Uforiya",
+        "description": "Music collaboration platform for unreleased tracks.",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://uforiya.com/#organization",
+        "name": "Uforiya",
+        "url": "https://uforiya.com",
+        "logo": "https://uforiya.com/images/ufologo.png",
+        "email": "hello@uforiya.com",
+        "sameAs": [
+          "https://instagram.com/uforiyaspace",
+          "https://twitter.com/uforiyaspace"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://uforiya.com/#software",
+        "name": "Uforiya",
+        "url": "https://uforiya.com",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Music collaboration and audio version control",
+        "operatingSystem": "Web browser",
+        "description": "Uforiya keeps unreleased tracks, every version, every stem and every collaborator in one place, with browser based audio tools for trimming, fading, converting, compressing, pitch, tempo and loudness.",
+        "featureList": [
+          "Audio version history per track",
+          "Role based collaborator access",
+          "Timestamped comments on a waveform",
+          "Stem uploads per version",
+          "Automatic BPM, key and duration detection",
+          "Browser based audio tools: trim, fade, convert, compress, pitch, tempo, normalize"
+        ],
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free",
+            "price": "0",
+            "priceCurrency": "CAD",
+            "description": "25 tracks, 5 versions per track, unlimited collaborators."
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro",
+            "price": "9.99",
+            "priceCurrency": "CAD",
+            "description": "250 tracks, 10 versions per track, weekly and monthly analytics."
+          },
+          {
+            "@type": "Offer",
+            "name": "Premium",
+            "price": "19.99",
+            "priceCurrency": "CAD",
+            "description": "1,000 tracks, 15 versions per track, daily analytics and granular download control."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://uforiya.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Uforiya?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Uforiya is a music collaboration platform for unreleased tracks. Artists, producers, songwriters and engineers work on the same track in one place, and the track carries its own owner, roles, versions, stems and comments rather than living in a folder somewhere."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need an account to use the audio tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Open uforiya.space/tools, drop a file in and start editing. Trim, fade, convert and compress all work without signing up. A free account adds pitch, tempo and normalize, raises the daily limit, and lets a result go straight into a project."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which audio tools work without an account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Trim, fade, convert and compress. Pitch, tempo and normalize need a free account, which takes about a minute to create and costs nothing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I keep track of different versions of a song?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every upload becomes a version under the same track, so the rough idea, the revised bounce and the final master all stay side by side with the date and the person who uploaded them. Only the track owner marks which version is current, so nobody is ever guessing which file is the real one."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I share stems securely with my mix engineer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Stems upload alongside any version, and roles decide who can see or download them. A mix engineer added as a collaborator gets the stems for the version they are working on, and nothing outside that."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What audio formats does Uforiya support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MP3, WAV, FLAC, AIFF and M4A, both for uploads and for the audio tools. BPM, key, duration and format are read automatically on the way in."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Uforiya free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The free plan covers 25 tracks, 5 versions per track and unlimited collaborators, with no card needed. Pro and Premium raise those limits and add analytics. Collaboration itself is on every plan, including the free one."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is this different from Dropbox or Google Drive?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cloud storage holds files. Uforiya holds tracks. A track knows its versions, who is on it and what each person is allowed to do, plays back on a waveform with comments pinned to the second, and carries its stems with it. A shared folder of files named final_v3_REALFINAL does none of that."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- Starfield background -->
   <canvas id="starfield"></canvas>
 
+  <a href="#home" class="skip-link">Skip to content</a>
+
   <!-- ═══════════════════════════════════════════
        NAVBAR
   ═══════════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
-    <div class="nav-inner nav-inner-minimal">
+    <div class="nav-inner">
       <a href="/" class="nav-brand">
         <img src="images/ufologo.png" alt="Uforiya" class="nav-logo" />
         <span class="nav-wordmark">Uforiya</span>
       </a>
 
       <div class="nav-actions">
+        <a href="#tools" class="nav-link-quiet">Audio tools</a>
         <a href="#feedback" class="nav-link-quiet">Send feedback</a>
         <a href="https://uforiya.space" class="btn-open-app" target="_blank" rel="noopener">
           Open app
@@ -85,15 +238,15 @@
       </h1>
 
       <p class="hero-sub">
-        Uforiya is where unreleased tracks live while it is still being made.
-        One place for the audio, the versions and the people on it.
+        Uforiya is where unreleased music lives while it is still being made. One place for
+        the audio, every version, the stems and everyone with a hand in it.
       </p>
 
       <div class="hero-cta">
         <a href="https://uforiya.space" class="btn-primary" target="_blank" rel="noopener">
           Try the beta
         </a>
-        <a href="#inside" class="btn-ghost">See what is inside</a>
+        <a href="#tools" class="btn-ghost">Use the audio tools free</a>
       </div>
 
       <p class="hero-note">Free plan, no card needed. It is a beta, so tell us what breaks.</p>
@@ -102,8 +255,9 @@
     <div class="hero-shot">
       <img
         src="images/projectpage.png"
-        alt="A Uforiya project showing its tracks with duration, BPM and key"
+        alt="A Uforiya project page listing its tracks with duration, BPM and musical key"
         class="hero-shot-img"
+        width="1600" height="1000"
       />
     </div>
   </header>
@@ -131,10 +285,10 @@
     <div class="section-inner">
       <div class="section-head">
         <p class="eyebrow">Working today</p>
-        <h2 class="section-title">Four things you can do right now</h2>
+        <h2 class="section-title">What you can do right now</h2>
       </div>
 
-      <div class="features-grid features-grid-four">
+      <div class="features-grid">
 
         <article class="feature-card">
           <i class="ph-bold ph-music-notes feature-icon" aria-hidden="true"></i>
@@ -174,20 +328,44 @@
         <h2 class="section-title">See it before you sign up</h2>
       </div>
 
-      <figure class="showcase-item showcase-lead">
+      <!-- Two views of the same page, switched the way they are in the app -->
+      <div class="library-switch" role="tablist" aria-label="Library views">
+        <button class="lib-tab is-active" role="tab" id="lib-tab-projects"
+                aria-controls="lib-panel-projects" aria-selected="true">
+          Projects <span class="lib-count">14</span>
+        </button>
+        <button class="lib-tab" role="tab" id="lib-tab-tracks"
+                aria-controls="lib-panel-tracks" aria-selected="false" tabindex="-1">
+          Tracks <span class="lib-count">27</span>
+        </button>
+      </div>
+
+      <figure class="showcase-item showcase-lead" role="tabpanel"
+              id="lib-panel-projects" aria-labelledby="lib-tab-projects">
         <div class="showcase-frame">
-          <img src="images/dashboard.png" alt="The Uforiya library showing every project you own or collaborate on" />
+          <img src="images/dashboard.png" alt="The Uforiya library on the Projects tab, showing 14 projects as cover art cards labelled single, EP, album or playlist" loading="lazy" />
         </div>
         <figcaption>
-          <span class="shot-title">Library</span>
-          <span class="shot-desc">Every project and track you own or collaborate on, in one view.</span>
+          <span class="shot-title">Projects</span>
+          <span class="shot-desc">Singles, EPs, albums and playlists you own or collaborate on, with covers and track counts.</span>
+        </figcaption>
+      </figure>
+
+      <figure class="showcase-item showcase-lead" role="tabpanel"
+              id="lib-panel-tracks" aria-labelledby="lib-tab-tracks" hidden>
+        <div class="showcase-frame">
+          <img src="images/dashboardtracks.png" alt="The Uforiya library on the Tracks tab, listing 27 tracks with duration, BPM and musical key in columns" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="shot-title">Tracks</span>
+          <span class="shot-desc">Every track in one list, with duration, BPM and key already read for you.</span>
         </figcaption>
       </figure>
 
       <div class="showcase-pair">
         <figure class="showcase-item">
           <div class="showcase-frame">
-            <img src="images/audioplayer.png" alt="The Uforiya player with waveform playback and a timestamped comment" />
+            <img src="images/audioplayer.png" alt="The Uforiya audio player showing waveform playback with a comment pinned to a timestamp" loading="lazy" />
           </div>
           <figcaption>
             <span class="shot-title">Player</span>
@@ -197,7 +375,7 @@
 
         <figure class="showcase-item">
           <div class="showcase-frame">
-            <img src="images/upload.png" alt="The Uforiya upload page with project, audio file and track details" />
+            <img src="images/upload.png" alt="The Uforiya upload page with project selection, audio file and track details" loading="lazy" />
           </div>
           <figcaption>
             <span class="shot-title">Upload</span>
@@ -214,30 +392,308 @@
     </div>
   </section>
 
-    <!-- ═══════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════
        TOOLS
   ═══════════════════════════════════════════ -->
   <section class="section tools" id="tools">
     <div class="section-inner">
-      <div class="section-head">
-        <p class="eyebrow">Built in</p>
-        <h2 class="section-title">Quick edits, right where the track lives</h2>
+
+      <div class="section-head section-head-wide">
+        <p class="eyebrow">Free audio tools</p>
+        <h2 class="section-title">Seven edits a track needs, without leaving the browser</h2>
         <p class="section-sub">
-          Trim, fade, convert, compress, shift pitch or tempo, normalize loudness.
-          The small fixes a track needs before it is ready to share, without exporting
-          to another app and coming back.
+          Trim, fade, convert, compress, shift pitch, change tempo, even out loudness. The small
+          fixes that usually mean opening a DAW, exporting, and coming back. Four of them work
+          with no account at all: open
+          <a href="https://uforiya.space/tools" class="inline-link" target="_blank" rel="noopener">uforiya.space/tools</a>,
+          drop a file in, and go.
         </p>
       </div>
 
-      <figure class="showcase-item showcase-lead">
+      <figure class="showcase-item showcase-lead tools-shot">
         <div class="showcase-frame">
-          <img src="images/uforiyatools.png" alt="The Uforiya audio tools page with trim, fade, convert, compress, pitch, tempo and normalize on a waveform" />
+          <img
+            src="images/uforiyatools.png"
+            alt="The Uforiya audio tools page: a waveform with two highlighted sections and buttons for trim, fade, convert, compress, pitch, tempo and normalize"
+            loading="lazy"
+          />
         </div>
         <figcaption>
-          <span class="shot-title">Tools</span>
-          <span class="shot-desc">Highlight a section, pick a tool, apply. Runs in the browser, no round trip.</span>
+          <span class="shot-title">Audio tools</span>
+          <span class="shot-desc">Highlight a section, pick a tool, apply. Processing runs in your browser, so the result is ready immediately.</span>
         </figcaption>
       </figure>
+
+      <!-- ── Tool explorer ──
+           A rail of tools on the left, detail on the right. On narrow screens
+           the rail becomes a horizontally scrolling strip above the panel.
+           Every panel stays in the DOM so all seven are indexable. -->
+      <div class="tools-explorer">
+
+        <div class="tool-rail" role="tablist" aria-label="Audio tools" aria-orientation="vertical">
+
+          <button class="tool-tab is-active" role="tab" id="tab-trim" aria-controls="panel-trim" aria-selected="true" data-tool="trim">
+            <i class="ph-bold ph-scissors tool-tab-icon" aria-hidden="true"></i>
+            <span class="tool-tab-body">
+              <span class="tool-tab-name">Trim</span>
+              <span class="tool-tab-desc">Cut or keep a section</span>
+            </span>
+            <span class="tool-dot tool-dot-open" aria-hidden="true"></span>
+          </button>
+
+          <button class="tool-tab" role="tab" id="tab-fade" aria-controls="panel-fade" aria-selected="false" tabindex="-1" data-tool="fade">
+            <i class="ph-bold ph-wave-sine tool-tab-icon" aria-hidden="true"></i>
+            <span class="tool-tab-body">
+              <span class="tool-tab-name">Fade</span>
+              <span class="tool-tab-desc">Ease a section in or out</span>
+            </span>
+            <span class="tool-dot tool-dot-open" aria-hidden="true"></span>
+          </button>
+
+          <button class="tool-tab" role="tab" id="tab-convert" aria-controls="panel-convert" aria-selected="false" tabindex="-1" data-tool="convert">
+            <i class="ph-bold ph-arrows-left-right tool-tab-icon" aria-hidden="true"></i>
+            <span class="tool-tab-body">
+              <span class="tool-tab-name">Convert</span>
+              <span class="tool-tab-desc">Change file format</span>
+            </span>
+            <span class="tool-dot tool-dot-open" aria-hidden="true"></span>
+          </button>
+
+          <button class="tool-tab" role="tab" id="tab-compress" aria-controls="panel-compress" aria-selected="false" tabindex="-1" data-tool="compress">
+            <i class="ph-bold ph-arrows-in-simple tool-tab-icon" aria-hidden="true"></i>
+            <span class="tool-tab-body">
+              <span class="tool-tab-name">Compress</span>
+              <span class="tool-tab-desc">Reduce file size</span>
+            </span>
+            <span class="tool-dot tool-dot-open" aria-hidden="true"></span>
+          </button>
+
+          <button class="tool-tab" role="tab" id="tab-pitch" aria-controls="panel-pitch" aria-selected="false" tabindex="-1" data-tool="pitch">
+            <i class="ph-bold ph-arrows-down-up tool-tab-icon" aria-hidden="true"></i>
+            <span class="tool-tab-body">
+              <span class="tool-tab-name">Pitch</span>
+              <span class="tool-tab-desc">Shift up or down</span>
+            </span>
+            <span class="tool-dot tool-dot-account" aria-hidden="true"></span>
+          </button>
+
+          <button class="tool-tab" role="tab" id="tab-tempo" aria-controls="panel-tempo" aria-selected="false" tabindex="-1" data-tool="tempo">
+            <i class="ph-bold ph-metronome tool-tab-icon" aria-hidden="true"></i>
+            <span class="tool-tab-body">
+              <span class="tool-tab-name">Tempo</span>
+              <span class="tool-tab-desc">Speed up or slow down</span>
+            </span>
+            <span class="tool-dot tool-dot-account" aria-hidden="true"></span>
+          </button>
+
+          <button class="tool-tab" role="tab" id="tab-normalize" aria-controls="panel-normalize" aria-selected="false" tabindex="-1" data-tool="normalize">
+            <i class="ph-bold ph-faders-horizontal tool-tab-icon" aria-hidden="true"></i>
+            <span class="tool-tab-body">
+              <span class="tool-tab-name">Normalize</span>
+              <span class="tool-tab-desc">Even out loudness</span>
+            </span>
+            <span class="tool-dot tool-dot-account" aria-hidden="true"></span>
+          </button>
+
+        </div>
+
+        <div class="tool-panels">
+
+          <!-- TRIM -->
+          <article class="tool-panel" role="tabpanel" id="panel-trim" aria-labelledby="tab-trim" tabindex="0">
+            <div class="tool-panel-head">
+              <h3>Trim</h3>
+              <span class="tool-badge tool-badge-open">No account needed</span>
+            </div>
+            <p class="tool-panel-lead">
+              Drag across the waveform to mark a section, then cut it out or keep only what you
+              marked. You can highlight several sections at once and join what is left, so a
+              take can lose its dead air in a single pass.
+            </p>
+            <ul class="tool-uses">
+              <li>Take the count-in and false start off the front of a vocal</li>
+              <li>Cut a loop down to the two bars you actually want</li>
+              <li>Keep the first verse and the last chorus, drop everything between</li>
+            </ul>
+            <p class="tool-meta">MP3 · WAV · FLAC · AIFF · M4A</p>
+          </article>
+
+          <!-- FADE -->
+          <article class="tool-panel" role="tabpanel" id="panel-fade" aria-labelledby="tab-fade" tabindex="0" hidden>
+            <div class="tool-panel-head">
+              <h3>Fade</h3>
+              <span class="tool-badge tool-badge-open">No account needed</span>
+            </div>
+            <p class="tool-panel-lead">
+              Ease the audio in or out instead of stopping on a hard edge. Apply it to the start,
+              the end, or any highlighted range in the middle, and set how long the fade runs.
+            </p>
+            <ul class="tool-uses">
+              <li>Soften the join left behind by a trim</li>
+              <li>Fade a rough bounce out rather than cutting mid-bar</li>
+              <li>Bring an intro up gradually before sending it round</li>
+            </ul>
+            <p class="tool-meta">Fade in · fade out · both ends</p>
+          </article>
+
+          <!-- CONVERT -->
+          <article class="tool-panel" role="tabpanel" id="panel-convert" aria-labelledby="tab-convert" tabindex="0" hidden>
+            <div class="tool-panel-head">
+              <h3>Convert</h3>
+              <span class="tool-badge tool-badge-open">No account needed</span>
+            </div>
+            <p class="tool-panel-lead">
+              Move a file between MP3, WAV, FLAC, AIFF and M4A. The file you dropped in is left
+              alone; what you get back is a new one in the format you picked.
+            </p>
+            <ul class="tool-uses">
+              <li>Send an MP3 to someone who does not want a 400MB WAV</li>
+              <li>Get a lossless WAV out of a bounce for the mix engineer</li>
+              <li>Match a stray file to the format the rest of the session uses</li>
+            </ul>
+            <p class="tool-meta">MP3 · WAV · FLAC · AIFF · M4A</p>
+          </article>
+
+          <!-- COMPRESS -->
+          <article class="tool-panel" role="tabpanel" id="panel-compress" aria-labelledby="tab-compress" tabindex="0" hidden>
+            <div class="tool-panel-head">
+              <h3>Compress</h3>
+              <span class="tool-badge tool-badge-open">No account needed</span>
+            </div>
+            <p class="tool-panel-lead">
+              Bring the file size down for sending, without an obvious hit to how it sounds. This
+              is file compression, not a dynamics compressor: it makes the file smaller, it does
+              not squash the mix.
+            </p>
+            <ul class="tool-uses">
+              <li>Get a reference under an email attachment limit</li>
+              <li>Send an idea out of the studio on bad signal</li>
+              <li>Shrink a long take before it goes anywhere else</li>
+            </ul>
+            <p class="tool-meta">Pick a quality level, hear it before you download</p>
+          </article>
+
+          <!-- PITCH -->
+          <article class="tool-panel" role="tabpanel" id="panel-pitch" aria-labelledby="tab-pitch" tabindex="0" hidden>
+            <div class="tool-panel-head">
+              <h3>Pitch</h3>
+              <span class="tool-badge tool-badge-account">Free account</span>
+            </div>
+            <p class="tool-panel-lead">
+              Shift the file up or down in semitones while the timing stays exactly where it was.
+              Nothing gets faster or slower, it just sits in a different key.
+            </p>
+            <ul class="tool-uses">
+              <li>Move a vocal take into the key the beat is actually in</li>
+              <li>Try a sample two semitones down before committing to it</li>
+              <li>Match a guest verse cut to a different reference</li>
+            </ul>
+            <p class="tool-meta">Semitone steps, pitch moves and timing does not</p>
+          </article>
+
+          <!-- TEMPO -->
+          <article class="tool-panel" role="tabpanel" id="panel-tempo" aria-labelledby="tab-tempo" tabindex="0" hidden>
+            <div class="tool-panel-head">
+              <h3>Tempo</h3>
+              <span class="tool-badge tool-badge-account">Free account</span>
+            </div>
+            <p class="tool-panel-lead">
+              Speed the file up or slow it down without the pitch sliding with it. Tempo and pitch
+              stay independent, so a part can be moved onto the grid without going chipmunk.
+            </p>
+            <ul class="tool-uses">
+              <li>Line a phone recording up with the track's BPM</li>
+              <li>Slow a sample down to sit in a half-time beat</li>
+              <li>Push a demo faster to hear whether it wants to move</li>
+            </ul>
+            <p class="tool-meta">Detected BPM shown before and after</p>
+          </article>
+
+          <!-- NORMALIZE -->
+          <article class="tool-panel" role="tabpanel" id="panel-normalize" aria-labelledby="tab-normalize" tabindex="0" hidden>
+            <div class="tool-panel-head">
+              <h3>Normalize</h3>
+              <span class="tool-badge tool-badge-account">Free account</span>
+            </div>
+            <p class="tool-panel-lead">
+              Even out loudness so a quiet bounce is not lost next to everything around it, and a
+              hot one is not clipping before anyone presses play.
+            </p>
+            <ul class="tool-uses">
+              <li>Level a batch of bounces before they go out together</li>
+              <li>Rescue a take that was recorded far too quietly</li>
+              <li>Get a reference to a sensible level for a listening session</li>
+            </ul>
+            <p class="tool-meta">Consistent level across every file you run through it</p>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── Access ── -->
+      <div class="access-grid">
+        <article class="access-card">
+          <h3 class="access-title">Without an account</h3>
+          <p class="access-desc">Open the page, drop a file in, start editing. Nothing to sign up for and nothing to install.</p>
+          <ul class="access-list">
+            <li class="is-on">Trim</li>
+            <li class="is-on">Fade</li>
+            <li class="is-on">Convert</li>
+            <li class="is-on">Compress</li>
+            <li class="is-off">Pitch</li>
+            <li class="is-off">Tempo</li>
+            <li class="is-off">Normalize</li>
+          </ul>
+          <a href="https://uforiya.space/tools" class="btn-plan btn-plan-primary" target="_blank" rel="noopener">Open the tools</a>
+        </article>
+
+        <article class="access-card access-card-featured">
+          <span class="plan-badge">Still free</span>
+          <h3 class="access-title">With a free account</h3>
+          <p class="access-desc">All seven tools, a higher daily limit, and a finished result can go straight into a project instead of your downloads folder.</p>
+          <ul class="access-list">
+            <li class="is-on">Trim</li>
+            <li class="is-on">Fade</li>
+            <li class="is-on">Convert</li>
+            <li class="is-on">Compress</li>
+            <li class="is-on">Pitch</li>
+            <li class="is-on">Tempo</li>
+            <li class="is-on">Normalize</li>
+          </ul>
+          <a href="https://uforiya.space" class="btn-plan" target="_blank" rel="noopener">Create a free account</a>
+        </article>
+      </div>
+
+      <!-- ── How the tools work ── -->
+      <ol class="steps tools-steps">
+        <li class="step">
+          <span class="step-index">01</span>
+          <div class="step-body">
+            <h3>Drop the file in</h3>
+            <p>MP3, WAV, FLAC, AIFF or M4A. BPM, key, duration, format and size are read as it loads, and the waveform is drawn ready to work on.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-index">02</span>
+          <div class="step-body">
+            <h3>Highlight what you want</h3>
+            <p>Drag across the waveform to mark a section. Mark several and they are handled together, or skip this entirely and let the tool run on the whole file.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-index">03</span>
+          <div class="step-body">
+            <h3>Pick a tool and apply</h3>
+            <p>The result plays back straight away, so you hear it before you commit. Download it, run another tool on it, or send it into a project if you are signed in.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="showcase-cta">
+        <a href="https://uforiya.space/tools" class="btn-primary" target="_blank" rel="noopener">
+          Open the audio tools
+        </a>
+      </div>
     </div>
   </section>
 
@@ -264,7 +720,7 @@
         <em class="save-badge">Save about 17%</em>
       </div>
 
-      <div class="pricing-grid pricing-grid-three">
+      <div class="pricing-grid">
 
         <!-- Free -->
         <article class="plan">
@@ -276,8 +732,9 @@
           <p class="plan-desc">Enough to run a real project and see if this fits how you work.</p>
           <ul class="plan-features">
             <li>25 tracks</li>
-            <li>3 versions per track</li>
+            <li>5 versions per track</li>
             <li>Unlimited collaborators</li>
+            <li>All seven audio tools</li>
             <li>Last 5 plays of analytics</li>
             <li>Stem uploads per version</li>
           </ul>
@@ -295,8 +752,9 @@
           <p class="plan-desc">For artists building a catalogue and working with a regular team.</p>
           <ul class="plan-features">
             <li>250 tracks</li>
-            <li>5 versions per track</li>
+            <li>10 versions per track</li>
             <li>Unlimited collaborators</li>
+            <li>Higher daily tool limit</li>
             <li>Weekly and monthly analytics</li>
             <li>Stem uploads per version</li>
           </ul>
@@ -313,8 +771,9 @@
           <p class="plan-desc">For studios and busy rooms running several records at once.</p>
           <ul class="plan-features">
             <li>1,000 tracks</li>
-            <li>10 versions per track</li>
+            <li>15 versions per track</li>
             <li>Unlimited collaborators</li>
+            <li>Highest daily tool limit</li>
             <li>Daily, weekly and monthly analytics</li>
             <li>Granular download control</li>
           </ul>
@@ -326,6 +785,78 @@
       <p class="pricing-note">
         Prices in CAD. Plan limits can move while the beta runs, and you can cancel from settings at any time.
       </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════════ -->
+  <section class="section faq" id="faq">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2 class="section-title">Answers before you sign up</h2>
+      </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary><span>What is Uforiya?</span></summary>
+          <div class="faq-answer">
+            <p>Uforiya is a music collaboration platform for unreleased tracks. Artists, producers, songwriters and engineers work on the same track in one place, and the track carries its own owner, roles, versions, stems and comments rather than living in a folder somewhere.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Do I need an account to use the audio tools?</span></summary>
+          <div class="faq-answer">
+            <p>No. Open <a href="https://uforiya.space/tools" target="_blank" rel="noopener">uforiya.space/tools</a>, drop a file in and start editing. Trim, fade, convert and compress all work without signing up. A free account adds pitch, tempo and normalize, raises the daily limit, and lets a result go straight into a project.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Which audio tools work without an account?</span></summary>
+          <div class="faq-answer">
+            <p>Trim, fade, convert and compress. Pitch, tempo and normalize need a free account, which takes about a minute to create and costs nothing.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>How do I keep track of different versions of a song?</span></summary>
+          <div class="faq-answer">
+            <p>Every upload becomes a version under the same track, so the rough idea, the revised bounce and the final master all stay side by side with the date and the person who uploaded them. Only the track owner marks which version is current, so nobody is ever guessing which file is the real one.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Can I share stems securely with my mix engineer?</span></summary>
+          <div class="faq-answer">
+            <p>Yes. Stems upload alongside any version, and roles decide who can see or download them. A mix engineer added as a collaborator gets the stems for the version they are working on, and nothing outside that.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>What audio formats does Uforiya support?</span></summary>
+          <div class="faq-answer">
+            <p>MP3, WAV, FLAC, AIFF and M4A, both for uploads and for the audio tools. BPM, key, duration and format are read automatically on the way in.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Is Uforiya free?</span></summary>
+          <div class="faq-answer">
+            <p>The free plan covers 25 tracks, 5 versions per track and unlimited collaborators, with no card needed. Pro and Premium raise those limits and add analytics. Collaboration itself is on every plan, including the free one.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>How is this different from Dropbox or Google Drive?</span></summary>
+          <div class="faq-answer">
+            <p>Cloud storage holds files. Uforiya holds tracks. A track knows its versions, who is on it and what each person is allowed to do, plays back on a waveform with comments pinned to the second, and carries its stems with it. A shared folder of files named final_v3_REALFINAL does none of that.</p>
+          </div>
+        </details>
+
+      </div>
     </div>
   </section>
 
@@ -435,6 +966,8 @@
 
       <nav class="footer-links" aria-label="Footer">
         <a href="https://uforiya.space" target="_blank" rel="noopener">Open app</a>
+        <a href="https://uforiya.space/tools" target="_blank" rel="noopener">Audio tools</a>
+        <a href="#faq">FAQ</a>
         <a href="mailto:hello@uforiya.com">Contact</a>
         <a href="https://instagram.com/uforiyaspace" target="_blank" rel="noopener">Instagram</a>
         <a href="https://twitter.com/uforiyaspace" target="_blank" rel="noopener">Twitter</a>
@@ -506,10 +1039,114 @@
     });
 
     /* ═══════════════════════════════════════════
+       TOOL EXPLORER
+       Standard tablist behaviour: click or arrow keys to move, Home and End
+       jump to the ends. Panels stay in the DOM, hidden with the hidden
+       attribute, so every tool is still readable to a crawler.
+    ═══════════════════════════════════════════ */
+    (function initToolExplorer() {
+      const rail = document.querySelector('.tool-rail');
+      if (!rail) return;
+
+      const tabs = Array.from(rail.querySelectorAll('.tool-tab'));
+
+      function selectTab(nextTab, moveFocus) {
+        tabs.forEach(tab => {
+          const isActive = tab === nextTab;
+          tab.classList.toggle('is-active', isActive);
+          tab.setAttribute('aria-selected', String(isActive));
+          tab.tabIndex = isActive ? 0 : -1;
+
+          const panel = document.getElementById(tab.getAttribute('aria-controls'));
+          if (panel) panel.hidden = !isActive;
+        });
+
+        if (moveFocus) nextTab.focus();
+
+        /* Keep the active tab in view when the rail is a scrolling strip */
+        nextTab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(tab, false));
+
+        tab.addEventListener('keydown', (e) => {
+          let target = null;
+
+          if (e.key === 'ArrowDown' || e.key === 'ArrowRight') target = tabs[(index + 1) % tabs.length];
+          else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') target = tabs[(index - 1 + tabs.length) % tabs.length];
+          else if (e.key === 'Home') target = tabs[0];
+          else if (e.key === 'End') target = tabs[tabs.length - 1];
+
+          if (!target) return;
+          e.preventDefault();
+          selectTab(target, true);
+        });
+      });
+    })();
+
+    /* ═══════════════════════════════════════════
+       LIBRARY SWITCH
+       Same tablist behaviour as the tool rail. The panels are figures that
+       carry the reveal fade, so a panel shown after its observer has already
+       passed gets marked revealed by hand, or it would appear blank.
+    ═══════════════════════════════════════════ */
+    (function initLibrarySwitch() {
+      const strip = document.querySelector('.library-switch');
+      if (!strip) return;
+
+      const tabs = Array.from(strip.querySelectorAll('.lib-tab'));
+
+      function selectTab(nextTab, moveFocus) {
+        tabs.forEach(tab => {
+          const isActive = tab === nextTab;
+          tab.classList.toggle('is-active', isActive);
+          tab.setAttribute('aria-selected', String(isActive));
+          tab.tabIndex = isActive ? 0 : -1;
+
+          const panel = document.getElementById(tab.getAttribute('aria-controls'));
+          if (!panel) return;
+          panel.hidden = !isActive;
+          if (isActive) panel.classList.add('revealed');
+        });
+
+        if (moveFocus) nextTab.focus();
+      }
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(tab, false));
+
+        tab.addEventListener('keydown', (e) => {
+          let target = null;
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') target = tabs[(index + 1) % tabs.length];
+          else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') target = tabs[(index - 1 + tabs.length) % tabs.length];
+          else if (e.key === 'Home') target = tabs[0];
+          else if (e.key === 'End') target = tabs[tabs.length - 1];
+          if (!target) return;
+          e.preventDefault();
+          selectTab(target, true);
+        });
+      });
+    })();
+    
+    /* ═══════════════════════════════════════════
+       FAQ: ONE OPEN AT A TIME
+    ═══════════════════════════════════════════ */
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        faqItems.forEach(other => {
+          if (other !== item) other.open = false;
+        });
+      });
+    });
+
+    /* ═══════════════════════════════════════════
        SCROLL REVEAL
     ═══════════════════════════════════════════ */
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealTargets = document.querySelectorAll('.feature-card, .plan, .showcase-item');
+    const revealTargets = document.querySelectorAll('.feature-card, .plan, .showcase-item, .access-card');
 
     if (prefersReduced) {
       revealTargets.forEach(el => el.classList.add('revealed'));
