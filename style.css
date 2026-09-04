@@ -451,7 +451,13 @@ a { color: inherit; }
   color: var(--ink-2);
   line-height: 1.72;
   max-width: 560px;
-  margin: 0 auto 34px;
+  margin: 0 auto 14px;
+}
+
+.hero-sub-detail {
+  font-size: clamp(13.5px, 1.3vw, 15px);
+  color: var(--ink-3);
+  margin-bottom: 34px;
 }
 
 .hero-cta {
