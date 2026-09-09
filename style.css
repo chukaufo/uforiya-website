@@ -211,6 +211,56 @@ a { color: inherit; }
   filter: drop-shadow(0 0 8px rgba(123, 95, 245, 0.5));
 }
 
+/* ═══════════════════════════════════════════════
+   ORBIT RING — add to style.css
+   Apply after the existing .nav-logo and .cta-logo rules.
+   Pure CSS, no markup changes needed — the ring is a pseudo-element on
+   the existing logo, so nothing in the HTML has to change.
+═══════════════════════════════════════════════ */
+
+/* ── Nav logo ── */
+
+
+
+
+@keyframes orbit-spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ── Final CTA logo ── */
+/* .cta-logo already animates a hover-drift; the ring sits underneath it on
+   a wrapper so the two motions don't fight over the same transform. */
+
+.final-cta-inner {
+  position: relative;
+}
+
+.cta-logo {
+  position: relative;
+  z-index: 1;
+}
+
+.final-cta-inner::before {
+  content: '';
+  position: absolute;
+  top: 76px; /* roughly centers on the 150px logo given its 26px top margin */
+  left: 50%;
+  width: 176px;
+  height: 176px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(123, 95, 245, 0.22);
+  border-bottom-color: rgba(0, 240, 255, 0.45);
+  border-radius: 50%;
+  animation: orbit-spin 10s linear infinite reverse;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .final-cta-inner::before {
+    animation: none;
+  }
+}
+
 .nav-wordmark {
   font-family: var(--f-display);
   font-size: 20px;
@@ -1769,6 +1819,9 @@ a { color: inherit; }
   :root { --nav-h: 66px; --gutter: 20px; --section-y: 72px; }
 
   .nav-logo { width: 60px; height: 60px; }
+
+  /* Ring follows the smaller logo — centre at 30px, ring 12px wider than it */
+
   .nav-actions { gap: 12px; }
 
   .hero { padding-top: calc(var(--nav-h) + 52px); }
@@ -1827,7 +1880,7 @@ a { color: inherit; }
 
 @media (max-width: 420px) {
   .nav-logo { width: 54px; height: 54px; }
-
+ 
   .hero-cta { flex-direction: column; align-items: stretch; }
   .btn-primary, .btn-ghost { width: 100%; }
 
