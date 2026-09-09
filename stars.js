@@ -29,7 +29,7 @@ const SCATTER_FORCE = 15;         // click impulse strength
 
 /* Musical notes: a fixed slice of the field renders as glyphs instead of
    dots. Kept as a plain constant, no UI control. */
-const NOTE_CHANCE = 0.10;
+const NOTE_CHANCE = 0.11;
 const NOTE_GLYPHS = ["\u266A", "\u266B"]; // ♪ eighth note, ♫ beamed eighth notes
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -220,6 +220,110 @@ function drawNebulae(time) {
 }
 
 /* ═══════════════════════════════════════════
+   RINGED PLANET
+   A static planet in the upper right of the viewport. Purely decorative —
+   no rotation, no drift, no scroll-tie, no interaction. Same screen
+   position and shading every single frame.
+═══════════════════════════════════════════ */
+
+const PLANET = {
+  visible: false,
+  x: 0,
+  y: 0,
+  fx: 0.14,
+  fy: 0.20,
+  tilt: -0.36,
+};
+
+function updatePlanetPosition() {
+  if (!bhAnchor) {
+    PLANET.visible = false;
+    return;
+  }
+
+  const rect = bhAnchor.getBoundingClientRect();
+  const r = Math.max(24, Math.min(canvas.width, canvas.height) * 0.036);
+
+  PLANET.x = rect.left + rect.width * PLANET.fx;
+  PLANET.y = rect.top + rect.height * PLANET.fy;
+
+  const pad = r * 3.5;
+  PLANET.visible =
+    rect.bottom > -pad &&
+    rect.top < canvas.height + pad;
+}
+
+function drawPlanet() {
+  if (!PLANET.visible) return;
+
+  const r = Math.max(24, Math.min(canvas.width, canvas.height) * 0.036);
+  const cx = PLANET.x;
+  const cy = PLANET.y;
+  const rx = r * 2.15;
+  const ry = r * 0.62;
+
+  // Soft halo
+  const halo = ctx.createRadialGradient(cx, cy, r * 0.6, cx, cy, r * 3.2);
+  halo.addColorStop(0, "rgba(155,127,247,0.14)");
+  halo.addColorStop(1, "rgba(155,127,247,0)");
+  ctx.beginPath();
+  ctx.arc(cx, cy, r * 3.2, 0, Math.PI * 2);
+  ctx.fillStyle = halo;
+  ctx.fill();
+
+  // Ring — back half, drawn before the body so it reads as passing behind it
+  drawPlanetRing(cx, cy, rx, ry, Math.PI, Math.PI * 2);
+
+  // Planet body
+  const bodyGrad = ctx.createRadialGradient(
+    cx - r * 0.35, cy - r * 0.35, r * 0.1,
+    cx, cy, r
+  );
+  bodyGrad.addColorStop(0, "rgba(210,196,245,0.95)");
+  bodyGrad.addColorStop(0.45, "rgba(160,140,225,0.9)");
+  bodyGrad.addColorStop(1, "rgba(90,75,150,0.9)");
+
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.fillStyle = bodyGrad;
+  ctx.fill();
+
+  // Faint atmospheric bands, clipped to the disc
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.clip();
+  ctx.strokeStyle = "rgba(70,55,120,0.25)";
+  ctx.lineWidth = r * 0.16;
+  [-0.5, 0.05, 0.55].forEach((offset) => {
+    ctx.beginPath();
+    ctx.moveTo(cx - r, cy + offset * r);
+    ctx.lineTo(cx + r, cy + offset * r * 0.85);
+    ctx.stroke();
+  });
+  ctx.restore();
+
+  // Ring — front half, drawn after so it passes in front of the body
+  drawPlanetRing(cx, cy, rx, ry, 0, Math.PI);
+}
+
+function drawPlanetRing(cx, cy, rx, ry, startAngle, endAngle) {
+  const bands = [
+    { scale: 1.0,  color: "200,190,240", alpha: 0.5 },
+    { scale: 0.82, color: "170,155,230", alpha: 0.4 },
+    { scale: 0.64, color: "140,120,215", alpha: 0.3 },
+  ];
+
+  bands.forEach((band) => {
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, rx * band.scale, ry * band.scale, PLANET.tilt, startAngle, endAngle);
+    ctx.strokeStyle = `rgba(${band.color},${band.alpha})`;
+    ctx.lineWidth = ry * 0.22;
+    ctx.stroke();
+  });
+}
+
+/* ═══════════════════════════════════════════
    WARP STREAK
    A brief hyperspace-style stretch triggered once when the page crosses
    into the pricing section or the final CTA. warpIntensity decays every
@@ -346,6 +450,8 @@ function animate() {
 
   drawNebulae();
   updateBlackholePosition();
+  updatePlanetPosition();
+  drawPlanet();  
 
   // Age out click pulses
   for (let i = clicks.length - 1; i >= 0; i--) {
@@ -358,6 +464,8 @@ function animate() {
 
   const cx = canvas.width / 2;
   const cy = canvas.height / 2;
+
+
 
   for (const star of stars) {
     star.phase += star.speed;
@@ -573,6 +681,7 @@ function init() {
     updateBlackholePosition();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawNebulae();
+    drawPlanet();
     for (const star of stars) {
       if (star.isNote) {
         ctx.save();

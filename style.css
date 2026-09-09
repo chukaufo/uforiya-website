@@ -231,36 +231,6 @@ a { color: inherit; }
 /* .cta-logo already animates a hover-drift; the ring sits underneath it on
    a wrapper so the two motions don't fight over the same transform. */
 
-.final-cta-inner {
-  position: relative;
-}
-
-.cta-logo {
-  position: relative;
-  z-index: 1;
-}
-
-.final-cta-inner::before {
-  content: '';
-  position: absolute;
-  top: 76px; /* roughly centers on the 150px logo given its 26px top margin */
-  left: 50%;
-  width: 176px;
-  height: 176px;
-  transform: translate(-50%, -50%);
-  border: 1px solid rgba(123, 95, 245, 0.22);
-  border-bottom-color: rgba(0, 240, 255, 0.45);
-  border-radius: 50%;
-  animation: orbit-spin 10s linear infinite reverse;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .final-cta-inner::before {
-    animation: none;
-  }
-}
-
 .nav-wordmark {
   font-family: var(--f-display);
   font-size: 20px;
