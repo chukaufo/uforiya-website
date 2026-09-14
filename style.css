@@ -1947,7 +1947,9 @@ a { color: inherit; }
 
   .share-desktop > figcaption { padding-top: 14px; }
 
-  .share-phone {
+  /* Specificity note: .share-stage figure sets margin: 0 and would beat a
+     bare .share-phone, so the centring has to match it. */
+  .share-stage .share-phone {
     width: 62%;
     max-width: 230px;
     margin: 40px auto 0;
