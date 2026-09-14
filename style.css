@@ -1939,53 +1939,28 @@ a { color: inherit; }
 }
 
 /* ── Composed rather than stacked ──
-   Desktop shot leads, since copying the link is the first step. It bleeds
-   to the screen edges and crops to the menu, because the full 2400px
-   capture squeezed into a phone column is unreadable. The phone then sits
-   over its bottom-left corner, so the two read as one image. */
+   Desktop shot leads, since copying the link is the first step. The phone
+   is pulled up over its bottom-left corner with a negative margin rather
+   than absolute positioning, so it stays in flow and cannot escape the
+   column. No crop on the desktop shot: nothing to guess at. */
 @media (max-width: 900px) {
-  .share-stage {
-    display: block;
-    position: relative;
-  }
-
+  .share-stage { display: block; }
   .share-stage::before { display: none; }
 
-  .share-desktop { margin-inline: calc(var(--gutter) * -1); }
-
-  .share-desktop .showcase-frame {
-    aspect-ratio: 4 / 5;
-    border-radius: 0;
-    border-inline: none;
-  }
-
-  /* object-position picks which part of the shot survives the crop:
-     first number is horizontal, second vertical. Nudge by eye. */
-  .share-desktop .showcase-frame img {
-    height: 100%;
-    object-fit: cover;
-    object-position: 88% 30%;
-  }
-
-  /* Caption clears the phone rather than running underneath it */
-  .share-desktop figcaption {
-    padding-inline: var(--gutter);
-    padding-left: calc(var(--gutter) + 46%);
-  }
+  .share-desktop > figcaption { padding-top: 14px; }
 
   .share-phone {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 42%;
-    max-width: 148px;
-    transform: rotate(-4.5deg);
+    position: relative;
+    z-index: 2;
+    width: 38%;
+    max-width: 150px;
+    margin: -56px 0 0 4px;
+    transform: rotate(-4deg);
     transform-origin: bottom left;
   }
 
   .share-phone .phone-frame { padding: 4px; border-radius: 20px; }
   .share-phone .phone-frame img { border-radius: 16px; }
-
   .share-phone figcaption { padding-top: 10px; }
   .share-phone .shot-desc { display: none; }
 }
