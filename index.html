@@ -43,7 +43,7 @@
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
 
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 
   <!-- ═══════════════════════════════════════════
        STRUCTURED DATA
@@ -97,14 +97,14 @@
             "name": "Free",
             "price": "0",
             "priceCurrency": "CAD",
-            "description": "30 tracks, 10 versions per track, unlimited collaborators."          },
+            "description": "25 tracks, unlimited versions per track, unlimited collaborators, 10GB of storage."
+            },
           {
             "@type": "Offer",
             "name": "Pro",
             "price": "12.99",
             "priceCurrency": "CAD",
-            "description": "Unlimited tracks, unlimited versions, daily analytics and granular download control."  
-           }
+            "description": "Unlimited tracks, unlimited versions per track, 1TB of storage, daily analytics and granular download control."           }
         ]
       },
       {
@@ -164,7 +164,7 @@
             "name": "Is Uforiya free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The free plan covers 30 tracks, 10 versions per track and unlimited collaborators, with no card needed. Pro removes the track and version limits entirely and adds analytics. Collaboration itself is on every plan, including the free one."
+              "text": "The free plan covers 25 tracks, unlimited versions per track and unlimited collaborators inside 10GB of storage, with no card needed. Pro raises that ceiling to 1TB with unlimited tracks and adds analytics and granular download control. Collaboration itself is on every plan, including the free one."
             }
           },
           {
@@ -383,6 +383,76 @@
           Create your free account
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       HANDHELD
+       Four phone shots on a shallow arc, tilted out from the centre.
+       Hover straightens and lifts one. Below 900px the arc flattens into
+       a snap scrolling strip, so it is swiped rather than hovered.
+  ═══════════════════════════════════════════ -->
+  <section class="section handheld" id="mobile">
+    <div class="section-inner">
+      <div class="section-head section-head-wide">
+        <p class="eyebrow">On a small screen</p>
+        <h2 class="section-title">The whole thing fits in a pocket</h2>
+        <p class="section-sub">
+          Open <a href="https://uforiya.space" class="inline-link" target="_blank" rel="noopener">uforiya.space</a>
+          in your phone browser and the library is already there: projects, tracks, versions, the
+          player and every comment pinned to its timestamp. Nothing to install, nothing to keep
+          signed in separately.
+        </p>
+      </div>
+
+      <div class="phone-arc">
+
+        <figure class="phone">
+          <div class="phone-frame">
+            <img src="images/dashboardmobile.PNG" alt="The Uforiya library on a phone, Projects tab, showing project cover cards labelled playlist and album" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="shot-title">Library</span>
+            <span class="shot-desc">Every project you own or are on.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="phone">
+          <div class="phone-frame">
+            <img src="images/dashboardtracksmobile.PNG" alt="The Uforiya library on a phone, Tracks tab, listing tracks with durations and a lock icon on the private ones" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="shot-title">Tracks</span>
+            <span class="shot-desc">Every track, duration read for you.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="phone">
+          <div class="phone-frame">
+            <img src="images/projectpagemobile.PNG" alt="A private Uforiya project on a phone, showing cover art, track count, total duration and the track list" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="shot-title">Project</span>
+            <span class="shot-desc">Cover, runtime and the full tracklist.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="phone">
+          <div class="phone-frame">
+            <img src="images/audioplayermobile.PNG" alt="The Uforiya player on a phone, showing waveform playback with BPM and key, and a comment pinned to 0:46" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="shot-title">Player</span>
+            <span class="shot-desc">Waveform, BPM, key and timestamped notes.</span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <p class="phone-note">
+        <span class="phone-ping" aria-hidden="true"></span>
+        Same account, same files. Start the track at the desk, leave the notes on the bus.
+      </p>
     </div>
   </section>
 
@@ -725,8 +795,9 @@
           <p class="plan-period">Free forever</p>
           <p class="plan-desc">Enough to run a real project and see if this fits how you work.</p>
           <ul class="plan-features">
-            <li>30 tracks</li>
-            <li>10 versions per track</li>
+            <li>25 tracks</li>
+            <li>Unlimited versions per track</li>
+            <li>10GB of storage</li>
             <li>Unlimited collaborators</li>
             <li>All seven audio tools</li>
             <li>Last 5 plays of analytics</li>
@@ -743,10 +814,11 @@
             <span class="price-amount" data-monthly="$12.99" data-yearly="$8.33">$12.99</span>
           </div>
           <p class="plan-period" data-monthly="per month CAD" data-yearly="per month CAD, billed yearly">per month CAD</p>
-          <p class="plan-desc">For artists and studios running several records at once.</p>
+          <p class="plan-desc">For artists and studios keeping full sessions and stems, not just bounces.</p>
           <ul class="plan-features">
             <li>Unlimited tracks</li>
             <li>Unlimited versions per track</li>
+            <li>1TB of storage</li>
             <li>Unlimited collaborators</li>
             <li>Higher daily tool limit</li>
             <li>Daily, weekly and monthly analytics</li>
@@ -820,7 +892,7 @@
         <details class="faq-item">
           <summary><span>Is Uforiya free?</span></summary>
           <div class="faq-answer">
-            <p>The free plan covers 30 tracks, 10 versions per track and unlimited collaborators, with no card needed. Pro removes the track and version limits entirely and adds analytics. Collaboration itself is on every plan, including the free one.</p>          
+            <p>The free plan covers 25 tracks, unlimited versions per track and unlimited collaborators inside 10GB of storage, with no card needed. Pro raises that ceiling to 1TB with unlimited tracks and adds analytics and granular download control. Collaboration itself is on every plan, including the free one.</p>          
           </div>
         </details>
 

@@ -1147,9 +1147,10 @@ a { color: inherit; }
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   align-items: stretch;
+  max-width: 760px;
 }
 
 .plan {
@@ -1732,6 +1733,149 @@ a { color: inherit; }
   border-top: 1px solid var(--line);
   width: 100%;
   max-width: 320px;
+}
+
+/* ═══════════════════════════════════════════════
+   HANDHELD
+   The arc is four figures in a grid, each pushed down and rotated by its
+   position, so the two outer ones sit lower and lean away. Hover pulls one
+   upright and forward. Rotations can reach past the content column, so the
+   section clips its own overflow.
+═══════════════════════════════════════════════ */
+
+.handheld { overflow: hidden; }
+
+.phone-arc {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: end;
+  padding-top: 26px;
+}
+
+/* Same glow that sits under the hero shot, widened for the row */
+.phone-arc::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  width: 84%;
+  height: 68%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(123, 95, 245, 0.2) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.phone {
+  position: relative;
+  margin: 0;
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.phone:nth-child(1) { transform: translateY(30px) rotate(-4.5deg); }
+.phone:nth-child(2) { transform: translateY(6px)  rotate(-1.5deg); }
+.phone:nth-child(3) { transform: translateY(6px)  rotate(1.5deg); }
+.phone:nth-child(4) { transform: translateY(30px) rotate(4.5deg); }
+
+/* Later than the nth rules, so it wins on equal specificity */
+.phone:hover {
+  transform: translateY(-12px) rotate(0deg);
+  z-index: 2;
+}
+
+.phone-frame {
+  position: relative;
+  padding: 6px;
+  border-radius: 30px;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.03));
+  box-shadow:
+    0 0 0 1px rgba(123, 95, 245, 0.16),
+    0 28px 56px rgba(0, 0, 0, 0.62);
+  transition: box-shadow 0.35s ease;
+}
+
+.phone:hover .phone-frame {
+  box-shadow:
+    0 0 0 1px rgba(123, 95, 245, 0.4),
+    0 36px 72px rgba(0, 0, 0, 0.7),
+    0 0 46px rgba(123, 95, 245, 0.18);
+}
+
+.phone-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  background: #000;
+}
+
+.phone figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.phone .shot-title { font-size: 14.5px; }
+.phone .shot-desc  { font-size: 12.5px; line-height: 1.5; }
+
+.phone-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 46px;
+  font-size: 13.5px;
+  color: var(--ink-3);
+  text-align: center;
+}
+
+.phone-ping {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+}
+
+/* ── Arc flattens into a swipeable strip ──
+   The negative margin lets the strip bleed to the screen edges, so the
+   fourth phone is visibly cut off and reads as scrollable. */
+@media (max-width: 900px) {
+  .phone-arc {
+    display: flex;
+    gap: 14px;
+    padding: 4px var(--gutter) 10px;
+    margin-inline: calc(var(--gutter) * -1);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .phone-arc::-webkit-scrollbar { display: none; }
+  .phone-arc::before { display: none; }
+
+  .phone-arc > .phone {
+    flex: 0 0 58%;
+    max-width: 250px;
+    scroll-snap-align: center;
+    transform: none;
+  }
+
+  .phone-arc > .phone:hover { transform: none; }
+
+  .phone-frame { padding: 5px; border-radius: 26px; }
+  .phone-frame img { border-radius: 21px; }
+}
+
+@media (max-width: 480px) {
+  .phone-arc > .phone { flex: 0 0 70%; }
+  .phone-note { margin-top: 34px; font-size: 12.5px; }
 }
 
 /* ═══════════════════════════════════════════════
