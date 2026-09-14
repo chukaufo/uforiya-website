@@ -1879,6 +1879,87 @@ a { color: inherit; }
 }
 
 /* ═══════════════════════════════════════════════
+   SHARE
+   Wide shot and phone in one row, bottom aligned so they read as one
+   image. Below 900px they stack, phone under desktop and centred.
+   Neither figure uses .showcase-item, so nothing here depends on the
+   reveal observer running.
+═══════════════════════════════════════════════ */
+
+.share-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 248px;
+  gap: 26px;
+  align-items: end;
+}
+
+/* Same purple wash that sits under the hero shot */
+.share-stage::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 4%;
+  width: 82%;
+  height: 66%;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(123, 95, 245, 0.18) 0%, transparent 70%);
+  filter: blur(38px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.share-stage figure { margin: 0; min-width: 0; }
+
+.share-desktop .showcase-frame img { width: 100%; height: auto; }
+.share-desktop:hover .showcase-frame { border-color: var(--line-accent); }
+
+.share-phone:hover .phone-frame {
+  box-shadow:
+    0 0 0 1px rgba(123, 95, 245, 0.4),
+    0 36px 72px rgba(0, 0, 0, 0.7),
+    0 0 46px rgba(123, 95, 245, 0.18);
+}
+
+.share-stage figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 14px;
+}
+
+.share-stage .shot-desc { font-size: 13px; }
+
+/* Second paragraph in the share head: the privacy boundary, quieter than
+   the pitch above it. Mirrors .hero-sub-detail. */
+.share-sub-note {
+  font-size: 14.5px;
+  color: var(--ink-3);
+  margin-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .share-stage {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    justify-items: center;
+  }
+
+  .share-stage::before { display: none; }
+
+  /* Phone shot leads on a phone: it is already phone-sized so it reads at
+     this width, while the desktop shot is a 2400px capture and its menu
+     text is illegible below about 500px. */
+  .share-phone {
+    order: -1;
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .share-desktop { width: 100%; }
+  .share-stage figcaption { text-align: center; }}
+
+/* ═══════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════ */
 
