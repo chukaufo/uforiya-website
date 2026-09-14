@@ -1938,26 +1938,57 @@ a { color: inherit; }
   margin-top: 12px;
 }
 
+/* ── Composed rather than stacked ──
+   Desktop shot leads, since copying the link is the first step. It bleeds
+   to the screen edges and crops to the menu, because the full 2400px
+   capture squeezed into a phone column is unreadable. The phone then sits
+   over its bottom-left corner, so the two read as one image. */
 @media (max-width: 900px) {
   .share-stage {
-    grid-template-columns: 1fr;
-    gap: 34px;
-    justify-items: center;
+    display: block;
+    position: relative;
   }
 
   .share-stage::before { display: none; }
 
-  /* Phone shot leads on a phone: it is already phone-sized so it reads at
-     this width, while the desktop shot is a 2400px capture and its menu
-     text is illegible below about 500px. */
-  .share-phone {
-    order: -1;
-    width: 100%;
-    max-width: 240px;
+  .share-desktop { margin-inline: calc(var(--gutter) * -1); }
+
+  .share-desktop .showcase-frame {
+    aspect-ratio: 4 / 5;
+    border-radius: 0;
+    border-inline: none;
   }
 
-  .share-desktop { width: 100%; }
-  .share-stage figcaption { text-align: center; }}
+  /* object-position picks which part of the shot survives the crop:
+     first number is horizontal, second vertical. Nudge by eye. */
+  .share-desktop .showcase-frame img {
+    height: 100%;
+    object-fit: cover;
+    object-position: 88% 30%;
+  }
+
+  /* Caption clears the phone rather than running underneath it */
+  .share-desktop figcaption {
+    padding-inline: var(--gutter);
+    padding-left: calc(var(--gutter) + 46%);
+  }
+
+  .share-phone {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 42%;
+    max-width: 148px;
+    transform: rotate(-4.5deg);
+    transform-origin: bottom left;
+  }
+
+  .share-phone .phone-frame { padding: 4px; border-radius: 20px; }
+  .share-phone .phone-frame img { border-radius: 16px; }
+
+  .share-phone figcaption { padding-top: 10px; }
+  .share-phone .shot-desc { display: none; }
+}
 
 /* ═══════════════════════════════════════════════
    RESPONSIVE
