@@ -1938,11 +1938,9 @@ a { color: inherit; }
   margin-top: 12px;
 }
 
-/* ── Composed rather than stacked ──
-   Desktop shot leads, since copying the link is the first step. The phone
-   is pulled up over its bottom-left corner with a negative margin rather
-   than absolute positioning, so it stays in flow and cannot escape the
-   column. No crop on the desktop shot: nothing to guess at. */
+/* ── Stacked and centred ──
+   Desktop shot leads, since copying the link is the first step, then the
+   phone sits centred beneath it. Both captions centre with their shot. */
 @media (max-width: 900px) {
   .share-stage { display: block; }
   .share-stage::before { display: none; }
@@ -1950,19 +1948,15 @@ a { color: inherit; }
   .share-desktop > figcaption { padding-top: 14px; }
 
   .share-phone {
-    position: relative;
-    z-index: 2;
-    width: 38%;
-    max-width: 150px;
-    margin: -56px 0 0 4px;
-    transform: rotate(-4deg);
-    transform-origin: bottom left;
+    width: 62%;
+    max-width: 230px;
+    margin: 40px auto 0;
   }
 
-  .share-phone .phone-frame { padding: 4px; border-radius: 20px; }
-  .share-phone .phone-frame img { border-radius: 16px; }
-  .share-phone figcaption { padding-top: 10px; }
-  .share-phone .shot-desc { display: none; }
+  .share-phone .phone-frame { padding: 5px; border-radius: 24px; }
+  .share-phone .phone-frame img { border-radius: 19px; }
+
+  .share-stage figcaption { align-items: center; text-align: center; }
 }
 
 /* ═══════════════════════════════════════════════
