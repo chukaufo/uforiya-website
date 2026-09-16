@@ -118,37 +118,99 @@ a { color: inherit; }
 }
 
 .section-head {
-  max-width: 640px;
+  max-width: 720px;
   margin-bottom: 64px;
 }
 
-/* The tools intro carries more explanation than the other section heads */
-.section-head-wide { max-width: 720px; }
+/* Wide heads carry more copy, so they get a little more room */
+.section-head-wide { max-width: 780px; }
 
+/* Label: sentence case with a small Saturn in front. The planet is
+   painted as the background so the ring and moon can layer over it.
+   Planet centre sits at 12px, 10px; every value below keys off that. */
 .eyebrow {
-  font-family: var(--f-mono);
-  font-size: 11px;
+  position: relative;
+  display: inline-block;
+  padding-left: 32px;
+  margin-bottom: 20px;
+  font-family: var(--f-body);
+  font-size: 14.5px;
   font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 18px;
+  line-height: 20px;
+  color: var(--ink-2);
+  background:
+    radial-gradient(circle 3px at 10.5px 8.5px, rgba(226, 216, 255, 0.95), transparent),
+    radial-gradient(circle 5px at 12px 10px, var(--purple) 0, #4a33b8 80%, #3d2a9e 92%, transparent 100%),
+    radial-gradient(circle 11px at 12px 10px, rgba(123, 95, 245, 0.35), transparent);
+  background-repeat: no-repeat;
 }
 
+/* Ring. The mask hides only the back arc where it passes behind the
+   planet, so the front arc still crosses over it. */
+.eyebrow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 24px;
+  height: 8px;
+  border: 1px solid rgba(155, 127, 247, 0.7);
+  border-radius: 50%;
+  transform: rotate(-18deg);
+  -webkit-mask:
+    radial-gradient(circle 6px at 50% 50%, transparent 5.5px, #000 6px),
+    linear-gradient(to bottom, transparent 50%, #000 50%);
+  mask:
+    radial-gradient(circle 6px at 50% 50%, transparent 5.5px, #000 6px),
+    linear-gradient(to bottom, transparent 50%, #000 50%);
+}
+
+/* Moon riding the ring. First half of the path is the far side,
+   second half the near side. */
+.eyebrow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #e9e3ff;
+  box-shadow: 0 0 6px rgba(155, 127, 247, 0.9);
+  offset-path: path("M 1.06 13.55 A 11.5 3.5 -18 1 1 22.94 6.45 A 11.5 3.5 -18 1 1 1.06 13.55");
+  offset-rotate: 0deg;
+  offset-distance: 80%;
+  animation: moon-orbit 6s linear infinite;
+}
+
+@keyframes moon-orbit {
+  0%   { offset-distance: 0%; opacity: 0.5; scale: 0.75; }
+  14%  { opacity: 0.5; }
+  17%  { opacity: 0; }     /* behind the planet */
+  33%  { opacity: 0; }
+  36%  { opacity: 0.5; }
+  50%  { opacity: 0.5; scale: 0.75; }
+  58%  { opacity: 1; scale: 1; }   /* near side, crosses in front */
+  92%  { opacity: 1; scale: 1; }
+  100% { offset-distance: 100%; opacity: 0.5; scale: 0.75; }
+}
 .section-title {
+  max-width: 20ch;
   font-family: var(--f-display);
-  font-size: clamp(28px, 3.6vw, 42px);
-  font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  font-size: clamp(32px, 4.4vw, 52px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.032em;
   color: var(--ink);
+  text-wrap: balance;
 }
 
 .section-sub {
+  max-width: 60ch;
   font-size: 16px;
   color: var(--ink-2);
   line-height: 1.7;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .inline-link {

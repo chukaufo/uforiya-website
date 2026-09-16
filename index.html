@@ -43,7 +43,7 @@
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
 
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
   <!-- ═══════════════════════════════════════════
        STRUCTURED DATA
        The FAQ entries below mirror the visible FAQ section word for word.
@@ -325,18 +325,18 @@
       <div class="library-switch" role="tablist" aria-label="Library views">
         <button class="lib-tab is-active" role="tab" id="lib-tab-projects"
                 aria-controls="lib-panel-projects" aria-selected="true">
-          Projects <span class="lib-count">14</span>
+          Projects <span class="lib-count">16</span>
         </button>
         <button class="lib-tab" role="tab" id="lib-tab-tracks"
                 aria-controls="lib-panel-tracks" aria-selected="false" tabindex="-1">
-          Tracks <span class="lib-count">27</span>
+          Tracks <span class="lib-count">34</span>
         </button>
       </div>
 
       <figure class="showcase-item showcase-lead" role="tabpanel"
               id="lib-panel-projects" aria-labelledby="lib-tab-projects">
         <div class="showcase-frame">
-          <img src="images/dashboard.png" alt="The Uforiya library on the Projects tab, showing 14 projects as cover art cards labelled single, EP, album or playlist" loading="lazy" />
+          <img src="images/dashboard.png" alt="The Uforiya library on the Projects tab, showing 16 projects as cover art cards labelled single, EP, album or playlist" loading="lazy" />
         </div>
         <figcaption>
           <span class="shot-title">Projects</span>
@@ -347,7 +347,7 @@
       <figure class="showcase-item showcase-lead" role="tabpanel"
               id="lib-panel-tracks" aria-labelledby="lib-tab-tracks" hidden>
         <div class="showcase-frame">
-          <img src="images/dashboardtracks.png" alt="The Uforiya library on the Tracks tab, listing 27 tracks with duration, BPM and musical key in columns" loading="lazy" />
+          <img src="images/dashboardtracks.png" alt="The Uforiya library on the Tracks tab, listing 34 tracks with duration, BPM and musical key in columns" loading="lazy" />
         </div>
         <figcaption>
           <span class="shot-title">Tracks</span>
@@ -381,6 +381,46 @@
         <a href="https://uforiya.space" class="btn-primary" target="_blank" rel="noopener">
           Create your free account
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       COLLABORATION
+       Access and versions side by side: who is on the track, and what
+       they have put on it. Reuses the showcase pair layout and reveal.
+  ═══════════════════════════════════════════ -->
+  <section class="section collab" id="collab">
+    <div class="section-inner">
+      <div class="section-head section-head-wide">
+        <p class="eyebrow">Collaboration</p>
+        <h2 class="section-title">Everyone on the track, and exactly what they can touch</h2>
+        <p class="section-sub">
+          Invite by username, give each person a role and a credit, and every bounce they
+          upload lands under the same track with its stems grouped beneath it.
+        </p>
+      </div>
+
+      <div class="showcase-pair">
+        <figure class="showcase-item">
+          <div class="showcase-frame">
+            <img src="images/collab-uforiya.png" alt="The Uforiya access panel for a track, inviting a collaborator by username and listing members with their role, credit and a pending invite" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="shot-title">Access</span>
+            <span class="shot-desc">Editors, listeners and credits for everyone on the track.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-item">
+          <div class="showcase-frame">
+            <img src="images/versionsandstems.png" alt="The Uforiya versions panel for a track, with the current version expanded to show drums, synth and vocal stems and an earlier version below it" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="shot-title">Versions</span>
+            <span class="shot-desc">Every bounce side by side, stems sorted by instrument.</span>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
