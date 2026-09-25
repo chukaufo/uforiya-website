@@ -105,7 +105,20 @@
         <span class="btn-soon">Coming very soon</span>
       </div>
 
-      <p class="hero-note">Drop your email on the feedback form and we will tell you when it lands.</p>
+      <!-- Named before they see it. An unsigned installer triggers a red
+           SmartScreen panel that is designed to look alarming, and a producer
+           who was not warned reads it as malware and closes it. Being told
+           in advance turns it into something expected. -->
+      <div class="install-note">
+        <i class="ph-bold ph-shield-warning" aria-hidden="true"></i>
+        <div>
+          <strong>On Windows you will see a blue "Windows protected your PC" screen.</strong>
+          That is because the app is not code signed yet, not because anything is wrong with it.
+          Click <em>More info</em>, then <em>Run anyway</em>. On macOS there is no warning.
+        </div>
+      </div>
+
+      <p class="hero-note">Drop your email on the <a href="/#feedback" class="inline-link">feedback form</a> and we will tell you when it lands.</p>
     </div>
 
     <div class="hero-shot">
@@ -125,7 +138,7 @@
   ═══════════════════════════════════════════ -->
   <div class="audience-bar">
     <div class="section-inner">
-      <p class="audience-label">Run against one producer's 4.5GB library</p>
+      <p class="audience-label">Run against one producer's library — 4,817 audio files, 4.5GB</p>
       <div class="so-figures">
         <span><strong>443MB</strong> reclaimable</span>
         <span><strong>568</strong> files removable</span>
@@ -311,6 +324,13 @@
           <summary><span>What counts as a duplicate?</span></summary>
           <div class="faq-answer">
             <p>Identical file contents. Not similar sounds, not similar names — the same bytes. If two files differ at all, they are treated as different samples.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Windows says it protected my PC. Is this safe?</span></summary>
+          <div class="faq-answer">
+            <p>Yes. That screen appears for any Windows app without a code signing certificate, which costs a few hundred dollars a year and is not something a free tool has yet. It is not a virus scan result and it is not a warning about this app specifically. Click <em>More info</em> and then <em>Run anyway</em>. The source is public if you want to read it first, and macOS shows no warning at all because that version is signed.</p>
           </div>
         </details>
 
