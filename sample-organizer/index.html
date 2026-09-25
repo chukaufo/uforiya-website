@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Uforiya Sample Organizer | Find duplicate samples across your drum kits</title>
+  <meta name="description" content="A free desktop app that finds duplicate samples across your kit library and removes them safely. Local only, nothing leaves your machine." />
+  <link rel="canonical" href="https://uforiya.com/sample-organizer/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#050507" />
+
+  <link rel="icon" type="image/png" href="../images/ufo-faveicon.png" />
+  <link rel="apple-touch-icon" href="../images/ufo-faveicon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://uforiya.com/sample-organizer/" />
+  <meta property="og:title" content="Uforiya Sample Organizer" />
+  <meta property="og:description" content="Find duplicate samples across your drum kits and remove them safely. Local only, free." />
+  <meta property="og:image" content="https://uforiya.com/images/sample/uforiya-sample-icon.png" />
+  <meta property="og:site_name" content="Uforiya" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Uforiya Sample Organizer" />
+  <meta name="twitter:description" content="Find duplicate samples across your drum kits and remove them safely. Local only, free." />
+  <meta name="twitter:image" content="https://uforiya.com/images/sample/uforiya-sample-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+  <link rel="stylesheet" href="../style.css?v=8" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Uforiya Sample Organizer",
+    "url": "https://uforiya.com/sample-organizer/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Windows, macOS",
+    "description": "Finds duplicate samples across a producer's drum kit library and removes them safely. Runs entirely on your machine with no account and no upload.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CAD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <a href="#top" class="skip-link">Skip to content</a>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="../images/ufologo.png" alt="Uforiya" class="nav-logo" />
+        <span class="nav-wordmark">Uforiya</span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="https://uforiya.space" class="btn-open-app" target="_blank" rel="noopener">
+          Open app
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+       Icon leads, because the app is a thing you install rather than a
+       page you open. The status chip says "soon" rather than promising a
+       download that is not up yet.
+  ═══════════════════════════════════════════ -->
+  <header class="hero so-hero" id="top">
+    <div class="hero-inner">
+
+      <img src="../images/sample/uforiya-sample-icon.png" alt="" class="so-icon" width="104" height="104" />
+      <span class="status-readout status-readout-static">
+        <span class="readout-sweep" aria-hidden="true"></span>
+        <span class="readout-body">
+          <span class="readout-ping" aria-hidden="true"></span>
+          <span class="readout-stage">DESKTOP</span>
+          <span class="readout-text">Windows and macOS, coming very soon</span>
+        </span>
+      </span>
+
+      <h1 class="hero-title">Sample Organizer</h1>
+
+      <p class="hero-sub">
+        The same sample is sitting in four of your kits. This finds every copy and clears
+        out the extras, without you having to open a single folder.
+      </p>
+      <p class="hero-sub hero-sub-detail">
+        Free, runs on your own machine, and nothing about your library ever leaves it.
+      </p>
+
+      <div class="hero-cta">
+        <span class="btn-soon">Coming very soon</span>
+      </div>
+
+      <p class="hero-note">Drop your email on the feedback form and we will tell you when it lands.</p>
+    </div>
+
+    <div class="hero-shot">
+      <img
+        src="../images/sample/mostcopies.png"
+        alt="The Sample Organizer listing duplicate groups, the largest with ten copies of the same sample"
+        class="hero-shot-img"
+        width="2420" height="1512"
+      />
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       THE NUMBERS
+       Real figures from a real library. A claim like this is only worth
+       making if it is a measurement, so it is labelled as one.
+  ═══════════════════════════════════════════ -->
+  <div class="audience-bar">
+    <div class="section-inner">
+      <p class="audience-label">Run against one producer's 4.5GB library</p>
+      <div class="so-figures">
+        <span><strong>443MB</strong> reclaimable</span>
+        <span><strong>568</strong> files removable</span>
+        <span><strong>408</strong> duplicate groups</span>
+        <span><strong>1 second</strong> to scan</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       WHY
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="why">
+    <div class="section-inner">
+      <div class="section-head section-head-wide">
+        <p class="eyebrow">The problem</p>
+        <h2 class="section-title">Kits repeat each other, and filenames never tell you</h2>
+        <p class="section-sub">
+          Buy enough drum kits and the same sounds start showing up in several of them, renamed
+          every time. One kit turns out to contain another kit whole. You cannot find that by
+          reading folder names, and no producer is going to listen through 5,000 one-shots to
+          check.
+        </p>
+      </div>
+
+      <div class="features-grid">
+
+        <article class="feature-card revealed">
+          <i class="ph-bold ph-fingerprint feature-icon" aria-hidden="true"></i>
+          <h3>Matches contents, not names</h3>
+          <p>Two files are duplicates when their bytes are identical, whatever they are called. <em>Uzi 808.wav</em> and <em>808 [Spinz].wav</em> can be the same sound, and this catches it.</p>
+        </article>
+
+        <article class="feature-card revealed">
+          <i class="ph-bold ph-target feature-icon" aria-hidden="true"></i>
+          <h3>Exact only, never similar</h3>
+          <p>No similarity scoring and no thresholds. A "97% match" is the one thing you cannot act on when the decision is whether to delete a sound.</p>
+        </article>
+
+        <article class="feature-card revealed">
+          <i class="ph-bold ph-lightning feature-icon" aria-hidden="true"></i>
+          <h3>Fast, then instant</h3>
+          <p>A full first scan of 4,800 samples takes about a second. After that it only looks at what changed, so reopening it costs nothing.</p>
+        </article>
+
+        <article class="feature-card revealed">
+          <i class="ph-bold ph-hard-drives feature-icon" aria-hidden="true"></i>
+          <h3>Stays on your machine</h3>
+          <p>No account, no upload, no server. Your library is never sent anywhere, because there is nowhere for it to be sent.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SAFETY
+       The part that decides whether a producer trusts it, so it gets its
+       own section rather than a line in a feature grid.
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="safety">
+    <div class="section-inner">
+      <div class="section-head section-head-wide">
+        <p class="eyebrow">Safety</p>
+        <h2 class="section-title">Nothing is deleted without two deliberate actions</h2>
+        <p class="section-sub">
+          Removing a sample you cannot get back is worse than keeping a duplicate forever, so
+          the app is built to make that impossible by accident.
+        </p>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-index">01</span>
+          <div class="step-body">
+            <h3>One copy of everything always survives</h3>
+            <p>Any selection that would empty a group is refused outright, and the refusal names the file. That check runs in the engine, not the interface, so no click can get around it.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-index">02</span>
+          <div class="step-body">
+            <h3>Listen before you decide</h3>
+            <p>Every copy has a play button next to it. A byte-identical match is only reassuring once you have heard that both files are the sound you think they are.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-index">03</span>
+          <div class="step-body">
+            <h3>Removals are staged, not deleted</h3>
+            <p>Approved files move to a holding area on your disk. They have left your library, they are still on your machine, and one button puts every one of them back.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-index">04</span>
+          <div class="step-body">
+            <h3>Permanent deletion is its own decision</h3>
+            <p>It only happens when you choose it, on a batch you name. No timer, no cleanup on launch, no side effect of anything else.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SHOTS
+  ═══════════════════════════════════════════ -->
+  <section class="section showcase" id="inside">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow">Inside the app</p>
+        <h2 class="section-title">What it looks like working</h2>
+      </div>
+
+      <figure class="showcase-item showcase-lead revealed">
+        <div class="showcase-frame">
+          <img src="../images/sample/movetoqurantine.png" alt="A duplicate group expanded to show two identical samples in different kits, with one marked to keep and the other selected for removal" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="shot-title">Review</span>
+          <span class="shot-desc">Every copy with its full path and size. One is suggested to keep; the rest are yours to approve.</span>
+        </figcaption>
+      </figure>
+
+      <div class="showcase-pair">
+        <figure class="showcase-item revealed">
+          <div class="showcase-frame">
+            <img src="../images/sample/quarantine.png" alt="The quarantine tab listing two staged batches with put back and delete permanently buttons" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="shot-title">Quarantine</span>
+            <span class="shot-desc">Removed files wait here until you say otherwise.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="showcase-item revealed">
+          <div class="showcase-frame">
+            <img src="../images/sample/no-duplicates.png" alt="The Sample Organizer showing no duplicates found across 4,249 unique samples" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="shot-title">Done</span>
+            <span class="shot-desc">What a clean library looks like afterwards.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════════ -->
+  <section class="section faq" id="faq">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2 class="section-title">Before you install it</h2>
+      </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary><span>Does it need a Uforiya account?</span></summary>
+          <div class="faq-answer">
+            <p>No. It has no account, no login and no connection to the Uforiya platform at all. It is a separate desktop app that happens to come from the same place.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Does my library get uploaded anywhere?</span></summary>
+          <div class="faq-answer">
+            <p>Never. Every scan, every comparison and every file move happens on your own machine. The app works with your internet off.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Can it delete something I wanted to keep?</span></summary>
+          <div class="faq-answer">
+            <p>Removals go to a holding area first, not to the bin, and one copy of every sample is always kept no matter what you select. Permanent deletion is a separate action on a batch you choose.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>What counts as a duplicate?</span></summary>
+          <div class="faq-answer">
+            <p>Identical file contents. Not similar sounds, not similar names — the same bytes. If two files differ at all, they are treated as different samples.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Which platforms?</span></summary>
+          <div class="faq-answer">
+            <p>Windows and macOS at launch, Linux after. It is being tested with producers now.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>What does it cost?</span></summary>
+          <div class="faq-answer">
+            <p>Nothing.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FINAL CTA
+  ═══════════════════════════════════════════ -->
+  <section class="final-cta" data-blackhole-anchor>
+    <div class="section-inner final-cta-inner">
+      <img src="../images/sample/uforiya-sample-icon.png" alt="" class="cta-logo" aria-hidden="true" />
+      <h2>Get your kits down to what you actually have.</h2>
+      <p>
+        Free, local, and safe by design. Nearly ready.
+      </p>
+      <span class="btn-soon btn-soon-large">Coming very soon</span>
+      <p class="cta-sub">uforiya.com/sample-organizer</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <a href="/" class="footer-brand">
+          <img src="../images/ufologo.png" alt="Uforiya" class="footer-logo" />
+          <span>Uforiya</span>
+        </a>
+        <p class="footer-tagline">Every track. Every version. Every collaborator. Nothing lost.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="https://uforiya.space" target="_blank" rel="noopener">Open app</a>
+        <a href="https://uforiya.space/tools" target="_blank" rel="noopener">Audio tools</a>
+        <a href="/#feedback">Contact</a>
+        <a href="/privacy/index.html">Privacy Policy</a>
+        <a href="/terms/index.html">Terms of Service</a>
+      </nav>
+
+      <p class="footer-copy">&copy; 2026 Uforiya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../stars.js?v=2"></script>
+  <script>
+    /* Navbar scroll state — same behaviour as the landing page */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 24);
+    }, { passive: true });
+
+    /* FAQ: one open at a time */
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        faqItems.forEach(other => { if (other !== item) other.open = false; });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "releases": [
+    {
+      "version": "0.1.0",
+      "date": "2026-09-25",
+      "notes": "First release. Finds byte-identical duplicate samples across your kits and stages removals so nothing is deleted outright.",
+      "changes": [
+        "Scans a sample library and finds duplicates by file contents, not filenames",
+        "Search by sample name, and sort by space reclaimable, copy count or file size",
+        "Play any copy before deciding, with the suggested keep marked",
+        "Removals staged in quarantine and restorable; permanent deletion is a separate action",
+        "Windows and macOS"
+      ]
+    }
+  ]
+}

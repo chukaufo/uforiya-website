@@ -1,0 +1,5 @@
+{
+  "version": "0.1.0",
+  "notes": "First release. Finds byte-identical duplicate samples across your kits and stages removals so nothing is deleted outright.",
+  "url": "https://uforiya.com/sample-organizer"
+}
