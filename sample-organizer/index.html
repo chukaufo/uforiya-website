@@ -41,7 +41,7 @@
     "name": "Uforiya Sample Organizer",
     "url": "https://uforiya.com/sample-organizer/",
     "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Windows, macOS",
+    "operatingSystem": "Windows",
     "description": "Finds duplicate samples across a producer's drum kit library and removes them safely. Runs entirely on your machine with no account and no upload.",
     "offers": {
       "@type": "Offer",
@@ -75,8 +75,8 @@
   <!-- ═══════════════════════════════════════════
        HERO
        Icon leads, because the app is a thing you install rather than a
-       page you open. The status chip says "soon" rather than promising a
-       download that is not up yet.
+       page you open. The download is the first thing after the pitch,
+       with the macOS build named as coming rather than hidden.
   ═══════════════════════════════════════════ -->
   <header class="hero so-hero" id="top">
     <div class="hero-inner">
@@ -87,7 +87,7 @@
         <span class="readout-body">
           <span class="readout-ping" aria-hidden="true"></span>
           <span class="readout-stage">DESKTOP</span>
-          <span class="readout-text">Windows and macOS, coming very soon</span>
+          <span class="readout-text">Windows available now, macOS coming soon</span>
         </span>
       </span>
 
@@ -102,9 +102,14 @@
       </p>
 
       <div class="hero-cta">
-        <span class="btn-soon">Coming very soon</span>
+        <a href="https://github.com/chukaufo/uforiya-sample-organizer/releases/download/v0.1.0/UforiyaSampleOrganizer-Setup-0.1.0.exe"
+           class="btn-primary">
+          <i class="ph-bold ph-windows-logo" aria-hidden="true"></i>
+          Download for Windows
+        </a>
+        <span class="btn-soon">macOS coming soon</span>
       </div>
-
+      <p class="hero-note" style="margin-top:12px">Version 0.1.0 &middot; 148 MB &middot; Free</p>
       <!-- Named before they see it. An unsigned installer triggers a red
            SmartScreen panel that is designed to look alarming, and a producer
            who was not warned reads it as malware and closes it. Being told
@@ -114,11 +119,11 @@
         <div>
           <strong>On Windows you will see a blue "Windows protected your PC" screen.</strong>
           That is because the app is not code signed yet, not because anything is wrong with it.
-          Click <em>More info</em>, then <em>Run anyway</em>. On macOS there is no warning.
+          Click <em>More info</em>, then <em>Run anyway</em>.
         </div>
       </div>
 
-      <p class="hero-note">Drop your email on the <a href="/#feedback" class="inline-link">feedback form</a> and we will tell you when it lands.</p>
+      <p class="hero-note">Issues or questions: <a href="mailto:support@uforiya.com" class="inline-link">support@uforiya.com</a></p>
     </div>
 
     <div class="hero-shot">
@@ -330,14 +335,14 @@
         <details class="faq-item">
           <summary><span>Windows says it protected my PC. Is this safe?</span></summary>
           <div class="faq-answer">
-            <p>Yes. That screen appears for any Windows app without a code signing certificate, which costs a few hundred dollars a year and is not something a free tool has yet. It is not a virus scan result and it is not a warning about this app specifically. Click <em>More info</em> and then <em>Run anyway</em>. The source is public if you want to read it first, and macOS shows no warning at all because that version is signed.</p>
+            <p>Yes. That screen appears for any Windows app without a code signing certificate, which costs a few hundred dollars a year and is not something a free tool has yet. It is not a virus scan result and it is not a warning about this app specifically. Click <em>More info</em> and then <em>Run anyway</em>. The <a href="https://github.com/chukaufo/uforiya-sample-organizer" class="inline-link" target="_blank" rel="noopener">source is public</a> if you want to read it first.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary><span>Which platforms?</span></summary>
           <div class="faq-answer">
-            <p>Windows and macOS at launch, Linux after. It is being tested with producers now.</p>
+            <p>Windows now. macOS is next, Linux after that.</p>
           </div>
         </details>
 
@@ -345,6 +350,13 @@
           <summary><span>What does it cost?</span></summary>
           <div class="faq-answer">
             <p>Nothing.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>Something went wrong. Who do I tell?</span></summary>
+          <div class="faq-answer">
+            <p><a href="mailto:support@uforiya.com" class="inline-link">support@uforiya.com</a>. If it is about a specific sample or kit, the file path helps.</p>
           </div>
         </details>
 
@@ -360,9 +372,13 @@
       <img src="../images/sample/uforiya-sample-icon.png" alt="" class="cta-logo" aria-hidden="true" />
       <h2>Get your kits down to what you actually have.</h2>
       <p>
-        Free, local, and safe by design. Nearly ready.
+        Free, local, and safe by design.
       </p>
-      <span class="btn-soon btn-soon-large">Coming very soon</span>
+      <a href="https://github.com/chukaufo/uforiya-sample-organizer/releases/download/v0.1.0/UforiyaSampleOrganizer-Setup-0.1.0.exe"
+         class="btn-primary btn-primary-large">
+        <i class="ph-bold ph-windows-logo" aria-hidden="true"></i>
+        Download for Windows
+      </a>
       <p class="cta-sub">uforiya.com/sample-organizer</p>
     </div>
   </section>
