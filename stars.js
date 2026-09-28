@@ -30,7 +30,16 @@ const SCATTER_FORCE = 15;         // click impulse strength
 /* Musical notes: a fixed slice of the field renders as glyphs instead of
    dots. Kept as a plain constant, no UI control. */
 const NOTE_CHANCE = 0.11;
+const NOTE_CHANCE_NARROW = 0.04;
 const NOTE_GLYPHS = ["\u266A", "\u266B"]; // ♪ eighth note, ♫ beamed eighth notes
+
+/* A phone has no negative space for the glyphs to sit in — at 390px wide a
+   note lands on the body copy rather than beside it. The dots still carry
+   the field, so the notes thin out rather than disappear.
+   680px matches the page's own breakpoint in style.css. */
+function noteChance() {
+  return canvas.width <= 680 ? NOTE_CHANCE_NARROW : NOTE_CHANCE;
+}
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -104,9 +113,13 @@ function getStarColor() {
 
 function createStars() {
   stars = [];
+  // Read once per rebuild rather than per star — createStars runs on every
+  // resize, so a rotation re-rolls the field at the new width anyway.
+  const chance = noteChance();
+
   for (let i = 0; i < STAR_COUNT; i++) {
     const isBright = Math.random() < 0.18;
-    const isNote = Math.random() < NOTE_CHANCE;
+    const isNote = Math.random() < chance;
     const depth = Math.random() * 0.85 + 0.15;
 
     // Depth contrast is exaggerated versus a flat scatter: near stars (high
