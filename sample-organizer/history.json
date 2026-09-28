@@ -1,6 +1,18 @@
 {
   "releases": [
     {
+      "version": "0.2.0",
+      "date": "2026-09-28",
+      "notes": "Fixes permanent delete failing silently. If a delete can't finish, the app now says which file blocked it and lets you open the folder to finish the job yourself.",
+      "changes": [
+        "Failed deletes keep the batch listed and show a red notice naming the file that blocked it",
+        "Open folder button on every quarantine batch, plus Open quarantine folder beside the search box",
+        "Deleting a large batch shows a progress screen so it doesn't look frozen",
+        "Read-only files and very long file paths are handled on Windows",
+        "Windows"
+      ]
+    },
+    {
       "version": "0.1.0",
       "date": "2026-09-26",
       "notes": "First release. Finds byte-identical duplicate samples across your kits and stages removals so nothing is deleted outright.",

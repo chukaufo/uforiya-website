@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
-  "notes": "First release. Finds byte-identical duplicate samples across your kits and stages removals so nothing is deleted outright.",
+  "version": "0.2.0",
+  "notes": "Fixes permanent delete failing silently. If a delete can't finish, the app now says which file blocked it and lets you open the folder to finish the job yourself.",
   "url": "https://uforiya.com/sample-organizer"
 }
