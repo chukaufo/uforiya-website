@@ -1,6 +1,16 @@
 {
   "releases": [
     {
+      "version": "0.3.0",
+      "date": "2026-09-30",
+      "notes": "Fixes duplicates going undetected. If you added a kit that duplicated samples the app had already scanned, those copies were never reported. Press Rescan once after updating and they will show up.",
+      "changes": [
+        "Rescan now finds duplicates of samples that were already scanned in an earlier session",
+        "Permanently deleting a batch clears its files from the index instead of leaving stale entries behind",
+        "Windows"
+      ]
+    },
+    {
       "version": "0.2.0",
       "date": "2026-09-28",
       "notes": "Fixes permanent delete failing silently. If a delete can't finish, the app now says which file blocked it and lets you open the folder to finish the job yourself.",

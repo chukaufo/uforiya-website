@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
-  "notes": "Fixes permanent delete failing silently. If a delete can't finish, the app now says which file blocked it and lets you open the folder to finish the job yourself.",
+  "version": "0.3.0",
+  "notes": "Fixes duplicates going undetected. If you added a kit that duplicated samples the app had already scanned, those copies were never reported. Press Rescan once after updating.",
   "url": "https://uforiya.com/sample-organizer"
 }
