@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Uforiya — How It Works: Rules & Manual</title>
-  <meta name="description" content="The complete guide to projects, tracks, versions, collaborators, roles and visibility on Uforiya." />
+  <meta name="description" content="The complete guide to projects, tracks, versions, stems, collaborators, credits, roles and visibility on Uforiya." />
 
   <link rel="icon" type="image/png" href="../images/ufologo.png" />
   <link rel="apple-touch-icon" href="../images/ufologo.png" />
@@ -161,13 +161,20 @@
         <li><span class="toc-num">01</span><a href="#uploads">Uploads &amp; Projects</a></li>
         <li><span class="toc-num">02</span><a href="#collaborators">Collaborators: Two Levels</a></li>
         <li><span class="toc-num">03</span><a href="#project-roles">Project Roles</a></li>
-        <li><span class="toc-num">04</span><a href="#track-roles">Track Roles &amp; Credits</a></li>
-        <li><span class="toc-num">05</span><a href="#versions">Versions</a></li>
-        <li><span class="toc-num">06</span><a href="#visibility">Visibility</a></li>
-        <li><span class="toc-num">07</span><a href="#ownership">Track Ownership &amp; Standalone Tracks</a></li>
-        <li><span class="toc-num">08</span><a href="#accounts">Accounts</a></li>
-        <li><span class="toc-num">09</span><a href="#subscriptions">Subscriptions &amp; Limits</a></li>
-        <li><span class="toc-num">10</span><a href="#feedback">Feedback &amp; Rule Reviews</a></li>
+        <li><span class="toc-num">04</span><a href="#track-roles">Track Roles</a></li>
+        <li><span class="toc-num">05</span><a href="#credits">Credits</a></li>
+        <li><span class="toc-num">06</span><a href="#versions">Versions</a></li>
+        <li><span class="toc-num">07</span><a href="#stems">Stems</a></li>
+        <li><span class="toc-num">08</span><a href="#lyrics">Lyrics</a></li>
+        <li><span class="toc-num">09</span><a href="#visibility">Visibility</a></li>
+        <li><span class="toc-num">10</span><a href="#share-links">Share Links</a></li>
+        <li><span class="toc-num">11</span><a href="#downloads">Downloads</a></li>
+        <li><span class="toc-num">12</span><a href="#ownership">Track Ownership &amp; Standalone Tracks</a></li>
+        <li><span class="toc-num">13</span><a href="#deleting">Deleting Things</a></li>
+        <li><span class="toc-num">14</span><a href="#tools">Free Audio Tools</a></li>
+        <li><span class="toc-num">15</span><a href="#accounts">Accounts</a></li>
+        <li><span class="toc-num">16</span><a href="#subscriptions">Plans &amp; Storage</a></li>
+        <li><span class="toc-num">17</span><a href="#feedback">Feedback &amp; Rule Reviews</a></li>
       </ul>
     </nav>
 
@@ -200,7 +207,7 @@
           <i class="ph-bold ph-music-note rule-card-icon"></i>
           <div class="rule-card-body">
             <h4>Uploading a track</h4>
-            <p><strong>Title and visibility are mandatory</strong> when uploading a track. All other metadata such as featuring artists, BPM and key are optional. If the project is private, the track will be private regardless of the visibility you set.</p>
+            <p><strong>Title and visibility are mandatory</strong> when uploading a track. Everything else is optional. Supported formats are MP3, WAV, FLAC, AIFF and M4A.</p>
           </div>
         </div>
         <div class="rule-card">
@@ -213,7 +220,7 @@
       </div>
       <div class="callout callout-info">
         <i class="ph-bold ph-info"></i>
-        <p>BPM and key are detected automatically on upload. You can override either value manually if the detection is incorrect.</p>
+        <p>BPM, key, duration and format are detected automatically on upload. You can override BPM and key manually if the detection is incorrect.</p>
       </div>
     </section>
 
@@ -235,20 +242,27 @@
           <i class="ph-bold ph-buildings rule-card-icon"></i>
           <div class="rule-card-body">
             <h4>Project-level collaborators</h4>
-            <p>Managed from Project Settings. Only the project owner can manage project collaborators. Project collaborators have access to <strong>all tracks in the project</strong> regardless of individual track visibility settings. Project editors have the same capabilities as a track editor on every track in the project.</p>
+            <p>Managed from Project Settings. Only the project owner can invite, remove or change the role of a project collaborator. Project collaborators have access to every track in the project, and project editors can do anything a track editor can do on those tracks.</p>
           </div>
         </div>
         <div class="rule-card">
           <i class="ph-bold ph-music-notes rule-card-icon"></i>
           <div class="rule-card-body">
             <h4>Track-level collaborators</h4>
-            <p>Managed from Track Settings by the track owner. Track collaborators are separate from project collaborators. They can view project collaborators from Project Settings but cannot manage them.</p>
+            <p>Managed from Track Settings by the track owner or the project owner. Track collaborators are separate from project collaborators and only have access to the track they were invited to.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-eye-slash rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Who can see the collaborator list</h4>
+            <p>The collaborator list shows who holds which role and who has an invite pending. It is only visible to the owner and to people who were actually invited to the track or project. Someone who arrived through a share link cannot see it.</p>
           </div>
         </div>
       </div>
       <div class="callout callout-purple">
         <i class="ph-bold ph-arrows-left-right"></i>
-        <p>Both track and project collaborators can <strong>view</strong> project collaborators from Project Settings. Only the project owner can <strong>manage</strong> them.</p>
+        <p>If you want people to see who worked on a track without showing them the access list, that is what <strong>Credits</strong> is for. See Section 05.</p>
       </div>
     </section>
 
@@ -269,21 +283,21 @@
         <tbody>
           <tr>
             <td><span class="role-label">Owner</span><span class="role-badge badge-owner">Owner</span></td>
-            <td>Full control. Can invite and remove collaborators, delete the project, change project visibility, edit all project and track data, and upload new versions of any track. There is one owner per project.</td>
+            <td>Full control. Can invite and remove collaborators, delete the project, change project visibility, edit project details, and upload new versions of any track in the project. There is one owner per project.</td>
           </tr>
           <tr>
             <td><span class="role-label">Editor</span><span class="role-badge badge-editor">Editor</span></td>
-            <td>Can upload tracks to the project and retain ownership of those tracks. Has the same capabilities as a track editor on all tracks in the project. Can edit some track data as specified in the app. Cannot invite or remove collaborators, delete the project, or change project visibility.</td>
+            <td>Can upload tracks to the project and keeps ownership of those tracks. Has the same capabilities as a track editor on every track in the project. Cannot invite or remove collaborators, delete the project, or change project visibility.</td>
           </tr>
           <tr>
             <td><span class="role-label">Listener</span><span class="role-badge badge-listener">Listener</span></td>
-            <td>Listen access only. Can stream all tracks in the project but only the current version of each track. Cannot upload, edit or manage anything.</td>
+            <td>Listen access only. Can stream the tracks in the project, current version only. Cannot upload, edit or manage anything.</td>
           </tr>
         </tbody>
       </table>
       <div class="callout callout-info">
         <i class="ph-bold ph-info"></i>
-        <p>Collaborators are invited by <strong>username or email</strong>. You can invite someone who does not yet have a Uforiya account by email; they will receive an invitation to join.</p>
+        <p>Project collaborators are invited by <strong>username or email</strong>. You can invite someone who does not yet have a Uforiya account by email; they will receive an invitation to join.</p>
       </div>
     </section>
 
@@ -294,11 +308,70 @@
       <div class="section-header">
         <span class="section-num">04</span>
         <i class="ph-bold ph-vinyl-record section-icon"></i>
-        <h2 class="section-title">Track Roles &amp; Credits</h2>
+        <h2 class="section-title">Track Roles</h2>
       </div>
       <div class="prose">
-        <p>At the track level, collaborators are also either <strong>Editors</strong> or <strong>Listeners</strong>. All track editors have the same permissions; there is no permission difference between them at this level.</p>
-        <p>Each editor on a track is assigned a <strong>credit role</strong> to document their contribution. Since anyone with access to the track can see all editors and their roles, these serve as credits for the record.</p>
+        <p>At the track level, collaborators are also either <strong>Editors</strong> or <strong>Listeners</strong>. All track editors have the same permissions; there is no permission difference between them.</p>
+        <p>When you invite an editor you also choose what they did on the track — producer, engineer, songwriter and so on. That choice is their <strong>credit</strong>, and it appears in the track's Credits. It does not change what they can do.</p>
+      </div>
+      <table class="role-table">
+        <thead><tr><th>Role</th><th>Permissions</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="role-label">Owner</span><span class="role-badge badge-owner">Owner</span></td>
+            <td>Full control over the track. Can invite and remove track collaborators, mark a version as current, edit track details and credited artists, set track visibility, manage the share link, and decide whether editors can download.</td>
+          </tr>
+          <tr>
+            <td><span class="role-label">Editor</span><span class="role-badge badge-editor">Editor</span></td>
+            <td>Can upload new versions and stems from Track Settings, and update BPM and key. All editors have the same permissions regardless of their credit.</td>
+          </tr>
+          <tr>
+            <td><span class="role-label">Listener</span><span class="role-badge badge-listener">Listener</span></td>
+            <td>Listen access only. Can stream the current version of the track and see its credits. Cannot upload, edit, download or manage anything.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout callout-purple">
+        <i class="ph-bold ph-star"></i>
+        <p><strong>Credits are for the record, not for access.</strong> A producer and an engineer on the same track have identical editing capabilities. The credit says what they did; the role says what they can do.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 05 -->
+    <section class="rules-section" id="credits">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <i class="ph-bold ph-scroll section-icon"></i>
+        <h2 class="section-title">Credits</h2>
+      </div>
+      <div class="prose">
+        <p>Every track has a Credits tab listing everyone who worked on it, grouped by what they did. Credits are the liner notes: <strong>anyone who can hear the track can see them</strong>, including someone who opened it from a share link with no account.</p>
+        <p>Credits come from three places and they all appear in the same list.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-microphone-stage rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Credited artists</h4>
+            <p>The artist line under the track title. It starts with the person who uploaded the track, and the track owner can add or remove names. <strong>A track must always have at least one credited artist</strong>, so you can remove your own name only once someone else is credited.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-users rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Collaborators on Uforiya</h4>
+            <p>Every editor you invite is credited by what you invited them as. Change their credit in Collaborators and the Credits list updates with it. Listeners are not credited — they did not work on the track.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-user-plus rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>People without a Uforiya account</h4>
+            <p>The track owner can add anyone by name from the Credits tab, with the role they played. Use this for people who are not on the platform. If they do have an account, invite them as a collaborator instead so they get access too.</p>
+          </div>
+        </div>
       </div>
       <div class="credit-roles">
         <span class="credit-role-tag">Artist</span>
@@ -310,35 +383,18 @@
         <span class="credit-role-tag">Featured Artist</span>
         <span class="credit-role-tag">Other</span>
       </div>
-      <table class="role-table">
-        <thead><tr><th>Role</th><th>Permissions</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><span class="role-label">Owner</span><span class="role-badge badge-owner">Owner</span></td>
-            <td>Full control over the track. Can invite and remove track collaborators, mark a version as current, edit all track data, set track visibility, and remove the track from a project if the project is not owned by them.</td>
-          </tr>
-          <tr>
-            <td><span class="role-label">Editor</span><span class="role-badge badge-editor">Editor</span></td>
-            <td>Can upload new versions of the track from Track Settings and edit some track data as specified in the app. All editors have the same permissions regardless of their assigned credit role.</td>
-          </tr>
-          <tr>
-            <td><span class="role-label">Listener</span><span class="role-badge badge-listener">Listener</span></td>
-            <td>Listen access only. Can stream the current version of the track. Cannot upload, edit or manage anything.</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="callout callout-purple">
-        <i class="ph-bold ph-star"></i>
-        <p><strong>Credit roles are for documentation, not permissions.</strong> A producer and an engineer on the same track have identical editing capabilities; the credit role records their contribution to the record, not their level of access.</p>
+      <div class="callout callout-info">
+        <i class="ph-bold ph-info"></i>
+        <p>On a project page, a track only shows its own artist line when it differs from the project's. If the whole project is by one artist, the header already says so.</p>
       </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <!-- 05 -->
+    <!-- 06 -->
     <section class="rules-section" id="versions">
       <div class="section-header">
-        <span class="section-num">05</span>
+        <span class="section-num">06</span>
         <i class="ph-bold ph-git-branch section-icon"></i>
         <h2 class="section-title">Versions</h2>
       </div>
@@ -346,6 +402,13 @@
         <p>Versions are the core of Uforiya. Every time an audio file is uploaded for a track it is saved as a new version. Nothing is overwritten. Your full version history is always there.</p>
       </div>
       <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-infinity rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Versions are unlimited on every plan</h4>
+            <p>There is no cap on how many versions a track can have, on Free or on Pro. The only ceiling is your storage. See Section 16.</p>
+          </div>
+        </div>
         <div class="rule-card">
           <i class="ph-bold ph-gear rule-card-icon"></i>
           <div class="rule-card-body">
@@ -370,75 +433,242 @@
         <div class="rule-card">
           <i class="ph-bold ph-clock-counter-clockwise rule-card-icon"></i>
           <div class="rule-card-body">
-            <h4>Nothing is deleted</h4>
-            <p>Every version you upload stays on the platform. You can go back to any version at any time. Old versions are never removed when a new one is uploaded.</p>
-          </div>
-        </div>
-        <div class="rule-card">
-          <i class="ph-bold ph-stack rule-card-icon"></i>
-          <div class="rule-card-body">
-            <h4>Version limits are based on the track owner's plan</h4>
-            <p>The number of versions allowed per track is determined by the <strong>track owner's plan</strong>, not the uploader's plan. See Section 09 for plan limits.</p>
+            <h4>Nothing is overwritten</h4>
+            <p>Every version you upload stays on the platform. You can go back to any version at any time. Uploading a new one never removes an old one.</p>
           </div>
         </div>
       </div>
       <div class="callout callout-info">
         <i class="ph-bold ph-info"></i>
-        <p>As long as you have not reached your plan's version limit for a track, you can keep uploading new versions. If you reach the limit, you will need to upgrade your plan to continue.</p>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- 06 -->
-    <section class="rules-section" id="visibility">
-      <div class="section-header">
-        <span class="section-num">06</span>
-        <i class="ph-bold ph-eye section-icon"></i>
-        <h2 class="section-title">Visibility</h2>
-      </div>
-      <div class="prose">
-        <p>Visibility is controlled at two levels: project and track. The project's visibility sets the boundaries. Track visibility cannot exceed what the project allows.</p>
-      </div>
-      <div class="rule-cards">
-        <div class="rule-card">
-          <i class="ph-bold ph-lock-simple rule-card-icon"></i>
-          <div class="rule-card-body">
-            <h4>Private project</h4>
-            <p>Only invited collaborators can access the project. All tracks inside a private project are private regardless of their individual visibility settings. No exceptions.</p>
-          </div>
-        </div>
-        <div class="rule-card">
-          <i class="ph-bold ph-globe rule-card-icon"></i>
-          <div class="rule-card-body">
-            <h4>Public project</h4>
-            <p>Any Uforiya user with the project link can view the project. When a project is public, each track owner can set their track's visibility independently; some tracks can be private while others are public.</p>
-          </div>
-        </div>
-        <div class="rule-card">
-          <i class="ph-bold ph-sliders-horizontal rule-card-icon"></i>
-          <div class="rule-card-body">
-            <h4>Who controls visibility</h4>
-            <p>The <strong>project owner</strong> sets and changes project visibility. The <strong>track owner</strong> sets and changes the visibility of their own tracks within the bounds of the project's visibility.</p>
-          </div>
-        </div>
-      </div>
-      <div class="callout callout-purple">
-        <i class="ph-bold ph-warning"></i>
-        <p><strong>Track visibility cannot exceed project visibility.</strong> If a project is private, all tracks inside it are private regardless of individual track settings. Making a project public gives each track owner the ability to choose their track's visibility independently.</p>
-      </div>
-      <div class="callout callout-info">
-        <i class="ph-bold ph-user-circle"></i>
-        <p>A Uforiya account is required to access any content on the platform, including public projects.</p>
+        <p>Versions do not count toward your track limit. A track with twenty versions is still one track.</p>
       </div>
     </section>
 
     <div class="section-divider"></div>
 
     <!-- 07 -->
-    <section class="rules-section" id="ownership">
+    <section class="rules-section" id="stems">
       <div class="section-header">
         <span class="section-num">07</span>
+        <i class="ph-bold ph-faders section-icon"></i>
+        <h2 class="section-title">Stems</h2>
+      </div>
+      <div class="prose">
+        <p>Stems are the individual parts of a mix — drums, bass, vocals, whatever you want to keep separate. On Uforiya stems belong to a <strong>version</strong>, not to the track as a whole, so you always know which mix a given set of stems came from.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-stack-simple rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Stems attach to a version</h4>
+            <p>Open a version in Track Settings and add stems to it. Each stem gets a name and a category so the list stays readable.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-copy rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Carry stems into a new version</h4>
+            <p>When you upload a new version you can bring stems from an earlier one across instead of uploading them again. Nothing is duplicated in storage when you do.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-lock-simple rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Who can see stems</h4>
+            <p>Only owners and editors. Listeners cannot see or download stems, and neither can anyone who opened the track from a share link.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-file-audio rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Size limit</h4>
+            <p><strong>500MB per stem.</strong> Stems count toward the storage of whoever uploaded them, same as anything else.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <i class="ph-bold ph-info"></i>
+        <p>If you upload the same stem file twice to the same track, Uforiya recognises it and links the existing file rather than storing it again.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 08 -->
+    <section class="rules-section" id="lyrics">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <i class="ph-bold ph-text-aa section-icon"></i>
+        <h2 class="section-title">Lyrics</h2>
+      </div>
+      <div class="prose">
+        <p>Every track can have lyrics attached to it. Owners and editors can write and edit them at any time.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-pencil-simple rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Who can write them</h4>
+            <p>The track owner, the project owner, and any editor. Lyrics belong to the track, not to a single version, so they stay put when you upload a new mix.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-eye rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Who can read them</h4>
+            <p>Owners and editors always can. <strong>The track owner decides whether listeners see them</strong>, with a switch in Access. It is off by default.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-purple">
+        <i class="ph-bold ph-warning"></i>
+        <p>Showing lyrics to listeners does not change who can reach the track. It only decides what the people who already have access can read.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 09 -->
+    <section class="rules-section" id="visibility">
+      <div class="section-header">
+        <span class="section-num">09</span>
+        <i class="ph-bold ph-eye section-icon"></i>
+        <h2 class="section-title">Visibility</h2>
+      </div>
+      <div class="prose">
+        <p>Projects and tracks each have their own visibility, and they are <strong>independent of each other</strong>. A private project is your workspace; a public track is something you chose to release. You can have both at once.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-lock-simple rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Private</h4>
+            <p>Only people who were invited can reach it. A private project is not browsable by anyone else and has no share link.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-globe rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Public</h4>
+            <p>Anyone with the link can listen, with or without an account. A public project also lets anyone with its link browse the public tracks inside it.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-arrow-square-out rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>A public track in a private project</h4>
+            <p>This works, and it is the normal way to release one song out of a project you are still working on. The track is reachable by its own link. The rest of the project stays private, and the project itself has no link.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-sliders-horizontal rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Who controls what</h4>
+            <p>The <strong>project owner</strong> sets the project's visibility. The <strong>track owner</strong> sets their own track's. Neither one overrides the other.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-purple">
+        <i class="ph-bold ph-user-switch"></i>
+        <p>Making a track private immediately removes everyone who joined it through a public link. <strong>People you invited directly keep their access</strong> — going private does not undo an invitation.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 10 -->
+    <section class="rules-section" id="share-links">
+      <div class="section-header">
+        <span class="section-num">10</span>
+        <i class="ph-bold ph-link section-icon"></i>
+        <h2 class="section-title">Share Links</h2>
+      </div>
+      <div class="prose">
+        <p>Public tracks and public projects each get their own link. Send it to anyone — a manager, a label, a friend — and they can listen straight away. <strong>They do not need a Uforiya account.</strong></p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-headphones rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>What someone with the link can do</h4>
+            <p>Listen to the current version, and see the title, artwork and credits. That is all. They cannot download, see other versions, see stems, read hidden lyrics, or see anything else in the project.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-plus-circle rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Adding it to your library</h4>
+            <p>Someone with a Uforiya account who opens your link can save it to their own library to keep it and get updates. They are still a listener — saving something does not give them any extra access.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-toggle-left rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Turning a link off and on</h4>
+            <p>Making a track or project private kills its link immediately. Making it public again brings <strong>the same link</strong> back, so anything you already shared starts working again.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-arrows-clockwise rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Generating a new link</h4>
+            <p>If a link ends up somewhere you did not intend, generate a new one. <strong>This cannot be undone.</strong> Every copy of the old link stops working the moment you do it, and the old one can never be recovered.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <i class="ph-bold ph-info"></i>
+        <p>Links never contain anything guessable about your account or your other music. Making something private and generating a new link are two different tools: one is a pause, the other is permanent.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 11 -->
+    <section class="rules-section" id="downloads">
+      <div class="section-header">
+        <span class="section-num">11</span>
+        <i class="ph-bold ph-download-simple section-icon"></i>
+        <h2 class="section-title">Downloads</h2>
+      </div>
+      <div class="prose">
+        <p>Downloading gives someone the actual audio file, so it is held tighter than listening.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-crown-simple rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Owners can always download</h4>
+            <p>The track owner and the project owner can download any version of a track at any time.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-toggle-right rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Editors only when it is switched on</h4>
+            <p>The track owner decides whether editors can download. It is <strong>off by default</strong> — turn it on in Track Settings when you want your collaborators to have the files.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-prohibit rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Listeners never can</h4>
+            <p>Listeners and anyone using a share link can only stream. There is no setting that changes this.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-purple">
+        <i class="ph-bold ph-faders"></i>
+        <p>Stems follow the same rule as versions. Only people who can see stems at all — owners and editors — can download them.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 12 -->
+    <section class="rules-section" id="ownership">
+      <div class="section-header">
+        <span class="section-num">12</span>
         <i class="ph-bold ph-crown-simple section-icon"></i>
         <h2 class="section-title">Track Ownership &amp; Standalone Tracks</h2>
       </div>
@@ -450,7 +680,7 @@
           <i class="ph-bold ph-trash rule-card-icon"></i>
           <div class="rule-card-body">
             <h4>Project is deleted</h4>
-            <p>If a project owner deletes a project, all tracks uploaded by editors within that project are not deleted. They become standalone projects with the type <strong>Single</strong>, still owned by the original track owner.</p>
+            <p>If a project owner deletes a project, tracks uploaded by editors within that project are not deleted. They become standalone projects with the type <strong>Single</strong>, still owned by the original track owner.</p>
           </div>
         </div>
         <div class="rule-card">
@@ -470,16 +700,91 @@
       </div>
       <div class="callout callout-info">
         <i class="ph-bold ph-info"></i>
-        <p>Track ownership <strong>never transfers automatically</strong>. Ownership transfer is not available in the current version of Uforiya but is planned for a future release.</p>
+        <p>Track ownership <strong>never transfers automatically</strong>. Transferring ownership to someone else is not available in the current version of Uforiya but is planned for a future release.</p>
       </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <!-- 08 -->
+    <!-- 13 -->
+    <section class="rules-section" id="deleting">
+      <div class="section-header">
+        <span class="section-num">13</span>
+        <i class="ph-bold ph-trash section-icon"></i>
+        <h2 class="section-title">Deleting Things</h2>
+      </div>
+      <div class="prose">
+        <p>Deleting is deliberate on Uforiya — you will always be asked to confirm. But mistakes happen, and we would rather get your music back than be strict about it.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-user-focus rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Who can delete what</h4>
+            <p>Only the person who uploaded a track can delete it. A project owner who did not upload it can remove it from their project instead, which turns it into a standalone single rather than destroying it.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-lifebuoy rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Deleted something by accident?</h4>
+            <p>Email <strong>support@uforiya.com</strong> with your username and the name of what you lost. We cannot promise to get everything back, but in most cases we can recover it <strong>within 30 days of deletion</strong>. After that, assume it is gone.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-purple">
+        <i class="ph-bold ph-warning"></i>
+        <p>Deleting a project deletes the tracks <strong>you</strong> uploaded to it. Tracks other people uploaded survive as standalone singles — see Section 12.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 14 -->
+    <section class="rules-section" id="tools">
+      <div class="section-header">
+        <span class="section-num">14</span>
+        <i class="ph-bold ph-wrench section-icon"></i>
+        <h2 class="section-title">Free Audio Tools</h2>
+      </div>
+      <div class="prose">
+        <p>Uforiya has seven audio tools you can use on any file, whether or not it is on the platform: <strong>Trim, Fade, Convert, Compress, Pitch, Tempo</strong> and <strong>Normalize</strong>.</p>
+      </div>
+      <div class="rule-cards">
+        <div class="rule-card">
+          <i class="ph-bold ph-user-circle-dashed rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>No account needed for four of them</h4>
+            <p>Trim, Fade, Convert and Compress work with no sign-up at all. Drop a file in, get it back.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-user-check rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>A free account adds the rest</h4>
+            <p>Signing up unlocks Pitch, Tempo and Normalize, raises your daily limit, and lets you send a result straight into one of your projects.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-hourglass rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Daily limits</h4>
+            <p>There is a daily cap on how many files you can process. It is higher with an account and higher again on Pro.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-info">
+        <i class="ph-bold ph-info"></i>
+        <p>Files you put through the tools are not added to your library and do not count toward your storage unless you choose to send the result into a project.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 15 -->
     <section class="rules-section" id="accounts">
       <div class="section-header">
-        <span class="section-num">08</span>
+        <span class="section-num">15</span>
         <i class="ph-bold ph-user-circle section-icon"></i>
         <h2 class="section-title">Accounts</h2>
       </div>
@@ -487,15 +792,22 @@
         <div class="rule-card">
           <i class="ph-bold ph-identification-card rule-card-icon"></i>
           <div class="rule-card-body">
-            <h4>An account is required</h4>
-            <p>You must have a Uforiya account to use the platform. This includes accessing public projects; all content on Uforiya is behind an account.</p>
+            <h4>When you need an account</h4>
+            <p>You need one to upload, collaborate, or keep anything in a library. You do <strong>not</strong> need one to open a share link someone sent you, or to use the four tools listed in Section 14.</p>
           </div>
         </div>
         <div class="rule-card">
           <i class="ph-bold ph-currency-dollar rule-card-icon"></i>
           <div class="rule-card-body">
             <h4>Free to start</h4>
-            <p>Creating an account is free. The Free plan gives you 25 tracks, 5 versions per track and unlimited collaborators. No credit card required.</p>
+            <p>Creating an account is free. The Free plan gives you 25 tracks, unlimited versions, 10GB of storage and unlimited collaborators. No credit card required.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-flask rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Uforiya is in beta</h4>
+            <p>It is open to everyone and free to start. Things will change as we go, and the limits below can move.</p>
           </div>
         </div>
       </div>
@@ -503,48 +815,69 @@
 
     <div class="section-divider"></div>
 
-    <!-- 09 -->
+    <!-- 16 -->
     <section class="rules-section" id="subscriptions">
       <div class="section-header">
-        <span class="section-num">09</span>
-        <i class="ph-bold ph-stack section-icon"></i>
-        <h2 class="section-title">Subscriptions &amp; Limits</h2>
+        <span class="section-num">16</span>
+        <i class="ph-bold ph-hard-drives section-icon"></i>
+        <h2 class="section-title">Plans &amp; Storage</h2>
       </div>
       <div class="prose">
-        <p>Your plan determines how many tracks you can upload and how many versions each track can have. These limits are tied to your account, not to any specific project.</p>
+        <p>There are two plans. <strong>Collaboration is on both of them</strong> — unlimited collaborators, all seven audio tools, and the full version history, whether you pay or not. What you pay for is room.</p>
       </div>
       <table class="plan-table">
         <thead>
-          <tr><th>Plan</th><th>Tracks</th><th>Versions per track</th><th>Collaborators</th></tr>
+          <tr><th>Plan</th><th>Tracks</th><th>Versions</th><th>Storage</th><th>Collaborators</th></tr>
         </thead>
         <tbody>
-          <tr><td><span class="plan-name-cell">Free</span></td><td>25</td><td>5</td><td>Unlimited</td></tr>
-          <tr><td><span class="plan-name-cell">Pro</span></td><td>250</td><td>10</td><td>Unlimited</td></tr>
-          <tr><td><span class="plan-name-cell">Premium</span></td><td>1,000</td><td>15</td><td>Unlimited</td></tr>
+          <tr><td><span class="plan-name-cell">Free</span></td><td>25</td><td>Unlimited</td><td>10GB</td><td>Unlimited</td></tr>
+          <tr><td><span class="plan-name-cell">Pro</span></td><td>Unlimited</td><td>Unlimited</td><td>1TB</td><td>Unlimited</td></tr>
         </tbody>
       </table>
       <div class="rule-cards">
         <div class="rule-card">
-          <i class="ph-bold ph-user rule-card-icon"></i>
+          <i class="ph-bold ph-upload-simple rule-card-icon"></i>
           <div class="rule-card-body">
-            <h4>Track count is based on who uploads</h4>
-            <p>Your track limit counts every track you upload, regardless of which project it belongs to. If you upload a track to another user's project, it counts toward your limit. If someone uploads a track to your project, it counts toward their limit.</p>
+            <h4>Storage follows whoever uploaded the file</h4>
+            <p>Everything you upload counts toward your own storage — the original track, every version, every stem — no matter whose project or whose track it went to. If you upload a version to a collaborator's track, that file is on your storage, not theirs.</p>
           </div>
         </div>
         <div class="rule-card">
-          <i class="ph-bold ph-stack rule-card-icon"></i>
+          <i class="ph-bold ph-scales rule-card-icon"></i>
           <div class="rule-card-body">
-            <h4>Version limits are based on the track owner's plan</h4>
-            <p>The version limit for any given track is set by the track owner's plan, not the plan of whoever is uploading the version.</p>
+            <h4>Why it works that way</h4>
+            <p>The person who picks the file is the person who pays for it. It also means nobody can fill up your storage by uploading large files to your project.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-user rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>The track limit works the same way</h4>
+            <p>Your track limit counts every track you upload, whichever project it ends up in. If you upload to someone else's project it counts for you; if someone uploads to yours, it counts for them.</p>
+          </div>
+        </div>
+        <div class="rule-card">
+          <i class="ph-bold ph-git-branch rule-card-icon"></i>
+          <div class="rule-card-body">
+            <h4>Versions never count as tracks</h4>
+            <p>A track with fifty versions is one track. Only the storage adds up.</p>
           </div>
         </div>
       </div>
+      <div class="callout callout-purple">
+        <i class="ph-bold ph-warning"></i>
+        <p>If you run out of storage you cannot upload anything new — including to someone else's track — until you free some space or upgrade. Everything already uploaded stays exactly where it is.</p>
+      </div>
+      <div class="callout callout-info">
+        <i class="ph-bold ph-info"></i>
+        <p>Pro is <strong>$12.99/month</strong> or <strong>$99.99/year</strong>, in Canadian dollars. The yearly price works out around 36% cheaper. Pro also adds daily, weekly and monthly analytics and finer control over downloads.</p>
+      </div>
     </section>
 
-    <!-- 10 Feedback -->
+    <!-- 17 Feedback -->
     <section class="feedback-section" id="feedback">
       <div class="feedback-card">
-        <span class="feedback-label">Section 10: Feedback</span>
+        <span class="feedback-label">Section 17: Feedback</span>
         <h2 class="feedback-title">Think a rule should change?</h2>
         <p class="feedback-body">
           We want Uforiya to work for the people who actually use it. If you believe a rule is unclear, unfair, or does not fit how you work, send us an email and we will review it. <strong>We cannot promise every rule will change, but every request will be read.</strong>
@@ -553,13 +886,13 @@
           Use the subject line format below so we can route your request correctly. Include your Uforiya username, the section name or number, and describe what you think should be different and why.
         </p>
         <div class="feedback-subjects">
-          <div class="feedback-subject"><span>Subject:</span> Request for Rule Review &mdash; Section 01: Uploads &amp; Projects</div>
-          <div class="feedback-subject"><span>Subject:</span> Request for Rule Review &mdash; Section 05: Versions</div>
-          <div class="feedback-subject"><span>Subject:</span> Request for Rule Review &mdash; Section 06: Visibility</div>
+          <div class="feedback-subject"><span>Subject:</span> Request for Rule Review &mdash; Section 05: Credits</div>
+          <div class="feedback-subject"><span>Subject:</span> Request for Rule Review &mdash; Section 09: Visibility</div>
+          <div class="feedback-subject"><span>Subject:</span> Request for Rule Review &mdash; Section 16: Plans &amp; Storage</div>
         </div>
-        <a href="mailto:hello@uforiya.xyz?subject=Request%20for%20Rule%20Review%20%E2%80%94%20Section%20[Number]%3A%20[Section%20Name]" class="btn-feedback">
+        <a href="mailto:hello@uforiya.com?subject=Request%20for%20Rule%20Review%20%E2%80%94%20Section%20[Number]%3A%20[Section%20Name]" class="btn-feedback">
           <i class="ph-bold ph-envelope-simple"></i>
-          Email hello@uforiya.xyz
+          Email hello@uforiya.com
         </a>
       </div>
     </section>
@@ -575,7 +908,7 @@
       <div class="footer-links">
         <a href="/">Home</a>
         <a href="https://uforiya.space" target="_blank" rel="noopener">Open App</a>
-        <a href="mailto:hello@uforiya.xyz">Contact</a>
+        <a href="mailto:hello@uforiya.com">Contact</a>
         <a href="../privacy/index.html">Privacy Policy</a>
         <a href="../terms/index.html">Terms of Service</a>
       </div>
