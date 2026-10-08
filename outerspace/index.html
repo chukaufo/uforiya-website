@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Uforiya</title>
+  <meta name="description" content="Uforiya. Every track. Every version. Every collaborator. Nothing lost." />
+  <meta name="theme-color" content="#050507" />
+
+  <link rel="icon" type="image/png" href="../images/ufo-faveicon.png" />
+  <link rel="apple-touch-icon" href="../images/ufo-faveicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css?v=8" />
+
+  <style>
+    /* One screen, no scrolling. The starfield canvas comes from style.css. */
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .space {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .space-logo {
+      width: min(54vmin, 480px);
+      height: min(54vmin, 480px);
+      object-fit: contain;
+      user-select: none;
+      -webkit-user-drag: none;
+      filter: drop-shadow(0 0 38px rgba(123, 95, 245, 0.6));
+      /* hover-drift is defined in style.css */
+      animation:
+        space-rise 1.6s cubic-bezier(0.2, 0.7, 0.3, 1) both,
+        hover-drift 5.5s ease-in-out 1.6s infinite;
+    }
+
+    .space-wordmark {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: clamp(32px, 9vh, 96px);
+      text-align: center;
+      font-family: 'Orbitron', system-ui, sans-serif;
+      font-size: clamp(26px, 5.6vw, 62px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      /* Trailing letter-spacing pushes the word left of centre, so pad it back */
+      padding-left: 0.5em;
+      line-height: 1;
+      background: linear-gradient(96deg, #f2f2f7 0%, #b9a6ff 55%, #00f0ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 18px rgba(123, 95, 245, 0.55));
+      pointer-events: none;
+      user-select: none;
+      animation: space-fade 2s ease 0.6s both;
+    }
+
+    @keyframes space-rise {
+      from { opacity: 0; transform: translateY(22px) scale(0.94); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    @keyframes space-fade {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .space-wordmark { letter-spacing: 0.38em; padding-left: 0.38em; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="starfield"></canvas>
+
+  <main class="space">
+    <img src="../images/ufologo.png" alt="Uforiya" class="space-logo" draggable="false" />
+    <h1 class="space-wordmark">Uforiya</h1>
+  </main>
+
+  <script src="deepspace.js?v=1"></script>
+</body>
+</html>
