@@ -21,7 +21,7 @@
   --line-accent:   rgba(123, 95, 245, 0.32);
   --ink:           #f2f2f7;
   --ink-2:         #9299aa;
-  --ink-3:         #62697a;
+  --ink-3:         #7a8194;
 
   /* Type */
   --f-display: 'Cabinet Grotesk', system-ui, sans-serif;
@@ -542,6 +542,9 @@ a { color: inherit; }
   margin-bottom: 34px;
 }
 
+/* A single subtitle with no detail line under it carries the gap to the CTAs */
+.hero-sub-solo { margin-bottom: 34px; }
+
 .hero-cta {
   display: flex;
   align-items: center;
@@ -552,7 +555,7 @@ a { color: inherit; }
 }
 
 .hero-note {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--ink-3);
 }
 
