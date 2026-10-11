@@ -101,9 +101,9 @@
           {
             "@type": "Offer",
             "name": "Pro",
-            "price": "12.99",
+            "price": "15.00",
             "priceCurrency": "CAD",
-            "description": "Unlimited tracks, unlimited versions per track, 1TB of storage, daily analytics and granular download control."           }
+            "description": "Private sessions, unlimited tracks, unlimited versions per track, 1TB of storage, daily analytics and granular download control."           }
         ]
       },
       {
@@ -163,7 +163,15 @@
             "name": "Is Uforiya free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The free plan covers 25 tracks, unlimited versions per track and unlimited collaborators inside 10GB of storage, with no card needed. Pro raises that ceiling to 1TB with unlimited tracks and adds analytics and granular download control. Collaboration itself is on every plan, including the free one."
+              "text": "The free plan covers 25 tracks, unlimited versions per track and unlimited collaborators inside 10GB of storage, with no card needed. Pro adds private sessions, raises that ceiling to 1TB with unlimited tracks, and adds analytics and granular download control. Collaboration itself is on every plan, including the free one."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a private session?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A private session is a shared space you host on Pro. Invite people or send a join link with a password, give each person a role, and everything they upload is stored in your storage while they keep the credit as the creator. Lock it when the session wraps and uploads stop, while everyone can still listen and comment."
             }
           },
           {
@@ -435,6 +443,55 @@
             <span class="shot-desc">Every bounce side by side, stems sorted by instrument.</span>
           </figcaption>
         </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PRIVATE SESSIONS (PRO)
+       The headline Pro feature. Reuses the features grid and cards.
+  ═══════════════════════════════════════════ -->
+  <section class="section features" id="private-sessions">
+    <div class="section-inner">
+      <div class="section-head section-head-wide">
+        <p class="eyebrow">Pro: private sessions</p>
+        <h2 class="section-title">Run the whole session in one place</h2>
+        <p class="section-sub">
+          Host a private session for your recording and studio sessions. Only the people you
+          invite get in, everyone uploads to the same space, and you decide who can do what.
+        </p>
+      </div>
+
+      <div class="features-grid">
+
+        <article class="feature-card">
+          <i class="ph-bold ph-headphones feature-icon" aria-hidden="true"></i>
+          <h3>Host the room</h3>
+          <p>Invite artists, producers and engineers, give each one a role, and add admins to help run it.</p>
+        </article>
+
+        <article class="feature-card">
+          <i class="ph-bold ph-link feature-icon" aria-hidden="true"></i>
+          <h3>Join links</h3>
+          <p>Share one link instead of adding people one by one. Put a password on it if the room is closed.</p>
+        </article>
+
+        <article class="feature-card">
+          <i class="ph-bold ph-hard-drives feature-icon" aria-hidden="true"></i>
+          <h3>Their uploads, your storage</h3>
+          <p>Everything members upload counts toward the host's storage, not theirs, and they keep the credit as the creator.</p>
+        </article>
+
+        <article class="feature-card">
+          <i class="ph-bold ph-lock-simple feature-icon" aria-hidden="true"></i>
+          <h3>Lock it when it wraps</h3>
+          <p>Lock the session and uploads stop. Everyone can still listen back and leave comments.</p>
+        </article>
+
+      </div>
+
+      <div class="showcase-cta">
+        <a href="#pricing" class="btn-primary">See Pro</a>
       </div>
     </div>
   </section>
@@ -917,7 +974,7 @@
           <span class="toggle-thumb"></span>
         </button>
         <span class="toggle-label" id="label-yearly">Yearly</span>
-        <em class="save-badge">Save about 36%</em>
+        <em class="save-badge">3 months free</em>
       </div>
 
       <div class="pricing-grid">
@@ -935,9 +992,8 @@
             <li>Unlimited versions per track</li>
             <li>10GB of storage</li>
             <li>Unlimited collaborators</li>
-            <li>All seven audio tools</li>
-            <li>Last 5 plays of analytics</li>
-            <li>Stem uploads per version</li>
+            <li>Audio tools</li>
+            <li>Upload stems</li>
           </ul>
           <a href="https://uforiya.space" class="btn-plan btn-plan-primary" target="_blank" rel="noopener">Start free</a>
         </article>
@@ -947,18 +1003,17 @@
           <span class="plan-badge">Everything, one plan</span>
           <h3 class="plan-name">Pro</h3>
           <div class="plan-price">
-            <span class="price-amount" data-monthly="$12.99" data-yearly="$8.33">$12.99</span>
+            <span class="price-amount" data-monthly="$15" data-yearly="$11.25">$15</span>
           </div>
-          <p class="plan-period" data-monthly="per month CAD" data-yearly="per month CAD, billed yearly">per month CAD</p>
-          <p class="plan-desc">For artists and studios keeping full sessions and stems, not just bounces.</p>
+          <p class="plan-period" data-monthly="per month CAD" data-yearly="per month CAD, $134.99 billed yearly">per month CAD</p>
+          <p class="plan-desc">For artists and studios running private sessions and keeping every stem, not just bounces.</p>
+          <p style="margin:0 0 12px;font-size:14px;font-weight:600;color:#fff;">Everything in Free, plus:</p>
           <ul class="plan-features">
+            <li><strong>Private sessions.</strong> Keep your recording and studio sessions organized in one place, closed to anyone you didn&#39;t invite. Everyone uploads to your storage and keeps their credit.</li>
             <li>Unlimited tracks</li>
-            <li>Unlimited versions per track</li>
             <li>1TB of storage</li>
-            <li>Unlimited collaborators</li>
             <li>Higher daily tool limit</li>
-            <li>Daily, weekly and monthly analytics</li>
-            <li>Granular download control</li>
+            <li>Full analytics: daily, weekly and monthly</li>
           </ul>
           <a href="https://uforiya.space" class="btn-plan" target="_blank" rel="noopener">Get Pro</a>
         </article>
@@ -1028,7 +1083,14 @@
         <details class="faq-item">
           <summary><span>Is Uforiya free?</span></summary>
           <div class="faq-answer">
-            <p>The free plan covers 25 tracks, unlimited versions per track and unlimited collaborators inside 10GB of storage, with no card needed. Pro raises that ceiling to 1TB with unlimited tracks and adds analytics and granular download control. Collaboration itself is on every plan, including the free one.</p>          
+            <p>The free plan covers 25 tracks, unlimited versions per track and unlimited collaborators inside 10GB of storage, with no card needed. Pro adds private sessions, raises that ceiling to 1TB with unlimited tracks, and adds analytics and granular download control. Collaboration itself is on every plan, including the free one.</p>          
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span>What is a private session?</span></summary>
+          <div class="faq-answer">
+            <p>A private session is a shared space you host on Pro. Invite people or send a join link with a password, give each person a role, and everything they upload is stored in your storage while they keep the credit as the creator. Lock it when the session wraps and uploads stop, while everyone can still listen and comment.</p>
           </div>
         </details>
 
