@@ -2470,3 +2470,135 @@ a { color: inherit; }
   .so-callout-cta-label { display: none; }
   .so-callout-cta { padding: 9px 12px; }
 }
+
+/* ═══════════════════════════════════════════════
+   SHOT CAROUSEL
+   Player, upload and lyrics at full width, one at a time.
+═══════════════════════════════════════════════ */
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  margin: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.carousel-slide .showcase-frame img { width: 100%; height: auto; }
+
+.carousel-slide:hover .showcase-frame { border-color: var(--line-accent); }
+
+.carousel-slide figcaption {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 10px;
+  padding-top: 16px;
+}
+
+.carousel-slide .shot-title { font-size: 16px; }
+
+/* Narrower than the dashboard shots, and capped by the window height so
+   the image, caption and controls fit on screen together. 1.6 is the
+   screenshots' width to height ratio. */
+.shot-carousel {
+  width: 100%;
+  max-width: min(860px, calc((100vh - var(--nav-h) - 190px) * 1.6));
+  margin: 56px auto 0;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+/* Play/pause: round and filled, like the play button in the app */
+.carousel-btn.carousel-toggle {
+  border-radius: 50%;
+  color: #fff;
+  background: var(--purple);
+  border-color: var(--purple);
+}
+
+.carousel-btn.carousel-toggle:hover:not(:disabled) {
+  color: #fff;
+  background: var(--purple-light);
+  border-color: var(--purple-light);
+}
+
+.carousel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  color: var(--ink-2);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.carousel-btn:hover:not(:disabled) { color: var(--ink); border-color: var(--line-accent); }
+.carousel-btn:disabled { opacity: 0.35; cursor: default; }
+
+.carousel-dots { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; }
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.carousel-dot.is-active { width: 22px; background: var(--purple-light); }
+
+@media (max-width: 680px) {
+  .carousel-slide figcaption { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* Private sessions: screenshot on the left taking the bigger share,
+   the four cards stacked in one column on the right. Stacks below 900px. */
+.ps-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Image fills the full row height. The shot is mostly empty dark space
+   around a centred card, so cover only trims empty edges. */
+.ps-shot { margin: 0; display: flex; }
+.ps-shot .showcase-frame { flex: 1; display: flex; }
+.ps-shot img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+/* Tighter cards so the column sits close to the image's height */
+.ps-layout .features-grid { grid-template-columns: 1fr; }
+.ps-layout .feature-card { padding: 20px 22px; }
+.ps-layout .feature-icon { font-size: 18px; margin-bottom: 10px; }
+.ps-layout .feature-card h3 { font-size: 16px; margin-bottom: 6px; }
+.ps-layout .feature-card p { font-size: 13.5px; line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .ps-layout { grid-template-columns: 1fr; }
+  .ps-shot img { height: auto; }
+}

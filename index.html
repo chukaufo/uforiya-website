@@ -43,7 +43,7 @@
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
 
-  <link rel="stylesheet" href="style.css?v=8" />
+  <link rel="stylesheet" href="style.css?v=10" />
   <!-- ═══════════════════════════════════════════
        STRUCTURED DATA
        The FAQ entries below mirror the visible FAQ section word for word.
@@ -377,26 +377,58 @@
         </figcaption>
       </figure>
 
-      <div class="showcase-pair">
-        <figure class="showcase-item">
-          <div class="showcase-frame">
-            <img src="images/audioplayer.png" alt="The Uforiya audio player showing waveform playback with a comment pinned to a timestamp" loading="lazy" />
-          </div>
-          <figcaption>
-            <span class="shot-title">Player</span>
-            <span class="shot-desc">Waveform playback with comments pinned to the timestamp.</span>
-          </figcaption>
-        </figure>
+      <div class="shot-carousel" aria-roledescription="carousel" aria-label="Player, upload and lyrics">
+        <div class="carousel-track" tabindex="0">
 
-        <figure class="showcase-item">
-          <div class="showcase-frame">
-            <img src="images/upload.png" alt="The Uforiya upload page with project selection, audio file and track details" loading="lazy" />
-          </div>
-          <figcaption>
-            <span class="shot-title">Upload</span>
-            <span class="shot-desc">Drop the file in and BPM, key and duration are read for you.</span>
-          </figcaption>
-        </figure>
+          <figure class="carousel-slide" aria-roledescription="slide" aria-label="1 of 3">
+            <div class="showcase-frame">
+              <img src="images/audioplayer.png" alt="The Uforiya audio player showing waveform playback with a comment pinned to a timestamp" loading="lazy" />
+            </div>
+            <figcaption>
+              <span class="shot-title">Player</span>
+              <span class="shot-desc">Waveform playback with comments pinned to the timestamp.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="carousel-slide" aria-roledescription="slide" aria-label="2 of 3">
+            <div class="showcase-frame">
+              <img src="images/upload.png" alt="The Uforiya upload page with project selection, audio file and track details" loading="lazy" />
+            </div>
+            <figcaption>
+              <span class="shot-title">Upload</span>
+              <span class="shot-desc">Drop the file in and BPM, key and duration are read for you.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="carousel-slide" aria-roledescription="slide" aria-label="3 of 3">
+            <div class="showcase-frame">
+              <img src="images/LyricsPanel.png" alt="The Uforiya full screen player on the Lyrics tab, with a lyrics panel over a starfield and the waveform below" loading="lazy" />
+            </div>
+            <figcaption>
+              <span class="shot-title">Lyrics</span>
+              <span class="shot-desc">Lyrics live with the track, one tap from the comments.</span>
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn carousel-prev" type="button" aria-label="Previous screen">
+            <i class="ph-bold ph-caret-left" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-btn carousel-toggle" type="button" aria-label="Pause slideshow">
+            <i class="ph-bold ph-pause" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-btn carousel-next" type="button" aria-label="Next screen">
+            <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="carousel-dots">
+          <button class="carousel-dot is-active" type="button" aria-label="Show player"></button>
+          <button class="carousel-dot" type="button" aria-label="Show upload"></button>
+          <button class="carousel-dot" type="button" aria-label="Show lyrics"></button>
+        </div>
       </div>
 
       <div class="showcase-cta">
@@ -462,6 +494,13 @@
         </p>
       </div>
 
+      <div class="ps-layout">
+      <figure class="showcase-item ps-shot">
+        <div class="showcase-frame">
+          <img src="images/PrivateSessions.png" alt="The Uforiya join page for a private session called South Side Studio Sessions, asking for a password" loading="lazy" />
+        </div>
+      </figure>
+
       <div class="features-grid">
 
         <article class="feature-card">
@@ -479,7 +518,7 @@
         <article class="feature-card">
           <i class="ph-bold ph-hard-drives feature-icon" aria-hidden="true"></i>
           <h3>Their uploads, your storage</h3>
-          <p>Everything members upload counts toward the host's storage, not theirs, and they keep the credit as the creator.</p>
+          <p>Everything members upload counts toward the host's 1TB of storage, not theirs, and they keep the credit as the creator.</p>
         </article>
 
         <article class="feature-card">
@@ -488,6 +527,7 @@
           <p>Lock the session and uploads stop. Everyone can still listen back and leave comments.</p>
         </article>
 
+      </div>
       </div>
 
       <div class="showcase-cta">
@@ -1226,6 +1266,87 @@
   </footer>
 
   <script src="stars.js?v=2"></script>
+  <script>
+    /* SHOT CAROUSEL: native scroll snap handles swiping. Autoplays every
+       5 seconds and loops; any manual move restarts the 5 seconds. The
+       middle button plays and pauses the slideshow. */
+    (function initShotCarousel() {
+      const root = document.querySelector('.shot-carousel');
+      if (!root) return;
+
+      const track  = root.querySelector('.carousel-track');
+      const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+      const dots   = Array.from(root.querySelectorAll('.carousel-dot'));
+      const prev   = root.querySelector('.carousel-prev');
+      const next   = root.querySelector('.carousel-next');
+      const toggle = root.querySelector('.carousel-toggle');
+      const icon   = toggle.querySelector('i');
+      const DELAY  = 5000;
+      let current = 0;
+      let timer = null;
+      let playing = true;
+
+      function setActive(index) {
+        current = index;
+        dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+      }
+
+      function goTo(index) {
+        const target = (index + slides.length) % slides.length;
+        track.scrollTo({ left: target * track.clientWidth, behavior: 'smooth' });
+        setActive(target);
+      }
+
+      function stop() {
+        clearInterval(timer);
+        timer = null;
+      }
+
+      function start() {
+        stop();
+        timer = setInterval(() => goTo(current + 1), DELAY);
+      }
+
+      function restart() {
+        if (playing) start();
+      }
+
+      function setPlaying(on) {
+        playing = on;
+        icon.className = on ? 'ph-bold ph-pause' : 'ph-bold ph-play';
+        toggle.setAttribute('aria-label', on ? 'Pause slideshow' : 'Play slideshow');
+        if (on) start(); else stop();
+      }
+
+      prev.addEventListener('click', () => { goTo(current - 1); restart(); });
+      next.addEventListener('click', () => { goTo(current + 1); restart(); });
+      dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); restart(); }));
+      toggle.addEventListener('click', () => setPlaying(!playing));
+      track.addEventListener('pointerdown', restart);
+
+      track.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); restart(); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); restart(); }
+      });
+
+      let ticking = false;
+      track.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          ticking = false;
+          const index = Math.round(track.scrollLeft / track.clientWidth);
+          if (index !== current) setActive(index);
+        });
+      }, { passive: true });
+
+      window.addEventListener('resize', () => {
+        track.scrollLeft = current * track.clientWidth;
+      });
+
+      setPlaying(true);
+    })();
+  </script>
   <script>
     /* ═══════════════════════════════════════════
        CONFIG
