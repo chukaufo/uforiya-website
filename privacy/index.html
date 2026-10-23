@@ -72,10 +72,13 @@
     }
 
     .nav-wordmark {
-      font-family: var(--font-heading);
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text-primary);
+      display: block;
+      height: 18px;
+      width: auto;
+    }
+
+    @media (max-width: 1000px) {
+      .nav-wordmark { display: none; }
     }
 
     .nav-back {
@@ -173,7 +176,7 @@
     <div class="nav-inner">
       <a href="/" class="nav-brand">
         <img src="../images/ufologo.png" alt="Uforiya" class="nav-logo" />
-        <span class="nav-wordmark">Uforiya</span>
+        <img src="../images/uforiya-wordmark-white.png" alt="" class="nav-wordmark" />
       </a>
       <a href="/" class="nav-back">&#8592; Back to home</a>
     </div>

@@ -294,11 +294,9 @@ a { color: inherit; }
    a wrapper so the two motions don't fight over the same transform. */
 
 .nav-wordmark {
-  font-family: var(--f-display);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--ink);
+  display: block;
+  height: 18px;
+  width: auto;
 }
 
 .nav-actions {

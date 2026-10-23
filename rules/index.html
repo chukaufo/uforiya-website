@@ -46,7 +46,8 @@
     .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; gap: 16px; }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
     .nav-logo { width: 72px; height: 72px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(123,95,245,0.5)); }
-    .nav-wordmark { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--text-primary); }
+    .nav-wordmark { display: block; height: 18px; width: auto; }
+    @media (max-width: 1000px) { .nav-wordmark { display: none; } }
     .nav-back { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
     .nav-back:hover { color: var(--text-primary); }
     .page-wrap { position: relative; z-index: 1; max-width: var(--max-width); margin: 0 auto; padding: calc(var(--nav-height) + 64px) 24px 120px; }
@@ -135,7 +136,7 @@
     <div class="nav-inner">
       <a href="/" class="nav-brand">
         <img src="../images/ufologo.png" alt="Uforiya" class="nav-logo" />
-        <span class="nav-wordmark">Uforiya</span>
+        <img src="../images/uforiya-wordmark-white.png" alt="" class="nav-wordmark" />
       </a>
       <a href="/" class="nav-back">
         <i class="ph-bold ph-arrow-left"></i>
