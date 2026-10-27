@@ -169,6 +169,17 @@
       .legal-page h1 { font-size: clamp(26px, 8vw, 36px); }
     }
   </style>
+  <style>
+    /* Moon orbiting the ring in the nav wordmark. Same path and timing as
+       /outerspace: front layer on the bottom half, back layer on the top
+       half so the letters hide it as it passes behind. */
+    .wm-orbit { position: relative; display: block; height: 18px; }
+    .wm-orbit img { position: relative; z-index: 1; display: block; height: 100%; width: auto; }
+    .wm-moon { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; filter: drop-shadow(0 0 3px rgba(155, 127, 247, 0.9)); }
+    .wm-moon-back { z-index: 0; }
+    .wm-moon-front { z-index: 2; }
+    @media (prefers-reduced-motion: reduce) { .wm-moon { display: none; } }
+  </style>
 </head>
 <body>
 
@@ -176,7 +187,33 @@
     <div class="nav-inner">
       <a href="/" class="nav-brand">
         <img src="../images/ufologo.png" alt="Uforiya" class="nav-logo" />
-        <img src="../images/uforiya-wordmark-white.png" alt="" class="nav-wordmark" />
+        <span class="nav-wordmark wm-orbit">
+          <svg class="wm-moon wm-moon-back" viewBox="0 0 3000 382" aria-hidden="true">
+            <defs>
+              <radialGradient id="wm-moon-grad" cx="35%" cy="35%" r="70%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="55%" stop-color="#d9cfff" />
+                <stop offset="100%" stop-color="#8f78f0" />
+              </radialGradient>
+              <path id="wm-moon-orbit" fill="none" d="M 1572.5 125.8 A 465 106 -8 1 1 651.5 255.2 A 465 106 -8 1 1 1572.5 125.8" />
+            </defs>
+            <g>
+            <circle r="80" fill="#9b7ff7" opacity="0.22" />
+            <circle r="44" fill="url(#wm-moon-grad)" />
+            <animateMotion dur="10s" repeatCount="indefinite" calcMode="linear"><mpath href="#wm-moon-orbit" /></animateMotion>
+            <animate attributeName="opacity" values="0;1" keyTimes="0;0.5" calcMode="discrete" dur="10s" repeatCount="indefinite" />
+          </g>
+          </svg>
+          <img src="../images/uforiya-wordmark-white.png" alt="" />
+          <svg class="wm-moon wm-moon-front" viewBox="0 0 3000 382" aria-hidden="true">
+            <g>
+            <circle r="80" fill="#9b7ff7" opacity="0.22" />
+            <circle r="44" fill="url(#wm-moon-grad)" />
+            <animateMotion dur="10s" repeatCount="indefinite" calcMode="linear"><mpath href="#wm-moon-orbit" /></animateMotion>
+            <animate attributeName="opacity" values="1;0" keyTimes="0;0.5" calcMode="discrete" dur="10s" repeatCount="indefinite" />
+          </g>
+          </svg>
+        </span>
       </a>
       <a href="/" class="nav-back">&#8592; Back to home</a>
     </div>
