@@ -179,11 +179,13 @@
        half so the letters hide it as it passes behind. */
     .wm-orbit { position: relative; display: block; height: 18px; }
     .wm-orbit img { position: relative; z-index: 1; display: block; height: 100%; width: auto; }
-    .wm-moon { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; filter: drop-shadow(0 0 3px rgba(155, 127, 247, 0.9)); }
+    .wm-moon { visibility: hidden; opacity: 0; transition: opacity 0.5s ease; position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; filter: drop-shadow(0 0 3px rgba(155, 127, 247, 0.9)); }
     .wm-moon-back { z-index: 0; }
     .wm-moon-front { z-index: 2; }
+    .wm-ready .wm-moon { visibility: visible; opacity: 1; }
     @media (prefers-reduced-motion: reduce) { .wm-moon { display: none; } }
   </style>
+  <script>addEventListener('load', function () { document.documentElement.classList.add('wm-ready'); });</script>
 </head>
 <body>
 
