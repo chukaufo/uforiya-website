@@ -184,6 +184,8 @@
     .wm-moon-front { z-index: 2; }
     .wm-ready .wm-moon { visibility: visible; opacity: 1; }
     @media (prefers-reduced-motion: reduce) { .wm-moon { display: none; } }
+    /* Phones: icon only. Two classes so it beats .wm-orbit's display: block. */
+    @media (max-width: 768px) { .nav-wordmark.wm-orbit { display: none; } }
   </style>
   <script>addEventListener('load', function () { document.documentElement.classList.add('wm-ready'); });</script>
 </head>
