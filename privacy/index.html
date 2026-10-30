@@ -77,9 +77,6 @@
       width: auto;
     }
 
-    @media (max-width: 1000px) {
-      .nav-wordmark { display: none; }
-    }
 
     .nav-back {
       margin-left: auto;
@@ -180,8 +177,6 @@
     .wm-moon-front { z-index: 2; }
     .wm-ready .wm-moon { visibility: visible; opacity: 1; }
     @media (prefers-reduced-motion: reduce) { .wm-moon { display: none; } }
-    /* Phones: icon only. Two classes so it beats .wm-orbit's display: block. */
-    @media (max-width: 768px) { .nav-wordmark.wm-orbit { display: none; } }
   </style>
   <script>addEventListener('load', function () { document.documentElement.classList.add('wm-ready'); });</script>
 </head>
@@ -190,7 +185,6 @@
   <nav class="navbar">
     <div class="nav-inner">
       <a href="/" class="nav-brand">
-        <img src="../images/ufologo.png" alt="Uforiya" class="nav-logo" />
         <span class="nav-wordmark wm-orbit">
           <svg class="wm-moon wm-moon-back" viewBox="0 0 3000 382" aria-hidden="true">
             <defs>
@@ -208,7 +202,7 @@
             <animate attributeName="opacity" values="0;1" keyTimes="0;0.5" calcMode="discrete" dur="10s" repeatCount="indefinite" />
           </g>
           </svg>
-          <img src="../images/uforiya-wordmark-white.png" alt="" />
+          <img src="../images/uforiya-wordmark-white.png" alt="Uforiya" />
           <svg class="wm-moon wm-moon-front" viewBox="0 0 3000 382" aria-hidden="true">
             <g>
             <circle r="80" fill="#9b7ff7" opacity="0.22" />

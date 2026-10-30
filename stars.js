@@ -29,8 +29,8 @@ const SCATTER_FORCE = 15;         // click impulse strength
 
 /* Musical notes: a fixed slice of the field renders as glyphs instead of
    dots. Kept as a plain constant, no UI control. */
-const NOTE_CHANCE = 0.11;
-const NOTE_CHANCE_NARROW = 0.04;
+const NOTE_CHANCE = 0.04;
+const NOTE_CHANCE_NARROW = 0.015;
 const NOTE_GLYPHS = ["\u266A", "\u266B"]; // ♪ eighth note, ♫ beamed eighth notes
 
 /* A phone has no negative space for the glyphs to sit in — at 390px wide a

@@ -2029,7 +2029,6 @@ a { color: inherit; }
 ═══════════════════════════════════════════════ */
 
 @media (max-width: 1000px) {
-  .nav-wordmark { display: none; }
 }
 
 @media (max-width: 960px) {
