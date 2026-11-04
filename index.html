@@ -43,7 +43,7 @@
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
 
-  <link rel="stylesheet" href="style.css?v=11" />
+  <link rel="stylesheet" href="style.css?v=16" />
   <!-- ═══════════════════════════════════════════
        STRUCTURED DATA
        The FAQ entries below mirror the visible FAQ section word for word.
@@ -81,14 +81,14 @@
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "Music collaboration and audio version control",
         "operatingSystem": "Web browser",
-        "description": "Uforiya keeps unreleased tracks, every version, every stem and every collaborator in one place, with browser based audio tools for trimming, fading, converting, compressing, pitch, tempo and loudness.",
+        "description": "Uforiya keeps unreleased tracks, every version, every stem and every collaborator in one place, with browser based audio tools for trimming, fading, converting, compressing, pitch, tempo, loudness and reverb.",
         "featureList": [
           "Audio version history per track",
           "Role based collaborator access",
           "Timestamped comments on a waveform",
           "Stem uploads per version",
           "Automatic BPM, key and duration detection",
-          "Browser based audio tools: trim, fade, convert, compress, pitch, tempo, normalize"
+          "Browser based audio tools: trim, fade, convert, compress, pitch, tempo, normalize, reverb"
         ],
         "offers": [
           {
@@ -123,7 +123,7 @@
             "name": "Do I need an account to use the audio tools?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Open uforiya.space/tools, drop a file in and start editing. Trim, fade, convert and compress all work without signing up. A free account adds pitch, tempo and normalize, raises the daily limit, and lets a result go straight into a project."
+              "text": "No. Open uforiya.space/tools, drop a file in and start editing. Trim, fade, convert and compress all work without signing up. A free account adds pitch, tempo, normalize and reverb, raises the daily limit, and lets a result go straight into a project."
             }
           },
           {
@@ -131,7 +131,7 @@
             "name": "Which audio tools work without an account?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Trim, fade, convert and compress. Pitch, tempo and normalize need a free account, which takes about a minute to create and costs nothing."
+              "text": "Trim, fade, convert and compress. Pitch, tempo, normalize and reverb need a free account, which takes about a minute to create and costs nothing."
             }
           },
           {
@@ -400,12 +400,12 @@
         </figcaption>
       </figure>
 
-      <div class="shot-carousel" aria-roledescription="carousel" aria-label="Player, upload and lyrics">
+      <div class="shot-carousel" aria-roledescription="carousel" aria-label="Player, upload, lyrics and visualizer">
         <div class="carousel-track" tabindex="0">
 
-          <figure class="carousel-slide" aria-roledescription="slide" aria-label="1 of 3">
+          <figure class="carousel-slide" aria-roledescription="slide" aria-label="1 of 4">
             <div class="showcase-frame">
-              <img src="images/audioplayer.png" alt="The Uforiya audio player showing waveform playback with a comment pinned to a timestamp" loading="lazy" />
+              <img src="images/commentplayer.png" alt="The Uforiya full screen player on the Comments tab, with a comment pinned at 0:44 on the waveform" loading="lazy" />
             </div>
             <figcaption>
               <span class="shot-title">Player</span>
@@ -413,7 +413,7 @@
             </figcaption>
           </figure>
 
-          <figure class="carousel-slide" aria-roledescription="slide" aria-label="2 of 3">
+          <figure class="carousel-slide" aria-roledescription="slide" aria-label="2 of 4">
             <div class="showcase-frame">
               <img src="images/upload.png" alt="The Uforiya upload page with project selection, audio file and track details" loading="lazy" />
             </div>
@@ -423,13 +423,23 @@
             </figcaption>
           </figure>
 
-          <figure class="carousel-slide" aria-roledescription="slide" aria-label="3 of 3">
+          <figure class="carousel-slide" aria-roledescription="slide" aria-label="3 of 4">
             <div class="showcase-frame">
               <img src="images/LyricsPanel.png" alt="The Uforiya full screen player on the Lyrics tab, with a lyrics panel over a starfield and the waveform below" loading="lazy" />
             </div>
             <figcaption>
               <span class="shot-title">Lyrics</span>
               <span class="shot-desc">Lyrics live with the track, one tap from the comments.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="carousel-slide" aria-roledescription="slide" aria-label="4 of 4">
+            <div class="showcase-frame">
+              <img src="images/audioplayer.png?v=2" alt="The Uforiya full screen player on the Visualizer tab, with the cover art floating over a starfield and the waveform in the bottom bar" loading="lazy" />
+            </div>
+            <figcaption>
+              <span class="shot-title">Visualizer</span>
+              <span class="shot-desc">Cover art front and centre while the track plays, over a field of stars.</span>
             </figcaption>
           </figure>
 
@@ -451,6 +461,7 @@
           <button class="carousel-dot is-active" type="button" aria-label="Show player"></button>
           <button class="carousel-dot" type="button" aria-label="Show upload"></button>
           <button class="carousel-dot" type="button" aria-label="Show lyrics"></button>
+          <button class="carousel-dot" type="button" aria-label="Show visualizer"></button>
         </div>
       </div>
 
@@ -520,8 +531,12 @@
       <div class="ps-layout">
       <figure class="showcase-item ps-shot">
         <div class="showcase-frame">
-          <img src="images/PrivateSessions.png" alt="The Uforiya join page for a private session called South Side Studio Sessions, asking for a password" loading="lazy" />
+          <img src="images/PrivateSessions.png?v=2" alt="The Uforiya join page for the Camp 12 private session, asking for a password" loading="lazy" />
         </div>
+        <figcaption>
+          <span class="shot-title">Main One Camp 12</span>
+          <span class="shot-desc">Main One Studios ran their 12th music recording camp in a private session.</span>
+        </figcaption>
       </figure>
 
       <div class="features-grid">
@@ -552,6 +567,41 @@
 
       </div>
       </div>
+
+      <!-- Camp 12 recap: thumbnail first, the YouTube player loads on click -->
+      <figure class="ps-video">
+        <div class="ps-video-frame">
+          <button class="ps-video-play" type="button" data-yt="5dsVKbbGlvg" aria-label="Play the Main One Camp 12 recap video">
+            <img src="https://i.ytimg.com/vi/5dsVKbbGlvg/hqdefault.jpg" alt="" loading="lazy" />
+            <span class="ps-video-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" /></svg>
+            </span>
+          </button>
+        </div>
+        <figcaption class="features-grid ps-camp">
+          <article class="feature-card">
+            <h3>Main One Camp 12</h3>
+            <p>During their 12th recording camp, Main One Studios used a private session to keep the music from every room in one place.</p>
+            <ul class="ps-camp-list">
+              <li>
+                <i class="ph-bold ph-link" aria-hidden="true"></i>
+                <p><strong>One link in.</strong> Artists, producers and engineers joined with a single password link instead of being added one by one.</p>
+              </li>
+              <li>
+                <i class="ph-bold ph-stack" aria-hidden="true"></i>
+                <p><strong>Nothing scattered.</strong> Every bounce from every room landed in the same place, in the host's storage, with each creator credited.</p>
+              </li>
+              <li>
+                <i class="ph-bold ph-lock-simple" aria-hidden="true"></i>
+                <p><strong>Closed when it wraps.</strong> Lock the session after the camp and the music stays put for everyone to play back and comment on.</p>
+              </li>
+            </ul>
+            <a href="https://www.instagram.com/reel/DfP5s0byCa0/" class="ps-video-ig" target="_blank" rel="noopener">
+              <i class="ph-bold ph-instagram-logo" aria-hidden="true"></i> Watch on Instagram
+            </a>
+          </article>
+        </figcaption>
+      </figure>
 
       <div class="showcase-cta">
         <a href="#pricing" class="btn-primary">See Pro</a>
@@ -695,9 +745,9 @@
 
       <div class="section-head section-head-wide">
         <p class="eyebrow">Free audio tools</p>
-        <h2 class="section-title">Seven edits a track needs, without leaving the browser</h2>
+        <h2 class="section-title">Eight edits a track needs, without leaving the browser</h2>
         <p class="section-sub">
-          Trim, fade, convert, compress, shift pitch, change tempo, even out loudness. The small
+          Trim, fade, convert, compress, shift pitch, change tempo, even out loudness, add reverb. The small
           fixes that usually mean opening a DAW, exporting, and coming back. Four of them work
           with no account at all: open
           <a href="https://uforiya.space/tools" class="inline-link" target="_blank" rel="noopener">uforiya.space/tools</a>,
@@ -722,7 +772,7 @@
       <!-- ── Tool explorer ──
            A rail of tools on the left, detail on the right. On narrow screens
            the rail becomes a horizontally scrolling strip above the panel.
-           Every panel stays in the DOM so all seven are indexable. -->
+           Every panel stays in the DOM so all eight are indexable. -->
       <div class="tools-explorer">
 
         <div class="tool-rail" role="tablist" aria-label="Audio tools" aria-orientation="vertical">
@@ -786,6 +836,15 @@
             <span class="tool-tab-body">
               <span class="tool-tab-name">Normalize</span>
               <span class="tool-tab-desc">Even out loudness</span>
+            </span>
+            <span class="tool-dot tool-dot-account" aria-hidden="true"></span>
+          </button>
+
+          <button class="tool-tab" role="tab" id="tab-reverb" aria-controls="panel-reverb" aria-selected="false" tabindex="-1" data-tool="reverb">
+            <i class="ph-bold ph-waves tool-tab-icon" aria-hidden="true"></i>
+            <span class="tool-tab-body">
+              <span class="tool-tab-name">Reverb</span>
+              <span class="tool-tab-desc">Put it in a room</span>
             </span>
             <span class="tool-dot tool-dot-account" aria-hidden="true"></span>
           </button>
@@ -922,6 +981,24 @@
             <p class="tool-meta">Consistent level across every file you run through it</p>
           </article>
 
+          <!-- REVERB -->
+          <article class="tool-panel" role="tabpanel" id="panel-reverb" aria-labelledby="tab-reverb" tabindex="0" hidden>
+            <div class="tool-panel-head">
+              <h3>Reverb</h3>
+              <span class="tool-badge tool-badge-account">Free account</span>
+            </div>
+            <p class="tool-panel-lead">
+              Give a dry recording some space. Add reverb to a vocal, a sample or a whole bounce
+              and hear the room it puts it in before you download anything.
+            </p>
+            <ul class="tool-uses">
+              <li>Take the edge off a dry phone vocal before sending it round</li>
+              <li>Wash a sample out to hear whether it works as a pad</li>
+              <li>Try a reverb idea on a bounce without opening the session</li>
+            </ul>
+            <p class="tool-meta">Hear it before you download</p>
+          </article>
+
         </div>
       </div>
 
@@ -938,6 +1015,7 @@
             <li class="is-off">Pitch</li>
             <li class="is-off">Tempo</li>
             <li class="is-off">Normalize</li>
+            <li class="is-off">Reverb</li>
           </ul>
           <a href="https://uforiya.space/tools" class="btn-plan btn-plan-primary" target="_blank" rel="noopener">Open the tools</a>
         </article>
@@ -945,7 +1023,7 @@
         <article class="access-card access-card-featured">
           <span class="plan-badge">Still free</span>
           <h3 class="access-title">With a free account</h3>
-          <p class="access-desc">All seven tools, a higher daily limit, and a finished result can go straight into a project instead of your downloads folder.</p>
+          <p class="access-desc">All eight tools, a higher daily limit, and a finished result can go straight into a project instead of your downloads folder.</p>
           <ul class="access-list">
             <li class="is-on">Trim</li>
             <li class="is-on">Fade</li>
@@ -954,6 +1032,7 @@
             <li class="is-on">Pitch</li>
             <li class="is-on">Tempo</li>
             <li class="is-on">Normalize</li>
+            <li class="is-on">Reverb</li>
           </ul>
           <a href="https://uforiya.space" class="btn-plan" target="_blank" rel="noopener">Create a free account</a>
         </article>
@@ -1112,14 +1191,14 @@
         <details class="faq-item">
           <summary><span>Do I need an account to use the audio tools?</span></summary>
           <div class="faq-answer">
-            <p>No. Open <a href="https://uforiya.space/tools" target="_blank" rel="noopener">uforiya.space/tools</a>, drop a file in and start editing. Trim, fade, convert and compress all work without signing up. A free account adds pitch, tempo and normalize, raises the daily limit, and lets a result go straight into a project.</p>
+            <p>No. Open <a href="https://uforiya.space/tools" target="_blank" rel="noopener">uforiya.space/tools</a>, drop a file in and start editing. Trim, fade, convert and compress all work without signing up. A free account adds pitch, tempo, normalize and reverb, raises the daily limit, and lets a result go straight into a project.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary><span>Which audio tools work without an account?</span></summary>
           <div class="faq-answer">
-            <p>Trim, fade, convert and compress. Pitch, tempo and normalize need a free account, which takes about a minute to create and costs nothing.</p>
+            <p>Trim, fade, convert and compress. Pitch, tempo, normalize and reverb need a free account, which takes about a minute to create and costs nothing.</p>
           </div>
         </details>
 
@@ -1315,10 +1394,41 @@
         dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
       }
 
+      /* Seamless loop: a copy of slide 1 sits after the last slide. Going
+         forward from the last slide scrolls into the copy, then jumps to the
+         real slide 1 with no animation, so it never rewinds. Prev on slide 1
+         does the reverse. */
+      const clone = slides[0].cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.removeAttribute('aria-label');
+      clone.inert = true;
+      clone.querySelectorAll('img').forEach((img) => { img.loading = 'eager'; });
+      track.appendChild(clone);
+      let wrapping = false;
+
+      function jumpTo(pos) {
+        track.scrollTo({ left: pos * track.clientWidth, behavior: 'instant' });
+      }
+
+      function settle() {
+        wrapping = false;
+        if (Math.round(track.scrollLeft / track.clientWidth) >= slides.length) jumpTo(0);
+      }
+
       function goTo(index) {
-        const target = (index + slides.length) % slides.length;
-        track.scrollTo({ left: target * track.clientWidth, behavior: 'smooth' });
-        setActive(target);
+        const n = slides.length;
+        if (wrapping) jumpTo(0);
+        settle();
+        let pos = index;
+        if (index >= n) {
+          pos = n;
+          wrapping = true;
+        } else if (index < 0) {
+          jumpTo(n);
+          pos = n - 1;
+        }
+        track.scrollTo({ left: pos * track.clientWidth, behavior: 'smooth' });
+        setActive(pos % n);
       }
 
       function stop() {
@@ -1359,10 +1469,17 @@
         ticking = true;
         requestAnimationFrame(() => {
           ticking = false;
-          const index = Math.round(track.scrollLeft / track.clientWidth);
+          const index = Math.round(track.scrollLeft / track.clientWidth) % slides.length;
           if (index !== current) setActive(index);
         });
       }, { passive: true });
+
+      let settleTimer = null;
+      track.addEventListener('scroll', () => {
+        clearTimeout(settleTimer);
+        settleTimer = setTimeout(settle, 150);
+      }, { passive: true });
+      track.addEventListener('scrollend', settle);
 
       window.addEventListener('resize', () => {
         track.scrollLeft = current * track.clientWidth;
@@ -1370,6 +1487,20 @@
 
       setPlaying(true);
     })();
+  </script>
+  <script>
+    /* CAMP 12 RECAP: the YouTube player only loads once someone presses play. */
+    document.querySelectorAll('.ps-video-play').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const frame = document.createElement('iframe');
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.yt + '?autoplay=1&playsinline=1&rel=0';
+        frame.title = 'Main One Camp 12 recap';
+        frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        frame.allowFullscreen = true;
+        btn.replaceWith(frame);
+        frame.focus();
+      });
+    });
   </script>
   <script>
     /* ═══════════════════════════════════════════
