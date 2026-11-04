@@ -2754,3 +2754,7 @@ a { color: inherit; }
   .install { padding: 22px 18px 22px; }
   .install-steps { grid-template-columns: 1fr; gap: 10px; }
 }
+
+/* Extra link names for sections (#sharing, #pro ...). Empty, takes no space. */
+.anchor-alias { display: block; height: 0; }
+#camp { scroll-margin-top: calc(var(--nav-h) + 24px); }
