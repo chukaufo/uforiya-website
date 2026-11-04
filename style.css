@@ -2693,7 +2693,7 @@ a { color: inherit; }
   padding: 28px 28px 30px;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.02);
+  background: #0d0c17;
   scroll-margin-top: calc(var(--nav-h) + 24px);
 }
 .install-head h3 { font-family: var(--f-display); font-size: 20px; color: var(--ink); margin: 0 0 6px; }
@@ -2715,6 +2715,7 @@ a { color: inherit; }
   padding: 14px 16px;
   border: 1px solid var(--line);
   border-radius: 12px;
+  background: #110f1e;
 }
 .install-num {
   width: 22px;
