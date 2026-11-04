@@ -43,7 +43,7 @@
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
 
-  <link rel="stylesheet" href="style.css?v=16" />
+  <link rel="stylesheet" href="style.css?v=17" />
   <!-- ═══════════════════════════════════════════
        STRUCTURED DATA
        The FAQ entries below mirror the visible FAQ section word for word.
@@ -676,6 +676,58 @@
         <span class="phone-ping" aria-hidden="true"></span>
         Same account, same files. Start the track at the desk, leave the notes on the bus.
       </p>
+
+      <!-- INSTALL: add the web app to the home screen. Linkable as uforiya.com/#install -->
+      <div class="install" id="install">
+        <div class="install-head">
+          <h3>Put it on your home screen</h3>
+          <p>Uforiya opens full screen like an app, straight to your library, with no browser bar. Nothing to download from an app store.</p>
+        </div>
+
+        <div class="library-switch install-switch" role="tablist" aria-label="Your phone">
+          <button class="lib-tab is-active" role="tab" id="install-tab-ios" aria-controls="install-panel-ios" aria-selected="true" data-os="ios">iPhone</button>
+          <button class="lib-tab" role="tab" id="install-tab-android" aria-controls="install-panel-android" aria-selected="false" tabindex="-1" data-os="android">Android</button>
+        </div>
+
+        <div role="tabpanel" id="install-panel-ios" aria-labelledby="install-tab-ios">
+          <ol class="install-steps">
+            <li class="install-step">
+              <span class="install-num">1</span>
+              <span class="install-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span>
+              <p>Open <strong>uforiya.space</strong> in Safari.</p>
+            </li>
+            <li class="install-step">
+              <span class="install-num">2</span>
+              <span class="install-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M8 11H6a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-2"/></svg></span>
+              <p>Tap <strong>Share</strong>. On newer iPhones, tap <strong>⋯</strong> first, then Share.</p>
+            </li>
+            <li class="install-step">
+              <span class="install-num">3</span>
+              <span class="install-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.5v7M8.5 12h7"/></svg></span>
+              <p>Tap <strong>Add to Home Screen</strong>, then <strong>Add</strong>.</p>
+            </li>
+          </ol>
+        </div>
+        <div role="tabpanel" id="install-panel-android" aria-labelledby="install-tab-android" hidden>
+          <ol class="install-steps">
+            <li class="install-step">
+              <span class="install-num">1</span>
+              <span class="install-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span>
+              <p>Open <strong>uforiya.space</strong> in Chrome.</p>
+            </li>
+            <li class="install-step">
+              <span class="install-num">2</span>
+              <span class="install-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5.5" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="12" cy="18.5" r="1.4"/></svg></span>
+              <p>Tap <strong>⋮</strong> in the top corner.</p>
+            </li>
+            <li class="install-step">
+              <span class="install-num">3</span>
+              <span class="install-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M12 7.5v7M9.2 11.8 12 14.6l2.8-2.8"/></svg></span>
+              <p>Tap <strong>Add to home screen</strong> or <strong>Install app</strong>, then confirm.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1486,6 +1538,33 @@
       });
 
       setPlaying(true);
+    })();
+  </script>
+  <script>
+    /* INSTALL STEPS: iPhone / Android switch, opens on the visitor's platform. */
+    (function initInstall() {
+      const root = document.getElementById('install');
+      if (!root) return;
+      const tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+      function show(os) {
+        tabs.forEach((t) => {
+          const on = t.dataset.os === os;
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+          t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+        });
+      }
+      tabs.forEach((t, i) => {
+        t.addEventListener('click', () => show(t.dataset.os));
+        t.addEventListener('keydown', (e) => {
+          if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+          e.preventDefault();
+          const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+          show(next.dataset.os); next.focus();
+        });
+      });
+      show(/android/i.test(navigator.userAgent) ? 'android' : 'ios');
     })();
   </script>
   <script>
