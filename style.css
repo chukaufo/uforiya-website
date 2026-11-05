@@ -2648,6 +2648,8 @@ a { color: inherit; }
   padding: 20px 22px;
 }
 .ps-camp .feature-card h3 { font-size: 16px; margin: 0; }
+.ps-camp-head { display: flex; align-items: center; gap: 12px; }
+.ps-camp-logo { flex: none; width: 56px; height: auto; padding: 5px 6px; background: #fff; border-radius: 8px; }
 .ps-camp .feature-card p { font-size: 13.5px; line-height: 1.6; margin: 0; }
 .ps-camp-list {
   list-style: none;
